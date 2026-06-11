@@ -1,24 +1,39 @@
 #include <stdio.h>
+#include <string.h>
 
 int main(int argc, char const *argv[])
 {
-    // char a = 65;
-    // char *p = &a;
-    // char **q = &p;
-    // printf("%p\n", &a);
 
-    // char *p = "hello";
-    // printf("%p\n", p);
-    // p = "h";
-    // printf("%p\n", p);
-    // char *q = "hello";
-    // printf("%p\n", q);
-    // return 0;
-    // int a[2][3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-    // printf("%p\n", a);
-    // printf("%p\n", *a + 1);
-    // printf("%p\n", a[0] + 1);
-
-    int a = 0x12345678;
-    printf("%x\n", (char)a);
+    char a[10] = "acdgjmno", b[10] = "befhil";
+    char *p = a, *q = b;
+    while (1)
+    {
+        if (*p < *q)
+        {
+            if (*p == '\0')
+            {
+                printf("%s", q);
+                break;
+            }
+            else
+            {
+                printf("%c", *p);
+                p++;
+            }
+        }
+        else
+        {
+            if (*q == '\0')
+            {
+                printf("%s", p);
+                break;
+            }
+            else
+            {
+                printf("%c", *q);
+                q++;
+            }
+        }
+    }
+    printf("\n");
 }
