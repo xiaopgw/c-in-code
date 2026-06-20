@@ -1,13 +1,28 @@
 #include <stdio.h>
 
+void c();
+
+
+void b()
+{
+    printf("1");
+    c();
+}
+
+void c()
+{
+    b();
+}
+
 int main(int argc, char const *argv[])
 {
-    
-    char arr[10] = "abc";
-    for (size_t i = 0; arr[i]; i++)
+    for (size_t i = 0; i < 10; i++)
     {
-        printf("%c", arr[i]);
+        
     }
+    
+    
     
     return 0;
 }
+

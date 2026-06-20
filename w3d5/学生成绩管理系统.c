@@ -23,6 +23,9 @@ void menu();
 int print();
 void Type();
 void List();
+void command();
+int empty();
+
 
 
 
@@ -84,10 +87,9 @@ void menu()
     printf("Copyright <C> 2011.06.12 By 姓名");
     
     printf("\033[%d;%dH", DISTANCE_H + MENU_H + 2, 0);
-    printf("请输入命令=");
 
     // printf("\033[0;0H");
-    print();
+    command();
 }
 
 void Type()
@@ -111,24 +113,56 @@ void Type()
         }
         count++;     
     }
-
-    printf("请输入命令=");
-    print();
+    command();
 }
 
 void List()
 {
-    printf("学生成绩如下\n");
-    printf("学号\t语文\t数学\t外语\t平均分\n");
+    if (empty())
+    {
+        command();
+    }
+    else
+    {
+        printf("学生成绩如下\n");
+        printf("学号\t语文\t数学\t外语\t平均分\n");
+        for (size_t i = 0; i < count; i++)
+        {
+            printf(" %d\t", student[i].stnum);
+            for (size_t t = 0; t < SUBJECT; t++)
+            {
+                printf("%.1f\t", student[i].subject[t]);
+            }
+            printf(" %.1f\n", student[i].av);
+        }
+        command();
+    }
+}
+
+void Average()
+{
     for (size_t i = 0; i < count; i++)
     {
-        printf(" %d\t", student[i].stnum);
         for (size_t t = 0; t < SUBJECT; t++)
         {
-            printf("%.1f\t", student[i].subject[t]);
+            student[i].av += student[i].subject[t];
         }
-        printf(" %.1f\n", student[i].av);
     }
+    command();
+}
+
+int empty()
+{
+    if (!count)
+    {
+        printf("成绩表为空！请先使用命令 T 录入学生成绩。");
+        return 1;
+    }
+    return 0;
+}
+
+void command()
+{
     printf("请输入命令=");
     print();
 }
@@ -149,6 +183,7 @@ int print()
         return abc;
         case 'A':
         case 'a':
+        Average();
         return abc;
         case 'L':
         case 'l':
