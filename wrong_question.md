@@ -1,3 +1,4 @@
+### 选择填空
 1. break语句的正确的用法是（）
 A. 无论在任何情况下，都终端程序的执行，退出到系统下一层
 B. 在多重循环中，只能退出最近靠近的那一层循环语句
@@ -13,7 +14,7 @@ do
 此处do-while循环的结束条件是().
 A. P的值不等于12345或者n的值小于3
 B. P的值等于12345或者n的值大于等于3
-C. P的值等于12345并且n的值大于等于3
+C. P的值等于12345并且n的值大于等于3    
 D. P的值不等于12345并且n的值小于3
 
 3. 语句while(!E)中表达式!E等价于()
@@ -76,16 +77,91 @@ A. a[i++]   B. a[i]++   C. a[i]   D. a[++i]
 
 18. 全局变量和局部变量可以重命名吗
 
+19. 下面这段代码能编译通过吗？如果不行，问题在哪？
+```
+int* getNum() 
+{
+    int a = 10;
+    return &a;
+}
+```
+
+20. 以下代码有什么问题？
 
 
+Apply
+struct student {
+    int id;
+    char name[32];
+};
 
-编程题
+int main() {
+    struct student *p;
+    p->id = 10;    
+    return 0;
+}
+
+21. 以下代码有什么问题？
+
+
+Apply
+typedef int myint;
+myint a = 10;
+
+typedef struct student {
+    int id;
+} stu;
+
+stu s = {1};
+
+typedef stu new_stu;
+new_stu s2 = {2};
+
+22. C语言程序的三种基本程序是
+    
+23. 以下关于字符串的叙述中正确的是（）
+A. 空串比空格打头的字符串小
+B. 两个字符串中的字符个数相同时才能进行字符串大小的比较
+C. 可以用关系运算符对字符串的大小进行比较
+D. C语言中有字符串类型的常量和变量
+
+24. 若要将当前目录中的myfile.txt文件压缩成myfile.txt.tar.gz则实现的命令为()
+A. tar -cvf myfile.txt myfile.txt.tar.gz
+B. tar -zcvf myfile.txt.tar.gz myfile.txt
+C. tar -zcvf myfile.txt myfile.txt.tar.gz
+D. tar -cvf myfile.txt.tar.gz myfile.txt
+
+25. 有以下程序
+main()
+{
+    char *p[10] = {"abc", "aabdfg","dcdbe","abbd","cd"};
+    printf("%d\n",strlen(p[4]));
+}
+
+26. char *RetMenory(void)
+{
+    char p[] = "hello world";
+    return p;
+}
+void Test(void)
+{
+    char *str = NULL;
+    str = RetMemory();
+    puts(str);
+}
+运行结果（）
+A. 语法有错误，不能编译
+B. hello world
+C. 结果不可预知
+D. hello world+乱码
+
+### 编程题
 1. 已知char *str[10] = {"abcABCaa"}, 实现此字符中内容字符大小写转换后，使用排序进行升序排序，最终输出str。
 
 2. 编写函数实现mySwap函数，及实现两个字符交换。要求内部要添加对空指针内容的提示。原型：void mySwap (char *a1, char *a2);
 编写完成后，使用此数组char str[] = *hello world; 测试mySwap函数。
 
-3. 使用for嵌套语句产生下列图案：
+4. 使用for嵌套语句产生下列图案：
 A
 _\AB
 _\_\ABC
@@ -93,3 +169,12 @@ _\_\_\ABCD
 _\_\_\_\ABCDE
 _\_\_\_\_\ABCDEF
 
+4. 写一个名为 operate 的函数，接收两个整数 a, b 和一个函数指针数组 ops（长度3），依次调用数组中的三个函数，分别打印结果。
+
+5. 综合题：用条件编译 + 函数指针数组写一个"计算器"的雏形：
+
+定义两个宏 MODE_ADD 和 MODE_SUB，值分别为 1 和 2
+如果定义了 MODE_ADD，数组中包含 add；如果定义了 MODE_SUB，数组中包含 sub
+通过改变宏定义，编译出不同版本的计算器
+
+### BUG

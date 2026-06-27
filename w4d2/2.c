@@ -6,6 +6,5 @@ int main(int argc, char const *argv[])
     {
         printf("%c", arr[i]);
     }
-    
     return 0;
 }
