@@ -1,7 +1,9 @@
+#ifndef _MY_H
+#define _MY_H
+
 #include<stdio.h>
 #include<stdlib.h>
 
-#define N 100;
 
 typedef char datatype;
 
@@ -12,3 +14,5 @@ typedef struct linked_list
 }sl, *sp;
 
 sp LinkedList(datatype data);
+
+#endif
