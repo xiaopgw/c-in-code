@@ -219,7 +219,7 @@ void ShowDoubleLinkedList(dbpoint_p top)
 int DeleteBoubleLinkedList(dbpoint_p top, int post)
 {
     // 尾删，前删，后删
-    if (post < 0 || post > top->len)
+    if (post < 0 || post >= top->len)
     {
         printf("X");
         return -1;
@@ -258,5 +258,77 @@ int DeleteBoubleLinkedList(dbpoint_p top, int post)
         // printf("-f-p\n");
     }
     top->len--;
+    return 0;
+}
+// 查找
+int FoundDoubleLinkedList(dbpoint_p top, datatype data)
+{
+    dbnode_p head = top->head;
+    int post = 0;
+    while (head->next != NULL)
+    {
+        head = head->next;
+        if (head->data == data)
+        {
+            printf("%d ", post);
+        }
+        post++;
+    }
+    return 0;
+}
+//修改
+int ChoungeDoubleLinkedList(dbpoint_p top, int post, datatype data)
+{
+    if (post <= top->len / 2)
+    {
+        dbnode_p ppost = top->head;
+        for (int i = 0; i <= post; i++)
+        {
+            ppost = ppost->next;
+        }
+        return ppost->data = data;
+        // printf("-z-\n");
+    }
+    else
+    {
+        dbnode_p ppost = top->tail;
+        for (int i = top->len - 1; i > post; i--)
+        {
+            ppost = ppost->prev;
+        }
+        return ppost->data = data;
+    }
+}
+// 删同一个元素
+int DeleteDoubleLinkList(dbpoint_p top, datatype data)
+{
+    dbnode_p head = top->head->next;
+    while (head != NULL)
+    {
+        if (head->data == data)
+        {
+            if (head->next == NULL)
+            {
+                top->tail = head->prev;
+                top->tail->next = NULL;
+                top->len--;
+                free(head);
+                return 0;
+            }
+            else
+            {
+                dbnode_p del = head;
+                head = del->next;
+                del->prev->next = head;
+                head->prev = del->prev;
+                free(del);
+                top->len--;
+            }
+        }
+        else
+        {
+            head = head->next;
+        }
+    }
     return 0;
 }

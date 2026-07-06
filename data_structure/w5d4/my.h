@@ -73,5 +73,11 @@ int PushDoubleLinkedList(dbpoint_p top, int post, datatype data);
 void ShowDoubleLinkedList(dbpoint_p top);
 // 删除
 int DeleteBoubleLinkedList(dbpoint_p top, int post);
+// 查找
+int FoundDoubleLinkedList(dbpoint_p top, datatype data);
+//修改
+int ChoungeDoubleLinkedList(dbpoint_p top, int post, datatype data);
+// 删同一个元素
+int DeleteDoubleLinkList(dbpoint_p top, datatype data);
 
 #endif

@@ -28,7 +28,7 @@ int main(int argc, char const *argv[])
     dbpoint_p top = CreateDoubleLinkedList();
     // printf("2\n");
     // 插入
-    for (int i = 0; i < 8; i++)
+    for (int i = 0; i < 7; i++)
     {
         PushDoubleLinkedList(top, i, i + 1);
     }
@@ -36,7 +36,15 @@ int main(int argc, char const *argv[])
     PushDoubleLinkedList(top, 8, data);
     // 遍历
     ShowDoubleLinkedList(top);
-    DeleteBoubleLinkedList(top, 4);
+    // DeleteBoubleLinkedList(top, 4);
+    ShowDoubleLinkedList(top);
+    // 查找
+    FoundDoubleLinkedList(top, data);
+    //修改
+    ChoungeDoubleLinkedList(top, post, data);
+    ShowDoubleLinkedList(top);
+    // 删同一个元素
+    DeleteDoubleLinkList(top, data);
     ShowDoubleLinkedList(top);
     return 0;
 }
