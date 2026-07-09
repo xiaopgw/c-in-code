@@ -3,12 +3,16 @@
 
 #include<sys/types.h>
 #include<sys/stat.h>
+#include<fcntl.h>
 #include<stdio.h>
 #include<unistd.h>
 #include<stdlib.h>
 #include<string.h>
 
 #define N 32
+
+int add(int a, int b);
+void fun();
 
 // int a(int a);
 // int a(int a, int b);

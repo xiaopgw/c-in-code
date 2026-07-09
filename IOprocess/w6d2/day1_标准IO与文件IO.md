@@ -64,7 +64,7 @@ LinuxIO模型
         a:追加，不存在创建，存在顶到结尾
         r+:可读可写，顶到开头
         w+:可读可写，存在清空，不存在创建，顶到开头
-        a+:可读可写，不存在创建，存在顶到结尾
+        a+:可读可写，不存在创建，存在写顶到结尾，读顶到开头
 
 返回值：成功：文件流
         失败：NULL, 并且设置errno(错误码)
@@ -73,7 +73,7 @@ LinuxIO模型
 ```
 
 ## 关闭文件fclose
-``` 
+```c
 #include <stdio.h>
     int fclos(FILE *stream);
 功能：关闭文件
@@ -200,7 +200,20 @@ int open(const char *pathname, int flags);
 返回值：成功：文件描述符
         失败：-1
 当有O_CREAT时要用
-int open(const char *pathname, int flags, mode_t mode);
-参数：mode：0755(八进制改权限)
+int open(const char *pathname, int flags, mode_t mode);         // 跟上面是同一个
+参数：mode：0755(八进制改权限)                                  // 怎么创建跟打开的权限不一样
 
 ```
+
+题目要求：编程读写一个文件test.txt，每隔1秒向文件中写入一行数据，类似这样： 
+1,  hello  
+2,  hello
+该程序应该无限循环，直到按Ctrl-C中断程序。
+再次启动程序写文件时可以追加到原文件之后，并且序号能够接续上次的序号，比如： 
+1,  hello  
+2,  hello
+3,  hello
+4,  hello
+5,  hello
+sleep(1); //睡眠函数
+fprintf/sprintf
