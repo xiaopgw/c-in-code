@@ -8,7 +8,7 @@ LinuxIO模型
 （字符串输入输出gets，puts会有越界风险，但io会学一个不会越界的方法来输入输出）
 ## 进程：process
 进程基础
-进程间通信：无名管道(pipe)、有名管道(fifo)、信号(signal)、共享内容(shard memory)、消息队列(message queue)、信号灯集(semaphore set)
+进程间通信：无名管道(pipe)、有名管道(fifo)、信号(signal)、共享内存(shard memory)、消息队列(message queue)、信号灯集(semaphore set)
 线程、同步、互斥、条件变量
 
 # 函数三要素
@@ -20,12 +20,12 @@ LinuxIO模型
 ## 概念
 标准IO：在C库中定义的一组专门用来输入输出的函数
 
-系统分文三层：应用层，内核层，硬件
+系统分三层：应用层，内核层，硬件
 ## 特点
 1. 通过缓冲机制减少系统的调用，提高效率
 系统调用：内核向上提供的一组接口
 2. 围绕流进行操作，流FILE*描述，FILE代表的是结构体
-3. 默认打开三个流：stdin(标准输入)、stdout(标准输出)、stderr(标注错误)
+3. 默认打开三个流：stdin(标准输入)、stdout(标准输出)、stderr(标准错误)
 
 ## 操作
 打开文件：fopen
@@ -168,7 +168,7 @@ long ftell(FILE *stream)
 围绕文件描述符进行操作，文件描述符是非负整数：0、1、2
 默认打开三个文件描述符：0(标准错误)、1(标准输出)、2(标准错误)
 除目录外其他类型的文件都可以操作(功能更丰富，标准io只能操作普通文件)
-
+ 
 问题：打开一个文件，文件描述符：
 3
 关闭3以后，重新打开文件，描述符是几？
@@ -185,7 +185,7 @@ long ftell(FILE *stream)
 ```c
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <scntl.h>
+#include <fcntl.h>
 
 int open(const char *pathname, int flags);
 功能：打开文件
@@ -217,3 +217,10 @@ int open(const char *pathname, int flags, mode_t mode);         // 跟上面是�
 5,  hello
 sleep(1); //睡眠函数
 fprintf/sprintf
+
+
+
+
+
+
+
