@@ -76,54 +76,54 @@ int main(int argc, char const *argv[])
     // select设置I/O多路复用模型
     // 6步
     // 设置双同步（）
-    // int ret = 0;
-    // char arr[N] = {};
-    // int fd = open(argv[1], O_RDONLY | O_NONBLOCK);
-    // if (fd < 0)
-    // {
-    //     perror("fd->");
-    //     return 0;
-    // }
+    int ret = 0;
+    char arr[N] = {};
+    int fd = open(argv[1], O_RDONLY | O_NONBLOCK);
+    if (fd < 0)
+    {
+        perror("fd->");
+        return 0;
+    }
         
-    // fd_set readfds;
-    // while(1)
-    // {
-    //     struct timeval tm = {5, 0};
-    //     FD_ZERO(&readfds);
-    //     FD_SET(fd, &readfds);
-    //     FD_SET(0, &readfds);
-    //     ret = select(fd + 1, &readfds, NULL, NULL, &tm);
-    //     if (ret == 0)
-    //     {
-    //         printf("time out\n");
-    //     }
-    //     else if (ret < 0)
-    //     {
-    //         perror("ret->");
-    //         return 0;
-    //     }
-    //     if (FD_ISSET(fd, &readfds))
-    //     {
-    //         int len = read(fd, arr, N - 1);
-    //         if (arr[len - 1] == '\n')
-    //             arr[len - 1] = '\0';
-    //         if (len > 0)
-    //         {
-    //             printf("%s\n", arr);
-    //         }
-    //         else if(len == 0)
-    //         {
-    //             FD_CLR(fd, &readfds);
-    //         }
+    fd_set readfds;
+    while(1)
+    {
+        struct timeval tm = {5, 0};
+        FD_ZERO(&readfds);
+        FD_SET(fd, &readfds);
+        FD_SET(0, &readfds);
+        ret = select(fd + 1, &readfds, NULL, NULL, &tm);
+        if (ret == 0)
+        {
+            printf("time out\n");
+        }
+        else if (ret < 0)
+        {
+            perror("ret->");
+            return 0;
+        }
+        if (FD_ISSET(fd, &readfds))
+        {
+            int len = read(fd, arr, N - 1);
+            if (arr[len - 1] == '\n')
+                arr[len - 1] = '\0';
+            if (len > 0)
+            {
+                printf("%s\n", arr);
+            }
+            else if(len == 0)
+            {
+                FD_CLR(fd, &readfds);
+            }
             
-    //     }
-    //     if (FD_ISSET(0, &readfds))
-    //     {
-    //         int len = read(0, arr, N - 1);
-    //         if (arr[len - 1] == '\n')
-    //             arr[len - 1] = '\0';
-    //         printf("%s\n", arr);
-    //     }
-    // }
+        }
+        if (FD_ISSET(0, &readfds))
+        {
+            int len = read(0, arr, N - 1);
+            if (arr[len - 1] == '\n')
+                arr[len - 1] = '\0';
+            printf("%s\n", arr);
+        }
+    }
     return 0;
 }

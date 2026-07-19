@@ -56,6 +56,44 @@ select poll epoll
             +---+---+---+---+-----------+---+
               0   1   2   3    ...       1023
 6. 做操作                                           <!--这做操作是干啥，有变化的就操作吗，每个变化的操作是分开的吗-->
+#### 函数接口
+```c
+#include <sys/time.h>
+#include <sys/types.h>
+#include <unistd.h>
+int select(int nfds, fd_set *readfds, fd_set *writefds,
+           fd_set *exceptfds, struct timeval *timeout);
+功能：
+	实现IO的多路复用
+参数：
+	nfds：关注的最大的文件描述符+1
+    readfds：关注的读表
+	writefds：关注的写表 
+	exceptfds：关注的异常表
+	timeout：超时的设置
+		NULL：一直阻塞，直到有文件描述符就绪或出错
+		时间值为0：仅仅检测文件描述符集的状态，然后立即返回
+		时间值不为0：在指定时间内，如果没有事件发生，则超时返回0，并清空设置的时间值
+
+struct timeval {
+    long tv_sec;		/* 秒 */
+    long tv_usec;	/* 微秒 = 10^-6秒 */
+};
+
+返回值：
+	准备好的文件描述符的个数
+	-1 ：失败：
+	0：超时检测时间到并且没有文件描述符准备好	
+
+注意：
+	select返回后，关注列表中只存在准备好的文件描述符
+操作表：
+void FD_CLR(int fd, fd_set *set); //清除集合中的fd位
+void FD_SET(int fd, fd_set *set);//将fd放入关注列表中
+int  FD_ISSET(int fd, fd_set *set);//判断fd是否在集合中  是--》1   不是---》0
+
+
+```
 #### 超时检测
 概念
 什么是网络超时检测呢，比如某些设备的规定，发送请求数据后，如果多长时间后没有收到来自设备的回复，那么需要做出一些特殊的处理
@@ -137,7 +175,6 @@ int main(int argc, char const *argv[])
             int n=read(fd_mouse, buf, sizeof(buf)-1);
             buf[n]='\0';
             printf("mouse:%s\n",buf);
-
         }
     }
     close(fd_mouse);
@@ -154,6 +191,8 @@ int main(int argc, char const *argv[])
 进程 Process
 ## 1.什么是进程
 ### 概念
+
+
 #### 程序：
 编译好的可执行文件
 
