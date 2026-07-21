@@ -93,6 +93,7 @@ void FD_SET(int fd, fd_set *set);//将fd放入关注列表中
 int  FD_ISSET(int fd, fd_set *set);//判断fd是否在集合中  是--》1   不是---》0
 
 
+
 ```
 #### 超时检测
 概念

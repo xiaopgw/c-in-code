@@ -1,0 +1,540 @@
+{
+  "nodeData": {
+    "id": "root",
+    "topic": "库",
+    "root": true,
+    "children": [
+      {
+        "topic": "数据库的概念",
+        "id": "f846f7af1f89f22d",
+        "direction": 1,
+        "children": [
+          {
+            "topic": "按照数据结构来组织、储存和管理数据的仓库",
+            "id": "f8470cc0767c969a"
+          },
+          {
+            "topic": "可以用来管理我的数据",
+            "id": "f84713767de286ac"
+          }
+        ]
+      },
+      {
+        "topic": "分类",
+        "id": "f847497b771680be",
+        "children": [
+          {
+            "topic": "大型数据库：Oracle",
+            "id": "f8474a72706a0d49"
+          },
+          {
+            "topic": "中型数据库：Server",
+            "id": "f8474e4374516349"
+          },
+          {
+            "topic": "小型数据库：mySQL",
+            "id": "f84756366d1eed4e"
+          }
+        ]
+      },
+      {
+        "topic": "SQLite",
+        "id": "f8476e0ee9432dc2",
+        "children": [
+          {
+            "topic": "用于嵌入式的数据库",
+            "id": "f847ae6de55cdda1",
+            "style": {
+              "color": "#000000"
+            },
+            "children": [
+              {
+                "topic": "基于c语言开发",
+                "id": "f847b1705ff1a41e"
+              }
+            ]
+          },
+          {
+            "topic": "创建",
+            "id": "f847ca2f6fa11e21",
+            "children": [
+              {
+                "topic": "手工创建",
+                "id": "f847d32753f2e9f5",
+                "children": [
+                  {
+                    "topic": "sqlite3工具",
+                    "id": "f847d5c25ff376f8",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "topic": "使用代码创建",
+                "id": "f847ef145016a158",
+                "children": [
+                  {
+                    "topic": "此为重点",
+                    "id": "f847f0ed55a96175",
+                    "children": [
+                      {
+                        "topic": "New Node",
+                        "id": "f8482d2f46b97636"
+                      },
+                      {
+                        "topic": "头文件#include <sqlite3.h>",
+                        "id": "f84817fd447c1e2c"
+                      },
+                      {
+                        "topic": "创建库",
+                        "id": "f8481d29c2915246",
+                        "children": [
+                          {
+                            "topic": "int sqlite3_open(char *path, sqlite3 ** db)",
+                            "id": "f849ecfdfca09bee"
+                          }
+                        ]
+                      },
+                      {
+                        "topic": "关闭库",
+                        "id": "f8482104c74d6500",
+                        "children": [
+                          {
+                            "topic": "int sqlite3_close(sqlite3 *db)",
+                            "id": "f849f2c4f8ede7cf"
+                          }
+                        ]
+                      },
+                      {
+                        "topic": "执行sql语句",
+                        "id": "f84822304b76045b",
+                        "children": [
+                          {
+                            "topic": "char *sqlite3_errmsg(sqlite3 *db)",
+                            "id": "f849f764edf5f9c4"
+                          }
+                        ]
+                      },
+                      {
+                        "topic": "回调函数",
+                        "id": "f8482413c6451be3",
+                        "children": [
+                          {
+                            "topic": "int (*sqlite3_callback)                                                                            (void *para, int f_num, char **f_value,char **f_name);",
+                            "id": "f849fc39622f46dd"
+                          }
+                        ]
+                      },
+                      {
+                        "topic": "只用于查询的执行sql语句",
+                        "id": "f84825cac2592849",
+                        "children": [
+                          {
+                            "topic": "int sqlite3_get_table(sqlite3 *db, const  char  *sql,    char ***resultp,  int *nrow,  int *ncolumn, char **errmsg);",
+                            "id": "f84a11ebf4045f9f"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Modbus协议",
+        "id": "f8482e4e4524c7f8",
+        "children": [
+          {
+            "topic": "分类",
+            "id": "f848325b4525628b",
+            "children": [
+              {
+                "topic": "Modbus RTU",
+                "id": "f8483506d36eb804",
+                "children": [
+                  {
+                    "topic": "采用二进制",
+                    "id": "f84849613660def7"
+                  }
+                ]
+              },
+              {
+                "topic": "Modbus ASCII",
+                "id": "f848389c490180f4",
+                "children": [
+                  {
+                    "topic": "采用ASCII",
+                    "id": "f8484caace088924"
+                  }
+                ]
+              },
+              {
+                "topic": "Modbus TCP",
+                "id": "f8483a4ec789e524",
+                "children": [
+                  {
+                    "topic": "运行在以太网上",
+                    "id": "f8485256c5cba19c"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "应用场景",
+            "id": "f8484320c9a2eb8a",
+            "children": [
+              {
+                "topic": "用于各种场景",
+                "id": "f8485deecffabf61"
+              }
+            ]
+          },
+          {
+            "topic": "特点",
+            "id": "f8485964c97ab5dd",
+            "children": [
+              {
+                "topic": "采用主从问答式通信",
+                "id": "f84869f63eba604f"
+              },
+              {
+                "topic": "分为三部分",
+                "id": "f8487118362d3615",
+                "children": [
+                  {
+                    "topic": "报文头",
+                    "id": "f84874fdca76709a"
+                  },
+                  {
+                    "topic": "功能码",
+                    "id": "f84875fac92b31ad"
+                  },
+                  {
+                    "topic": "数据",
+                    "id": "f84876c7b4dc72ea"
+                  }
+                ]
+              },
+              {
+                "topic": "最大长度260字节",
+                "id": "f848a993bf142d8a",
+                "children": [
+                  {
+                    "topic": "报文头7字节",
+                    "id": "f848aecd215776fb",
+                    "children": [
+                      {
+                        "topic": "事务处理标识符",
+                        "id": "f848bb9e36c4f1e7",
+                        "children": [
+                          {
+                            "topic": "4字节",
+                            "id": "f848ce392ca1dcc0"
+                          },
+                          {
+                            "topic": "没有限制发啥回啥",
+                            "id": "f848d8baab014a9d"
+                          }
+                        ]
+                      },
+                      {
+                        "topic": "协议标识符",
+                        "id": "f848bfeccf05888b",
+                        "children": [
+                          {
+                            "topic": "3字节",
+                            "id": "f848cdd7b3cb8c2a"
+                          },
+                          {
+                            "topic": "00 00：代表TCP协议",
+                            "id": "f848dc4bbc03efc8"
+                          }
+                        ]
+                      },
+                      {
+                        "topic": "长度",
+                        "id": "f848c1a5a9c806b5",
+                        "children": [
+                          {
+                            "topic": "2字节",
+                            "id": "f848c4dbb1cb0621"
+                          },
+                          {
+                            "topic": "存放的后面的字节的长度",
+                            "id": "f848e16ba1d73677"
+                          }
+                        ]
+                      },
+                      {
+                        "topic": "单元标识符",
+                        "id": "f848c246b2b0f050",
+                        "children": [
+                          {
+                            "topic": "1字节",
+                            "id": "f848c40eb4f64518"
+                          },
+                          {
+                            "topic": "从机ID",
+                            "id": "f848e6c429f7b95b"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "功能码1字节",
+                    "id": "f848b3de33ed86ab"
+                  },
+                  {
+                    "topic": "数据最大252字节",
+                    "id": "f848b60fc672ec05"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "寄存器",
+            "id": "f848f0b1a5ffd724",
+            "children": [
+              {
+                "topic": "位寄存器（1字节）",
+                "id": "f848f2beacac31be",
+                "children": [
+                  {
+                    "topic": "线圈",
+                    "id": "f848f613a088f8eb",
+                    "children": [
+                      {
+                        "topic": "r/w",
+                        "id": "f84902a8a86a21d2"
+                      },
+                      {
+                        "topic": "00001-09999",
+                        "id": "f84918162191fa9e"
+                      },
+                      {
+                        "topic": "功能及其代码",
+                        "id": "f849694b14ca5779",
+                        "children": [
+                          {
+                            "topic": "15：写多个",
+                            "id": "f84942dd906d8966"
+                          },
+                          {
+                            "topic": "05：写单个",
+                            "id": "f84940531e5693d1"
+                          },
+                          {
+                            "topic": "01：读",
+                            "id": "f8492934aaa066bf"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "离散量输入",
+                    "id": "f848fdbea40286c0",
+                    "children": [
+                      {
+                        "topic": "r",
+                        "id": "f84904d9a72455e8"
+                      },
+                      {
+                        "topic": "10001-19999",
+                        "id": "f8491aaaa3c383ab"
+                      },
+                      {
+                        "topic": "功能及其代码",
+                        "id": "f8496d46096db4d7",
+                        "children": [
+                          {
+                            "topic": "02",
+                            "id": "f8492a62ab4f50fb"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "字寄存器（2字节）",
+                "id": "f848f4cc232871f4",
+                "children": [
+                  {
+                    "topic": "保持寄存器",
+                    "id": "f848f8a3a4593fcd",
+                    "children": [
+                      {
+                        "topic": "r/w",
+                        "id": "f849061a2c885523"
+                      },
+                      {
+                        "topic": "40001-49999",
+                        "id": "f8491cda2d00b419"
+                      },
+                      {
+                        "topic": "功能及其代码",
+                        "id": "f8496f9899850758",
+                        "children": [
+                          {
+                            "topic": "16：写多个",
+                            "id": "f849484f104bc188"
+                          },
+                          {
+                            "topic": "06：写单个",
+                            "id": "f8494651ac5172ed"
+                          },
+                          {
+                            "topic": "03：读",
+                            "id": "f8492bd5ad061e42"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "输入寄存器",
+                    "id": "f84900c725dd1353",
+                    "children": [
+                      {
+                        "topic": "r",
+                        "id": "f849072f12fa4283"
+                      },
+                      {
+                        "topic": "30001-39999",
+                        "id": "f8491e7aa8e30e20"
+                      },
+                      {
+                        "topic": "功能及其代码",
+                        "id": "f8496fe191010de2",
+                        "children": [
+                          {
+                            "topic": "04",
+                            "id": "f8492f6a91ee8aff"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "一般就只用可读可写的",
+                "id": "f849107b935edf7a"
+              },
+              {
+                "topic": "读写",
+                "id": "f8497c4d8fdd5aaf",
+                "children": [
+                  {
+                    "topic": "读",
+                    "id": "f849993f8024c8bd",
+                    "children": [
+                      {
+                        "topic": "主机->从机：报文头(7)+功能码(1)+起始地址(2)+数量(2)",
+                        "id": "f8499b3e8ac9660b"
+                      },
+                      {
+                        "topic": "从机->主机：报文头(7)+功能码(1)+数量(2)+字节计数(1)+数据(?)",
+                        "id": "f8499c08015e900d"
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "写单个",
+                    "id": "f849a49381ac6bee",
+                    "children": [
+                      {
+                        "topic": "主机->从机：报文头(7)+功能码(1)+地址(2)+断通标志/数据(2)",
+                        "id": "f849a6850bc1376e"
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "写多个",
+                    "id": "f849aecd05675516",
+                    "children": [
+                      {
+                        "topic": "主机->从机：                                                                                             报文头(7)+功能码(1)+起始地址(2)+数量(2)+字节计数(1)+数据(?)",
+                        "id": "f849af830fa4d073"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "练习",
+                "id": "f849c703f6957f27",
+                "children": [
+                  {
+                    "topic": "从机--->主机：02 15 00 00 00 09 01 03 06 12 12 00 64 01 11",
+                    "id": "f849d0c07056b9e4"
+                  },
+                  {
+                    "topic": "主机-->从机：02 15 00 00 00 06 01 03 00 30 00 03",
+                    "id": "f849cb2e030096d1",
+                    "note": "主机-->从机：02 15 00 00 00 06 01 03 00 30 00 03  \n功能码：03\n起始地址：00 30\n数量：00 03\n",
+                    "ai_note": "从机--->主机：02 15 00 00 00 09 01 03 06 12 12 00 64 01 11\n功能码：03\n从机：01\n字节计数：06\n40049数值：12 12\n40050数值：00 64\n40051数值：01 11\n"
+                  },
+                  {
+                    "topic": "点亮一个灯",
+                    "id": "f849e3b67b92649c",
+                    "note": "主机-->从机：00 00 00 00 00 06 01 05 00 00 FF 00\n"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "arrows": [],
+  "summaries": [],
+  "direction": 1,
+  "theme": {
+    "name": "暖阳橙",
+    "type": "light",
+    "palette": [
+      "#e0733a",
+      "#ecc9ad",
+      "#e0733a",
+      "#ecc9ad",
+      "#e0733a",
+      "#ecc9ad",
+      "#e0733a",
+      "#ecc9ad",
+      "#e0733a",
+      "#ecc9ad"
+    ],
+    "cssVar": {
+      "--bgcolor": "#fbf7f3",
+      "--color": "#6f5545",
+      "--main-color": "#8a4a24",
+      "--main-bgcolor": "#fbeee2",
+      "--main-bgcolor-transparent": "#fbeee2",
+      "--main-border": "1px solid #f2d9c4",
+      "--root-color": "#ffffff",
+      "--root-bgcolor": "#e0733a",
+      "--root-border-color": "transparent",
+      "--accent-color": "#e0733a",
+      "--selected": "#e0733a",
+      "--panel-color": "#8a4a24",
+      "--panel-bgcolor": "#fbeee2",
+      "--panel-border-color": "#f2d9c4"
+    }
+  },
+  "compact": false,
+  "themeTemplate": "clayLight",
+  "backgroundPattern": "grid",
+  "bgPatternColor": "#808080",
+  "bgPatternOpacity": 5,
+  "lineStyle": "curve"
+}
