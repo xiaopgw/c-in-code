@@ -1,0 +1,98 @@
+{
+  "nodeData": {
+    "id": "root",
+    "topic": "GPIO",
+    "root": true,
+    "children": [
+      {
+        "topic": "概念",
+        "id": "fa89528f7d92df7d",
+        "children": [
+          {
+            "topic": "通用输入输出接口",
+            "id": "fa895514f39c4ade"
+          },
+          {
+            "topic": "I：输入",
+            "id": "fa895abe8b55293b"
+          },
+          {
+            "topic": "O：输出",
+            "id": "fa895c6a7532b68b"
+          },
+          {
+            "topic": "最常用的接口",
+            "id": "fa895d4379566137"
+          }
+        ]
+      },
+      {
+        "topic": "实际应用",
+        "id": "fa8961de7d925692",
+        "children": [
+          {
+            "topic": "input",
+            "id": "fa8962e779e46cf3",
+            "children": [
+              {
+                "topic": "输入->信息或者电压的采集",
+                "id": "fa8963ce77d97011"
+              }
+            ]
+          },
+          {
+            "topic": "output",
+            "id": "fa89681c63e0fb2a",
+            "children": [
+              {
+                "topic": "输出->控制外部设备",
+                "id": "fa896995fecb321b"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "arrows": [],
+  "summaries": [],
+  "direction": 1,
+  "theme": {
+    "name": "薄荷绿",
+    "type": "light",
+    "palette": [
+      "#10a37f",
+      "#a9dcc8",
+      "#10a37f",
+      "#a9dcc8",
+      "#10a37f",
+      "#a9dcc8",
+      "#10a37f",
+      "#a9dcc8",
+      "#10a37f",
+      "#a9dcc8"
+    ],
+    "cssVar": {
+      "--bgcolor": "#f4faf7",
+      "--color": "#37655a",
+      "--main-color": "#1d5d4b",
+      "--main-bgcolor": "#e4f5ee",
+      "--main-bgcolor-transparent": "#e4f5ee",
+      "--main-border": "1px solid #c7eadd",
+      "--root-color": "#ffffff",
+      "--root-bgcolor": "#10a37f",
+      "--root-border-color": "transparent",
+      "--accent-color": "#10a37f",
+      "--selected": "#10a37f",
+      "--panel-color": "#1d5d4b",
+      "--panel-bgcolor": "#e4f5ee",
+      "--panel-border-color": "#c7eadd"
+    }
+  },
+  "compact": false,
+  "themeTemplate": "mintLight",
+  "backgroundPattern": "grid",
+  "bgPatternColor": "#808080",
+  "bgPatternOpacity": 5,
+  "lineStyle": "curve"
+}

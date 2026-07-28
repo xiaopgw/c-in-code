@@ -1,0 +1,536 @@
+{
+  "nodeData": {
+    "id": "root",
+    "topic": "stm32课程day1",
+    "root": true,
+    "children": [
+      {
+        "topic": "学习方法",
+        "id": "fa86c0f818fbaf78",
+        "children": [
+          {
+            "topic": "先宏观后微观，先原理后应用",
+            "id": "fa86c40b9a756c04"
+          },
+          {
+            "topic": "学原理学方法",
+            "id": "fa86c6809a021eec"
+          },
+          {
+            "topic": "由浅入深，项目实践",
+            "id": "fa86caf812cfcac1"
+          }
+        ]
+      },
+      {
+        "topic": "计算机基础",
+        "id": "fa86dcbe0684101b",
+        "children": [
+          {
+            "topic": "组成",
+            "id": "fa86ddd08e05ea23",
+            "children": [
+              {
+                "topic": "输入设备",
+                "id": "fa86df65008f1cee",
+                "children": [
+                  {
+                    "topic": "将其他事件转换为电信号",
+                    "id": "fa86e791143e5d72"
+                  }
+                ]
+              },
+              {
+                "topic": "输出设备",
+                "id": "fa86e0520c0f5beb",
+                "children": [
+                  {
+                    "topic": "将电信号转换为其他事件",
+                    "id": "fa86ed871bc3892f"
+                  }
+                ]
+              },
+              {
+                "topic": "运算器",
+                "id": "fa86e0fc1529605c",
+                "children": [
+                  {
+                    "topic": "进行运算：加减乘除",
+                    "id": "fa86f0d5866fbc52"
+                  }
+                ]
+              },
+              {
+                "topic": "控制器",
+                "id": "fa86e31181fa6f31",
+                "children": [
+                  {
+                    "topic": "计算机的指挥中心",
+                    "id": "fa86ff470bd41df0"
+                  }
+                ]
+              },
+              {
+                "topic": "存储器",
+                "id": "fa86e3e28104df07",
+                "children": [
+                  {
+                    "topic": "存放程序和数据",
+                    "id": "fa87029f111f79c8",
+                    "children": [
+                      {
+                        "topic": "ROM",
+                        "id": "fa87081a877b8170",
+                        "children": [
+                          {
+                            "topic": "掉电不丢失",
+                            "id": "fa870cfe0d9d0716"
+                          }
+                        ]
+                      },
+                      {
+                        "topic": "RAM",
+                        "id": "fa870a6d859ac743",
+                        "children": [
+                          {
+                            "topic": "掉电丢失",
+                            "id": "fa8711067b13a230"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "三级存储结构",
+            "id": "fa8714ecf4adb5cd",
+            "children": [
+              {
+                "topic": "cpu",
+                "id": "fa87178bfdf9eb88",
+                "children": [
+                  {
+                    "topic": "Cache",
+                    "id": "fa872f8c7d06f9e8",
+                    "children": [
+                      {
+                        "topic": "内存（主存）",
+                        "id": "fa8730b50809a509",
+                        "children": [
+                          {
+                            "topic": "外存（辅存）",
+                            "id": "fa87334ef02ea415"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "IO逻辑",
+            "id": "fa873beb7c57328c",
+            "children": [
+              {
+                "topic": "高低电平（数据存入输出就是传递这个）",
+                "id": "fa873d536b27e683",
+                "children": [
+                  {
+                    "topic": "1",
+                    "id": "fa873f1876b1a4ef"
+                  },
+                  {
+                    "topic": "0",
+                    "id": "fa873fb76bde2b42"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "总线",
+            "id": "fa874a597dd964fd",
+            "children": [
+              {
+                "topic": "数据总线",
+                "id": "fa874e0ae0ba7f81",
+                "children": [
+                  {
+                    "topic": "cpu与内存或其他器件之间的数据传送的通道",
+                    "id": "fa875277e2c551c2"
+                  },
+                  {
+                    "topic": "数据总线的宽度决定的传输的速度",
+                    "id": "fa876649ece0f1be"
+                  },
+                  {
+                    "topic": "一根线只能传输一个1/0，所以一个数据线为8的数据总线一次性可以传输8位",
+                    "id": "fa876721759aefea"
+                  },
+                  {
+                    "topic": "几根数据线就是多少数据总线",
+                    "id": "fa8796d6d871cba4"
+                  }
+                ]
+              },
+              {
+                "topic": "地址总线",
+                "id": "fa874f00771d524a",
+                "children": [
+                  {
+                    "topic": "可以决定指定的存储单元，然后让cpu去找",
+                    "id": "fa875d817fc06c93"
+                  },
+                  {
+                    "topic": "决定了能访问多大内存空间",
+                    "id": "fa8780b268188500"
+                  },
+                  {
+                    "topic": "几根地址线就是多少地址总线",
+                    "id": "fa8789d36d70ea44"
+                  }
+                ]
+              },
+              {
+                "topic": "控制总线",
+                "id": "fa875011ed04ab75",
+                "children": [
+                  {
+                    "topic": "cpu用控制总线对外部器件进行控制",
+                    "id": "fa876338fdc51a21"
+                  },
+                  {
+                    "topic": "控制总线的数量决定cpu对外部器件的控制能力",
+                    "id": "fa87875fe80d0e53"
+                  },
+                  {
+                    "topic": "几根控制线就是多少控制总线",
+                    "id": "fa87a766576da287"
+                  }
+                ]
+              },
+              {
+                "topic": "总结：",
+                "id": "fa87b62e6b3476c7",
+                "children": [
+                  {
+                    "topic": "数据总线决定传输数据的能力",
+                    "id": "fa87b702d397eda0"
+                  },
+                  {
+                    "topic": "地址总线决定能用多少内从",
+                    "id": "fa87b9aa501a7513"
+                  },
+                  {
+                    "topic": "控制总线决定控制外器的能力",
+                    "id": "fa87bd60d42a0091"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "单片机基础",
+        "id": "fa87c5e5da05cc74",
+        "children": [
+          {
+            "topic": "什么是单片机",
+            "id": "fa87c7165bbf79ab",
+            "children": [
+              {
+                "topic": "单片微型计算机",
+                "id": "fa87c8f2df7ff5e5"
+              },
+              {
+                "topic": "一个小而完善的微型计算机系统",
+                "id": "fa87cb2652ba7882"
+              }
+            ]
+          },
+          {
+            "topic": "型号",
+            "id": "fa87cfb44ac9484e",
+            "children": [
+              {
+                "topic": "51",
+                "id": "fa87d11d538f5337"
+              },
+              {
+                "topic": "32",
+                "id": "fa87d1dfd7ece261"
+              }
+            ]
+          },
+          {
+            "topic": "开发板介绍",
+            "id": "fa87e2cd57aa3b99",
+            "children": [
+              {
+                "topic": "用于研发研究学习",
+                "id": "fa87e470561e66d4",
+                "children": [
+                  {
+                    "topic": "显示屏",
+                    "id": "fa87e9bc5f926346"
+                  },
+                  {
+                    "topic": "资源拓展版",
+                    "id": "fa87eb50d06868f1"
+                  },
+                  {
+                    "topic": "核心板",
+                    "id": "fa87ee2c493a2050"
+                  },
+                  {
+                    "topic": "最小系统板",
+                    "id": "fa87ef4d5f31a370"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "stm32基础",
+        "id": "fa87f376dd94647b",
+        "children": [
+          {
+            "topic": "命名规范",
+            "id": "fa87f4d6df6ee206",
+            "children": [
+              {
+                "topic": "STM32U575RIT6",
+                "id": "fa87fcddc8f61f8d"
+              }
+            ]
+          },
+          {
+            "topic": "优势",
+            "id": "fa88054d43ae87cb",
+            "children": [
+              {
+                "topic": "型号丰富",
+                "id": "fa88075343692e56"
+              },
+              {
+                "topic": "速度快",
+                "id": "fa88089dc49fee17"
+              },
+              {
+                "topic": "处理接口丰富",
+                "id": "fa880a7bc19076a0"
+              },
+              {
+                "topic": "学习系统完善",
+                "id": "fa880b97c8c02658"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "ARM介绍",
+        "id": "fa880ff94532935b",
+        "children": [
+          {
+            "topic": "什么是ARM",
+            "id": "fa881150480aa7a8",
+            "children": [
+              {
+                "topic": "一家公司，只做计数服务",
+                "id": "fa88125448dd4f73"
+              },
+              {
+                "topic": "ARM处理器",
+                "id": "fa8816014cceef87"
+              },
+              {
+                "topic": "ARM指令集",
+                "id": "fa882141411b9b94",
+                "children": [
+                  {
+                    "topic": "RISC精简指令集",
+                    "id": "fa8822d646c3dd94",
+                    "children": [
+                      {
+                        "topic": "优点：功耗低，便宜，体积小，指令简短，散热需求小",
+                        "id": "fa882cd7c82df212"
+                      },
+                      {
+                        "topic": "缺点：复杂指令较难实现",
+                        "id": "fa8835073490d8de"
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "CISC复杂指令集",
+                    "id": "fa88291f42e48164",
+                    "children": [
+                      {
+                        "topic": "优点：运行速度快",
+                        "id": "fa883a52bc230b9f"
+                      },
+                      {
+                        "topic": "缺点：功耗高，成本高，指令集复杂，散热需求高",
+                        "id": "fa883cbbc44d24f5"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "如何点亮一盏灯",
+        "id": "fa88481839a4bcde",
+        "children": [
+          {
+            "topic": "需要电势差",
+            "id": "fa884ab63a178b1a"
+          },
+          {
+            "topic": "电路中常见的元件",
+            "id": "fa88666dbf853c4e",
+            "children": [
+              {
+                "topic": "二极管",
+                "id": "fa88692d24de7e48",
+                "children": [
+                  {
+                    "topic": "正向导通，反向截止",
+                    "id": "fa886a52b60e6fe1"
+                  }
+                ]
+              },
+              {
+                "topic": "三极管",
+                "id": "fa886df0ace2fb49",
+                "children": [
+                  {
+                    "topic": "NPN",
+                    "id": "fa886eae360c341e",
+                    "children": [
+                      {
+                        "topic": "形成高电平的电流通道",
+                        "id": "fa887281b8fc976f"
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "PNP",
+                    "id": "fa88712fb7692b9b",
+                    "children": [
+                      {
+                        "topic": "给一个低电平导通",
+                        "id": "fa88774fa6be7fe9"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "电阻",
+                "id": "fa890caf0da0c960",
+                "children": [
+                  {
+                    "topic": "保护元件",
+                    "id": "fa891bfa048b44bb"
+                  },
+                  {
+                    "topic": "上下拉电阻（没有外界电路接入时）",
+                    "id": "fa891f641d39d167",
+                    "children": [
+                      {
+                        "topic": "上拉电阻",
+                        "id": "fa8921cb85edaae8",
+                        "children": [
+                          {
+                            "topic": "VCC连接一个电阻连接到信号线",
+                            "id": "fa8925adfaa0d44b",
+                            "children": [
+                              {
+                                "topic": "让电路保持高电平",
+                                "id": "fa892f050dc8bd3b"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "topic": "下拉电阻",
+                        "id": "fa8922be05c37fbe",
+                        "children": [
+                          {
+                            "topic": "GND连接一个电阻连接信号线",
+                            "id": "fa8928d50c593817",
+                            "children": [
+                              {
+                                "topic": "让电路保持低电平",
+                                "id": "fa892c4d78b97652"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "arrows": [],
+  "summaries": [],
+  "direction": 1,
+  "theme": {
+    "name": "薄荷绿",
+    "type": "light",
+    "palette": [
+      "#10a37f",
+      "#a9dcc8",
+      "#10a37f",
+      "#a9dcc8",
+      "#10a37f",
+      "#a9dcc8",
+      "#10a37f",
+      "#a9dcc8",
+      "#10a37f",
+      "#a9dcc8"
+    ],
+    "cssVar": {
+      "--bgcolor": "#f4faf7",
+      "--color": "#37655a",
+      "--main-color": "#1d5d4b",
+      "--main-bgcolor": "#e4f5ee",
+      "--main-bgcolor-transparent": "#e4f5ee",
+      "--main-border": "1px solid #c7eadd",
+      "--root-color": "#ffffff",
+      "--root-bgcolor": "#10a37f",
+      "--root-border-color": "transparent",
+      "--accent-color": "#10a37f",
+      "--selected": "#10a37f",
+      "--panel-color": "#1d5d4b",
+      "--panel-bgcolor": "#e4f5ee",
+      "--panel-border-color": "#c7eadd"
+    }
+  },
+  "compact": false,
+  "themeTemplate": "mintLight",
+  "backgroundPattern": "grid",
+  "bgPatternColor": "#808080",
+  "bgPatternOpacity": 5,
+  "lineStyle": "curve"
+}
