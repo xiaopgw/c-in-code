@@ -5,48 +5,423 @@
     "root": true,
     "children": [
       {
-        "topic": "概念",
-        "id": "fa89528f7d92df7d",
+        "topic": "GPIO",
+        "id": "fad82b3ecf592bdd",
         "children": [
           {
-            "topic": "通用输入输出接口",
-            "id": "fa895514f39c4ade"
-          },
-          {
-            "topic": "I：输入",
-            "id": "fa895abe8b55293b"
-          },
-          {
-            "topic": "O：输出",
-            "id": "fa895c6a7532b68b"
-          },
-          {
-            "topic": "最常用的接口",
-            "id": "fa895d4379566137"
-          }
-        ]
-      },
-      {
-        "topic": "实际应用",
-        "id": "fa8961de7d925692",
-        "children": [
-          {
-            "topic": "input",
-            "id": "fa8962e779e46cf3",
+            "topic": "概念",
+            "id": "fa89528f7d92df7d",
             "children": [
               {
-                "topic": "输入->信息或者电压的采集",
-                "id": "fa8963ce77d97011"
+                "topic": "通用输入输出接口",
+                "id": "fa895514f39c4ade"
+              },
+              {
+                "topic": "I：输入",
+                "id": "fa895abe8b55293b"
+              },
+              {
+                "topic": "O：输出",
+                "id": "fa895c6a7532b68b"
+              },
+              {
+                "topic": "最常用的接口",
+                "id": "fa895d4379566137"
               }
             ]
           },
           {
-            "topic": "output",
-            "id": "fa89681c63e0fb2a",
+            "topic": "实际应用",
+            "id": "fa8961de7d925692",
             "children": [
               {
-                "topic": "输出->控制外部设备",
-                "id": "fa896995fecb321b"
+                "topic": "input",
+                "id": "fa8962e779e46cf3",
+                "children": [
+                  {
+                    "topic": "输入->信息或者电压的采集",
+                    "id": "fa8963ce77d97011"
+                  }
+                ]
+              },
+              {
+                "topic": "output",
+                "id": "fa89681c63e0fb2a",
+                "children": [
+                  {
+                    "topic": "输出->控制外部设备",
+                    "id": "fa896995fecb321b"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "功能描述",
+            "id": "fad8308b21952512",
+            "children": [
+              {
+                "topic": "输入浮空",
+                "id": "fad831d12b53694e",
+                "children": [
+                  {
+                    "topic": "上拉电阻和下拉电阻军部接入电路",
+                    "id": "fadfd6bfa90dd324",
+                    "children": [
+                      {
+                        "topic": "IO端口-施密特触发器-输入数据寄存器-cpu读取",
+                        "id": "fae15b4259330120"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "输入上拉",
+                "id": "fad834faaadbd7bf",
+                "children": [
+                  {
+                    "topic": "上拉电阻接入电路，无信号下高电平",
+                    "id": "fae15468d177d735",
+                    "children": [
+                      {
+                        "topic": "IO口/上拉电阻-施密特触发器-输入数据寄存器-cpu读取",
+                        "id": "fae162a5c0b488a9"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "输入下拉",
+                "id": "fad836b9a74a032f",
+                "children": [
+                  {
+                    "topic": "下拉电阻接入电路，无信号下低电平",
+                    "id": "fae1698d44533aa5",
+                    "children": [
+                      {
+                        "topic": "IO口/下拉电阻-施密特触发器-输入数据寄存器-cpu读取",
+                        "id": "fae16d2ecf587349"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "模拟输入",
+                "id": "fad838a0264d26d3",
+                "children": [
+                  {
+                    "topic": "原汁原味信号",
+                    "id": "fae1750653247dd0",
+                    "children": [
+                      {
+                        "topic": "IO口进来-片上外设",
+                        "id": "fae1769e48568adb",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "推挽输出",
+                "id": "fad83a6915779d6c",
+                "children": [
+                  {
+                    "topic": "推挽：描述的是电流的动作",
+                    "id": "fae17c78cc88de4c",
+                    "children": [
+                      {
+                        "topic": "推：N-MOS管关闭，P-MOS管打开，电流从内部的VDD给外部供电，电流从内部被推出去。",
+                        "id": "fae18417358cc2bf",
+                        "children": [
+                          {
+                            "topic": "输出数据寄存器为0-》输出控制1-》激活 N—MOS——》输出低电平",
+                            "id": "fae19393302060bf"
+                          }
+                        ]
+                      },
+                      {
+                        "topic": "挽：P-MOS管关闭，N-MOS管打开，电流从外部流向内部的VSS，此时电流被挽回来。",
+                        "id": "fae1905ed32f34b3",
+                        "children": [
+                          {
+                            "topic": "输出数据寄存器为1-》输出控制0-》激活 P—MOS——》输出高电平",
+                            "id": "fae19648bfc9c799"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "开漏输出",
+                "id": "fad840cd159520ac",
+                "children": [
+                  {
+                    "topic": "P-MOS管不使用",
+                    "id": "fae1990eb2bb255a",
+                    "children": [
+                      {
+                        "topic": "1.低电平状态（逻辑0）：当内部的晶体管（N-MOS）导通的时候，引脚的点评状态被拉低到低电平，输出低电平。",
+                        "id": "fae199b837d81c0a"
+                      },
+                      {
+                        "topic": "2.当晶体管（N-MOS）也关闭的时候，内部处在高阻态。没有办法输出电平，但是可以使用上拉电阻将电平状态拉高，来输出一个高电平。",
+                        "id": "fae19f4f40057709"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "复用推挽",
+                "id": "fad841971d9f4a5b"
+              },
+              {
+                "topic": "复用开漏",
+                "id": "fad843a0a64ee81b"
+              }
+            ]
+          },
+          {
+            "topic": "功能框图",
+            "id": "fad845431fa04ef1",
+            "children": [
+              {
+                "topic": "VDD",
+                "id": "fad848101e9b1696"
+              },
+              {
+                "topic": "VSS",
+                "id": "fad848db142b483a"
+              },
+              {
+                "topic": "VCC",
+                "id": "fad84abc2031cc3b"
+              },
+              {
+                "topic": "TTL",
+                "id": "fad84b9ea2144794",
+                "children": [
+                  {
+                    "topic": "去除噪声",
+                    "id": "fad84cfb2065565a"
+                  },
+                  {
+                    "topic": "波形整形",
+                    "id": "fad84e6c2d4e5d41"
+                  },
+                  {
+                    "topic": "提高抗干扰能力",
+                    "id": "fad8511b2eca26a3"
+                  },
+                  {
+                    "topic": "工作原理",
+                    "id": "fad872a9ad424707",
+                    "children": [
+                      {
+                        "topic": "超过VT+才会切换到高电平",
+                        "id": "fad8750c2b4a075f"
+                      },
+                      {
+                        "topic": "超过VT-才会切换到低电平",
+                        "id": "fad87b3335e31d26"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "寄存器",
+        "id": "fae1ed26ac4f71b7",
+        "children": [
+          {
+            "topic": "单片机内部的存储单元",
+            "id": "fae1eed2b79be878"
+          },
+          {
+            "topic": "对单片机进行设置就是对寄存器改写的过程",
+            "id": "fae1f0bebc61dd42"
+          },
+          {
+            "topic": "如果要要控制某个灯量                                                                               （比如配置0x5602 0800(GPIOC端口)和0x5602 0C00(RCC寄存器)）",
+            "id": "fb2f9c36fac0f7cf",
+            "children": [
+              {
+                "topic": "打开时钟使能",
+                "id": "fb2fa194f3b898ab",
+                "children": [
+                  {
+                    "topic": "*(unsigned int *)0x56020c8c |= (1<<2);",
+                    "id": "fb2fdb4de8e531e3"
+                  }
+                ]
+              },
+              {
+                "topic": "配置端口输出模式",
+                "id": "fb2fa3627dd852c6",
+                "children": [
+                  {
+                    "topic": "*(unsigned int *)0x52020800 &= ~(1<<27);\t                          \t\t\t*(unsigned int *)0x52020800 |= (1<<26);",
+                    "id": "fb2fddc4e008d5b6"
+                  }
+                ]
+              },
+              {
+                "topic": "配置端口输出类型",
+                "id": "fb2fa6cf16dd7826",
+                "children": [
+                  {
+                    "topic": "*(unsigned int *)0x52020804 &= ~(1<<13);",
+                    "id": "fb2fe1f483dd2c06"
+                  }
+                ]
+              },
+              {
+                "topic": "配置端口输出速度",
+                "id": "fb2fac0313769fc6",
+                "children": [
+                  {
+                    "topic": "*(unsigned int *)0x52020808 &= ~(3<<26);",
+                    "id": "fb2fe3ade54d797d"
+                  }
+                ]
+              },
+              {
+                "topic": "配置上下拉寄存器",
+                "id": "fb2fb00f78d4700b",
+                "children": [
+                  {
+                    "topic": "*(unsigned int *)0x5202080c &= ~(3<<26);",
+                    "id": "fb2fe5ad9eb0fb96"
+                  }
+                ]
+              },
+              {
+                "topic": "配置输出数据寄存器",
+                "id": "fb2fb155ebaab989",
+                "children": [
+                  {
+                    "topic": "*(unsigned int *)0X52020814 |= (1<<13);",
+                    "id": "fb2fe6e6fe8b68a9"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Cube MX",
+        "id": "fb2fea4d75d121ab",
+        "children": [
+          {
+            "topic": "函数操作",
+            "id": "fb2feed4ec86ee2a",
+            "children": [
+              {
+                "topic": "HAL_GPIO_WritePin(GPIO, GPIO_PIN_13, GPIO_PIN_RESET)",
+                "id": "fb2ff0b268c4eb7c",
+                "children": [
+                  {
+                    "topic": "功能：给指定引脚写入高低电平",
+                    "id": "fb2ffef0f27cc994"
+                  },
+                  {
+                    "topic": "参数：",
+                    "id": "fb3003480584ee68",
+                    "children": [
+                      {
+                        "topic": "端口号",
+                        "id": "fb300636ff3bc975"
+                      },
+                      {
+                        "topic": "引脚号",
+                        "id": "fb308152f169b24f"
+                      },
+                      {
+                        "topic": "高低电平",
+                        "id": "fb3082cef0a65321"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "HAL_Delay(毫秒)",
+                "id": "fb3087020b7de618",
+                "children": [
+                  {
+                    "topic": "延时函数",
+                    "id": "fb3099f17f072af8"
+                  }
+                ]
+              },
+              {
+                "topic": "HAL_GPIO_ReadPin(GPIO, GPIO_PIN_13)",
+                "id": "fb308a9d75bc51f9",
+                "children": [
+                  {
+                    "topic": "功能：读取指定引脚的电平状态",
+                    "id": "fb3093ff70ec2ab3"
+                  },
+                  {
+                    "topic": "参数",
+                    "id": "fb309cde00370a3b",
+                    "children": [
+                      {
+                        "topic": "端口号",
+                        "id": "fb309dbdf8f09cf0"
+                      },
+                      {
+                        "topic": "引脚号",
+                        "id": "fb309f33fdc6bcf2"
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "返回值",
+                    "id": "fb30b33077029d41",
+                    "children": [
+                      {
+                        "topic": "读取到的引脚的电平状态",
+                        "id": "fb30b3c86253de99"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "HAL_GPIO_TogglePin(GPIO, GPIO_PIN_13)",
+                "id": "fb30a0b614e9d2c0",
+                "children": [
+                  {
+                    "topic": "功能：反转指定引脚的电平状态",
+                    "id": "fb30a7e78e245d4e"
+                  },
+                  {
+                    "topic": "参数：",
+                    "id": "fb30aef4f4d256a7",
+                    "children": [
+                      {
+                        "topic": "端口号",
+                        "id": "fb30afbdfe11b5ac"
+                      },
+                      {
+                        "topic": "引脚号",
+                        "id": "fb30b06cf21b98ed"
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           }

@@ -1,0 +1,481 @@
+{
+  "nodeData": {
+    "id": "root",
+    "topic": "w10d3",
+    "root": true,
+    "children": [
+      {
+        "topic": "NVIC（嵌套向量中断控制器）",
+        "id": "fcfb59b6f3fd300a",
+        "children": [
+          {
+            "topic": "简介",
+            "id": "fcfb6020513954cb"
+          },
+          {
+            "topic": "功能",
+            "id": "fcfb617561921b4a",
+            "children": [
+              {
+                "topic": "1.管理中断事件",
+                "id": "fcfb7a79e00072d0"
+              },
+              {
+                "topic": "2.支持终端和异常的向量处理",
+                "id": "fcfb7a9dfa2739db"
+              },
+              {
+                "topic": "3.支持终端嵌套",
+                "id": "fcfb7ac0612c76f2"
+              }
+            ]
+          },
+          {
+            "topic": "EXTI（外部中断和事件控制器）",
+            "id": "fcfb90095e64cf4d",
+            "children": [
+              {
+                "topic": "简介",
+                "id": "fcfb91127953f677",
+                "children": [
+                  {
+                    "topic": "NVIC是处理器内部的器件，在外部的信号送入到NVIC之前还需要经过另一个外设。EXTI对于中断和事件进行初步的筛选",
+                    "id": "fcfb9230fab757a0"
+                  },
+                  {
+                    "topic": "相当于小助理(NVIC)的小助理",
+                    "id": "fcfbaaaad716145d",
+                    "children": [
+                      {
+                        "topic": "NVIC在内部和内核捆绑在一起，EXTI在CPU的外部负责初步筛选，专门用来管理中断和事件",
+                        "id": "fcfbb3786a904b1b",
+                        "children": [
+                          {
+                            "topic": "中断和事件的区别",
+                            "id": "fcfbbee9e5caffad",
+                            "children": [
+                              {
+                                "topic": "中断",
+                                "id": "fcfbc2f4ea8e1222",
+                                "children": [
+                                  {
+                                    "topic": "只要是中断就能打断CPU正常工作",
+                                    "id": "fcfbcd8a73ff93cf"
+                                  }
+                                ]
+                              },
+                              {
+                                "topic": "事件",
+                                "id": "fcfbc5f3ec0362af",
+                                "children": [
+                                  {
+                                    "topic": "送给外部设备执行的信号，本质上就是IO口的电平信号",
+                                    "id": "fcfbc828e77bf5ef"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "主要特性",
+                "id": "fcfc1bb3fc4e6da0"
+              },
+              {
+                "topic": "主要功能",
+                "id": "fcfc1d9b6158b24d",
+                "children": [
+                  {
+                    "topic": "产生中断",
+                    "id": "fcfc1e656366d564",
+                    "children": [
+                      {
+                        "topic": "目的",
+                        "id": "fcfc2129685245a6",
+                        "children": [
+                          {
+                            "topic": "将产生的中断信号送给NVIC，进而运行相应的中断服务程序，实现对应的功能",
+                            "id": "fcfc21c3ea808e35",
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "产生事件",
+                    "id": "fcfc1fdbe49956b7",
+                    "children": [
+                      {
+                        "topic": "将采集到的脉冲信号送到某个外设，进而驱动某些设备做出动作。这是电路级别的传输，属于硬件级。",
+                        "id": "fcfc337e506a12cd"
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "外部中断/事件处理图",
+                    "id": "fcfd4b3265396559",
+                    "children": [
+                      {
+                        "topic": "图",
+                        "id": "fcfd5163e0fd7ff2"
+                      },
+                      {
+                        "topic": "处理流程",
+                        "id": "fcfd51c0f451b1be",
+                        "children": [
+                          {
+                            "topic": "信号输入口",
+                            "id": "fcfd552ff543311b",
+                            "children": [
+                              {
+                                "topic": "EXTI最多可以产生26个外部事件或者中断请求",
+                                "id": "fcfd57b5e42ce2a6"
+                              }
+                            ]
+                          },
+                          {
+                            "topic": "边沿检测电路",
+                            "id": "fd0e3107beae875f",
+                            "children": [
+                              {
+                                "topic": "检测上升或下降沿信号",
+                                "id": "fd1b81955c3105c1"
+                              }
+                            ]
+                          },
+                          {
+                            "topic": "根据触发的",
+                            "id": "fd0e3466a86ff9c3"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "中断实验",
+                "id": "fcfd4f506d32e6b3"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "时钟系统",
+        "id": "fd0e3ed0ad6cc504",
+        "children": [
+          {
+            "topic": "基本概念",
+            "id": "fd0e4c3231f2f3a9",
+            "children": [
+              {
+                "topic": "嵌入式系统的脉搏",
+                "id": "fd0e4d6cad752115",
+                "children": [
+                  {
+                    "topic": "在电子系统中，时钟信号可以被理解为一个周期性的信号，他确定了系统的节奏和事件基准",
+                    "id": "fd0e5fb3add5aab5"
+                  }
+                ]
+              },
+              {
+                "topic": "对于计算机系统来说时钟是非常重要的，如果时钟系统出了问题往往也是致命的，比如振荡器不起振，振荡不稳，停振等。时钟信号对东单片机各个部分执行相应的指令，时钟就像人的心跳一样。",
+                "id": "fd0e60f1293976ae"
+              }
+            ],
+            "expanded": false
+          },
+          {
+            "topic": "作用",
+            "id": "fd0e7b79bf0938f7",
+            "children": [
+              {
+                "topic": "通信同步，时序控制（整个时序），计时功能",
+                "id": "fd0e7bfd3be2468b"
+              }
+            ],
+            "expanded": false
+          },
+          {
+            "topic": "组成",
+            "id": "fd0ea2efbebf9dfc",
+            "children": [
+              {
+                "topic": "振荡器",
+                "id": "fd0ea3acbcd450ac",
+                "children": [
+                  {
+                    "topic": "产生时钟信号的源头",
+                    "id": "fd0eb9cdb9c74409"
+                  },
+                  {
+                    "topic": "常见的振荡器",
+                    "id": "fd0efaad53ed36ce",
+                    "children": [
+                      {
+                        "topic": "晶体振荡器",
+                        "id": "fd0efc6bf728b128",
+                        "children": [
+                          {
+                            "topic": "使用石英晶体作为振荡元件，石英晶体具有电压效应，当时加电场时，会以固定频率产生机械振动",
+                            "id": "fd0f3904644ddd58",
+                            "children": [
+                              {
+                                "topic": "优点",
+                                "id": "fd0f498d693dd2ca",
+                                "children": [
+                                  {
+                                    "topic": "稳定并精度高",
+                                    "id": "fd0f4af064ff4cbf"
+                                  }
+                                ]
+                              },
+                              {
+                                "topic": "缺点",
+                                "id": "fd0f4e9f6480886e",
+                                "children": [
+                                  {
+                                    "topic": "贵，起振时间长",
+                                    "id": "fd0f4f57ecc77275"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "topic": "RC振荡器",
+                        "id": "fd0efe57d9ba8615",
+                        "children": [
+                          {
+                            "topic": "电阻(R)电容(C)振荡器",
+                            "id": "fd0f7b4a789a3e60",
+                            "children": [
+                              {
+                                "topic": "使用电阻和电容构成振荡回路，当电容器充放电达到某个阈值时，会产生周期性的振荡信号",
+                                "id": "fd0f83a9689beb28",
+                                "children": [
+                                  {
+                                    "topic": "优点",
+                                    "id": "fd0fa7e279602b8f",
+                                    "children": [
+                                      {
+                                        "topic": "成本低，由电容电阻组成，起振时间短",
+                                        "id": "fd0fa913fb5b9024"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "topic": "缺点",
+                                    "id": "fd0fb1ad81962299",
+                                    "children": [
+                                      {
+                                        "topic": "精度低，不够稳定，受环境因素影响大",
+                                        "id": "fd0fb26c8ebb2482"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "topic": "LC振荡器",
+                        "id": "fd0effbbd29b0760",
+                        "children": [
+                          {
+                            "topic": "电感(L)电容(C)振荡器",
+                            "id": "fd0fb845832b0313",
+                            "children": [
+                              {
+                                "topic": "通过能量交换产生震荡信号（电感和电容都能储存能量）。用于射频，高频等电路",
+                                "id": "fd0fe64605f8e38c",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "topic": "总结：RC和LC是简单的振荡器，用于一些低要求的应用场景，而晶体振荡器具有更高的频率稳定性和精度，适用于对时钟信号要求较高的电子系统中。",
+                        "id": "fd10033f925b6bc8"
+                      }
+                    ],
+                    "expanded": false
+                  }
+                ]
+              },
+              {
+                "topic": "唤醒定时器",
+                "id": "fd0ea5bcc2899667",
+                "children": [
+                  {
+                    "topic": "使能，关闭功能",
+                    "id": "fd0ebdbac5b1a462",
+                    "children": [
+                      {
+                        "topic": "举例：低功耗模式下（熄屏），每间隔几十毫秒，唤醒一次设备",
+                        "id": "fd0ebfe3cf3bf538"
+                      }
+                    ]
+                  }
+                ],
+                "expanded": false
+              },
+              {
+                "topic": "倍频器",
+                "id": "fd0ea76038f8b757",
+                "children": [
+                  {
+                    "topic": "放大时钟频率",
+                    "id": "fd0ecaef43e104ad"
+                  },
+                  {
+                    "topic": "CPU需要更高的频率",
+                    "id": "fd100f21063f9c50"
+                  }
+                ],
+                "expanded": false
+              },
+              {
+                "topic": "分频器",
+                "id": "fd0ea8d4464d7460",
+                "children": [
+                  {
+                    "topic": "减小时钟频率",
+                    "id": "fd0ed78740b0d338"
+                  },
+                  {
+                    "topic": "降低功耗",
+                    "id": "fd12050892386bfb"
+                  }
+                ],
+                "expanded": false
+              }
+            ]
+          },
+          {
+            "topic": "时钟树",
+            "id": "fd1209dc16c02013",
+            "children": [
+              {
+                "topic": "作用",
+                "id": "fd13ffe3097af08a",
+                "children": [
+                  {
+                    "topic": "为芯片内部各个模块提供稳定、同步的时钟信号，确保数据再正确的时间被处理和传输",
+                    "id": "fd1b44bcc1a923c3"
+                  }
+                ],
+                "expanded": false
+              },
+              {
+                "topic": "配置方法",
+                "id": "fd140151849c5b3a"
+              }
+            ]
+          },
+          {
+            "topic": "SysTick定时器",
+            "id": "fd120d00131920dc",
+            "children": [
+              {
+                "topic": "概念",
+                "id": "fd1210911d961de1",
+                "children": [
+                  {
+                    "topic": "又称滴答定时器。是一个定时设备，位于Cortex-M33内核中，和NVIC捆绑(可以产生中断信号)，产生SysTick异常，可以对输入的时钟进行计数，系统定时器一般用于操作系统，用于产生时基，维持操作系统的心跳。",
+                    "id": "fd12127f902f5b92"
+                  },
+                  {
+                    "topic": "频率(f):  单位：Hz   代表每秒振荡的次数 1MHZ = 1000KHZ = 1000 000HZ",
+                    "id": "fd1236d7100a67f9"
+                  },
+                  {
+                    "topic": "周期(T)：单位   s   代表振荡一次需要的时间    1s = 1000ms = 1000 000us",
+                    "id": "fd12642aa3d1d1f7"
+                  },
+                  {
+                    "topic": "二者的关系：Y = 1/f",
+                    "id": "fd1390217135c775"
+                  },
+                  {
+                    "topic": "1KHZ代表每秒钟振荡1000次，振荡一次需要的时间1/1000 = 1ms",
+                    "id": "fd1394250fb0d895"
+                  }
+                ],
+                "expanded": false
+              },
+              {
+                "topic": "工作原理",
+                "id": "fd1409a62093b5eb",
+                "children": [
+                  {
+                    "topic": "重载数值寄存器把自己设置的计数值放在定时器中，当每来一个时钟信号，计数值减1，直到为0，触发一次异常事件，然后处理异常服务程序，处理完后再重装到定时器中，继续下一个循环。",
+                    "id": "fd140c558f17078c"
+                  },
+                  {
+                    "topic": "频率转换",
+                    "id": "fd14405615ebadd2"
+                  }
+                ],
+                "expanded": false
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "arrows": [],
+  "summaries": [],
+  "direction": 1,
+  "theme": {
+    "name": "薄荷绿",
+    "type": "light",
+    "palette": [
+      "#10a37f",
+      "#a9dcc8",
+      "#10a37f",
+      "#a9dcc8",
+      "#10a37f",
+      "#a9dcc8",
+      "#10a37f",
+      "#a9dcc8",
+      "#10a37f",
+      "#a9dcc8"
+    ],
+    "cssVar": {
+      "--bgcolor": "#f4faf7",
+      "--color": "#37655a",
+      "--main-color": "#1d5d4b",
+      "--main-bgcolor": "#e4f5ee",
+      "--main-bgcolor-transparent": "#e4f5ee",
+      "--main-border": "1px solid #c7eadd",
+      "--root-color": "#ffffff",
+      "--root-bgcolor": "#10a37f",
+      "--root-border-color": "transparent",
+      "--accent-color": "#10a37f",
+      "--selected": "#10a37f",
+      "--panel-color": "#1d5d4b",
+      "--panel-bgcolor": "#e4f5ee",
+      "--panel-border-color": "#c7eadd"
+    }
+  },
+  "compact": false,
+  "themeTemplate": "mintLight",
+  "backgroundPattern": "grid",
+  "bgPatternColor": "#808080",
+  "bgPatternOpacity": 5,
+  "lineStyle": "curve"
+}

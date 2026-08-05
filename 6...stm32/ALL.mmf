@@ -1,0 +1,561 @@
+{
+  "nodeData": {
+    "id": "root",
+    "topic": "通信协议",
+    "root": true,
+    "children": [
+      {
+        "topic": "USART",
+        "id": "fc7c233f00a6f11b",
+        "children": [
+          {
+            "topic": "基本概念",
+            "id": "fc7c538b03354dca",
+            "children": [
+              {
+                "topic": "USART",
+                "id": "fc7c247980ae51ae",
+                "children": [
+                  {
+                    "topic": "有时钟线，支持同步/异步，全双工，串行",
+                    "id": "fc7c30550f927588"
+                  }
+                ]
+              },
+              {
+                "topic": "UART",
+                "id": "fc7c25cc0ad62b29",
+                "children": [
+                  {
+                    "topic": "无时钟线，只支持异步通信，全双工，串行",
+                    "id": "fc7c39c10ac0c494"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "发送接收过程",
+            "id": "fc7c57850a8aa700",
+            "children": [
+              {
+                "topic": "发送",
+                "id": "fc7c680ff1c9bb10",
+                "children": [
+                  {
+                    "topic": "当数据在TDR中时，会检测发送移位寄存器中有没有东西，如果没有数据正在移位，才把数据放到移位寄存器中",
+                    "id": "fc7c68f1870c3fb9"
+                  }
+                ]
+              },
+              {
+                "topic": "接收",
+                "id": "fc7ca8440610c232",
+                "children": [
+                  {
+                    "topic": "当数据接收时，先接收最低位，然后放到接收移位寄存器的最高位，然后整个位整体往右移一格，然后再接收下一位",
+                    "id": "fc7ca8f201a7f913"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "串口通信协议格式的组成",
+            "id": "fc7d682b78a90cf6",
+            "children": [
+              {
+                "topic": "空闲状态",
+                "id": "fc7d6ec6f6a0e9ff",
+                "children": [
+                  {
+                    "topic": "高电平",
+                    "id": "fc7d768f07ca5acd"
+                  }
+                ]
+              },
+              {
+                "topic": "起始位",
+                "id": "fc7d707c013ee885",
+                "children": [
+                  {
+                    "topic": "低电平表示开始",
+                    "id": "fc7d779471ca7449"
+                  }
+                ]
+              },
+              {
+                "topic": "数据位",
+                "id": "fc7d721e0543040e",
+                "children": [
+                  {
+                    "topic": "789可选",
+                    "id": "fc7d7b348e4dc2b8"
+                  }
+                ]
+              },
+              {
+                "topic": "效验位",
+                "id": "fc7d7333027beb17",
+                "children": [
+                  {
+                    "topic": "1位",
+                    "id": "fc7d7dcf7f76f881"
+                  }
+                ]
+              },
+              {
+                "topic": "停止位",
+                "id": "fc7d74c77afbd66a",
+                "children": [
+                  {
+                    "topic": "1位高电平",
+                    "id": "fc7d8031874fd913"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "逻辑电平标准",
+            "id": "fc7d882e7089e0cd",
+            "children": [
+              {
+                "topic": "TTL",
+                "id": "fc7d8d140353b893",
+                "children": [
+                  {
+                    "topic": "1",
+                    "id": "fc7d8e4172b0bb22",
+                    "children": [
+                      {
+                        "topic": "2.4V-5V",
+                        "id": "fc7d90ef8c615eb9"
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "0",
+                    "id": "fc7d9373f4a641fa",
+                    "children": [
+                      {
+                        "topic": "0-0.5V",
+                        "id": "fc7d93f303faea56"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "RS-232",
+                "id": "fc7d960c78d2c0ad",
+                "children": [
+                  {
+                    "topic": "0",
+                    "id": "fc7d9cf27e4d9e52",
+                    "children": [
+                      {
+                        "topic": "3~15V",
+                        "id": "fc7d9ff889b3fc28"
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "1",
+                    "id": "fc7da136fc5d4679",
+                    "children": [
+                      {
+                        "topic": "-3~-15V",
+                        "id": "fc7da44b0a737181"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "RS-485",
+                "id": "fc7dab38031b8ff6",
+                "children": [
+                  {
+                    "topic": "1",
+                    "id": "fc7dae0279dae1e1",
+                    "children": [
+                      {
+                        "topic": "2~6V",
+                        "id": "fc7db14cf1bdfeb1"
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "0",
+                    "id": "fc7db48877daad24",
+                    "children": [
+                      {
+                        "topic": "-2~-6V",
+                        "id": "fc7dbcfd80c07306"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "SPI",
+        "id": "fc7c411f8df9a606",
+        "children": [
+          {
+            "topic": "基本概念",
+            "id": "fc7dd5c49cd3f1f8",
+            "children": [
+              {
+                "topic": "全双工，三/四线，同步串行，主从模式架构",
+                "id": "fc7dd7f4fabc8c53",
+                "children": [
+                  {
+                    "topic": "时钟由主机控制",
+                    "id": "fc7eae197012e8b0"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "总线-拓扑结构",
+            "id": "fc7ec1c9028b4945",
+            "children": [
+              {
+                "topic": "SCLK",
+                "id": "fc7ec3ba706a563b",
+                "children": [
+                  {
+                    "topic": "时钟线",
+                    "id": "fc7ec5bc71d4f4b7"
+                  }
+                ]
+              },
+              {
+                "topic": "MOSI",
+                "id": "fc7ec79873302114",
+                "children": [
+                  {
+                    "topic": "主机输出，从机输入",
+                    "id": "fc7ec86cf00407d5"
+                  }
+                ]
+              },
+              {
+                "topic": "MISO",
+                "id": "fc7ecc8807c374a8",
+                "children": [
+                  {
+                    "topic": "主机输入，从机输出",
+                    "id": "fc7ecddaf6495e3a"
+                  }
+                ]
+              },
+              {
+                "topic": "NSS",
+                "id": "fc7ecfe8f5d32b0f",
+                "children": [
+                  {
+                    "topic": "片选线",
+                    "id": "fc7ed0c612539b22"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "时序单元",
+            "id": "fc7ed8fff065e977",
+            "children": [
+              {
+                "topic": "起始条件",
+                "id": "fc7f1bd27cbdebc4",
+                "children": [
+                  {
+                    "topic": "SS从高电平切换到低电平",
+                    "id": "fc7f1e070c03561f"
+                  }
+                ]
+              },
+              {
+                "topic": "结束条件",
+                "id": "fc7f20618da4bc82",
+                "children": [
+                  {
+                    "topic": "SS从低电平切换到高电平",
+                    "id": "fc7f22a6f4b19461"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "字节交换原理",
+            "id": "fc7f255673088f37",
+            "children": [
+              {
+                "topic": "移出",
+                "id": "fc7f2c1f8dad1c41",
+                "children": [
+                  {
+                    "topic": "把移位寄存器的最高位写到信号线上，然后整体左移一位",
+                    "id": "fc7f30988a317e14"
+                  }
+                ]
+              },
+              {
+                "topic": "移入",
+                "id": "fc7f2f7c7d93d141",
+                "children": [
+                  {
+                    "topic": "把信号线上的位的信息读取到一位寄存器上的最低位",
+                    "id": "fc7f5ec4f23de0ed"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "工作模式",
+            "id": "fc7f6ce67607caef",
+            "children": [
+              {
+                "topic": "CPOL",
+                "id": "fc7f6d9a82334fa6",
+                "children": [
+                  {
+                    "topic": "时钟极性",
+                    "id": "fc7f73a271293485",
+                    "children": [
+                      {
+                        "topic": "0",
+                        "id": "fc7f8bd11df14b53",
+                        "children": [
+                          {
+                            "topic": "空闲时为低电平",
+                            "id": "fc7f9956f2cb17d2"
+                          }
+                        ]
+                      },
+                      {
+                        "topic": "1",
+                        "id": "fc7f8c55f372f32d",
+                        "children": [
+                          {
+                            "topic": "空闲时为高电平",
+                            "id": "fc7f9bf578153cfa"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "CPHA",
+                "id": "fc7f720c020547ab",
+                "children": [
+                  {
+                    "topic": "时钟相位",
+                    "id": "fc7f74e5962df22e",
+                    "children": [
+                      {
+                        "topic": "0",
+                        "id": "fc7f96d10b9ca1e4",
+                        "children": [
+                          {
+                            "topic": "从0到1采样",
+                            "id": "fc7fa1c6764062fd"
+                          }
+                        ]
+                      },
+                      {
+                        "topic": "1",
+                        "id": "fc7f979f77be57e3",
+                        "children": [
+                          {
+                            "topic": "从1到0采样",
+                            "id": "fc7fa3eafb325e45"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "IIC",
+        "id": "fc7c42c78a140aea",
+        "direction": 1,
+        "children": [
+          {
+            "topic": "基本概念",
+            "id": "fc7fb24e79449b48",
+            "children": [
+              {
+                "topic": "半双工，同步，串行通信模式，主从模式架构",
+                "id": "fc7fb41d0e725460"
+              },
+              {
+                "topic": "总线",
+                "id": "fca4d1a65b60be7d",
+                "children": [
+                  {
+                    "topic": "SCL：时钟线",
+                    "id": "fc7fd1fc7a3439fa"
+                  },
+                  {
+                    "topic": "SDA：数据线",
+                    "id": "fc7fc8527b5a45ac"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "上拉电阻的作用",
+            "id": "fc7fd444889c66b5",
+            "children": [
+              {
+                "topic": "1.让空闲状态两条线都保持高电平状态",
+                "id": "fca51a8058c9d23e"
+              },
+              {
+                "topic": "2.开漏输出结构，需要上拉电阻输出高电平",
+                "id": "fca51c73edf8e85a"
+              },
+              {
+                "topic": "3.设备的N-MOS的通断决定时高低电平",
+                "id": "fca532c2daf6b11c",
+                "children": [
+                  {
+                    "topic": "设备想要输出0时",
+                    "id": "fca570151f19de21"
+                  },
+                  {
+                    "topic": "设备想要输出1时",
+                    "id": "fca5963fe2ebabb1"
+                  }
+                ]
+              },
+              {
+                "topic": "4.线与逻辑与总线仲裁",
+                "id": "fca53372d145ac87"
+              }
+            ]
+          },
+          {
+            "topic": "特性",
+            "id": "fca415eedb3e0bd8"
+          },
+          {
+            "topic": "起始信号和终止信号",
+            "id": "fca41729d00625f7",
+            "children": [
+              {
+                "topic": "SCL线为高电平期间，SDA从高电平变为低电平表示起始信号",
+                "id": "fca41dc14d3e4fce"
+              },
+              {
+                "topic": "SCL线为高电平器件，SDA从低电平变为高电平表示终止信号",
+                "id": "fca4323f69720816"
+              },
+              {
+                "topic": "起始信号开始后，总线被占用",
+                "id": "fca43ad550315c17"
+              },
+              {
+                "topic": "终止信号后，总线空闲",
+                "id": "fca43d04c8502e3f"
+              }
+            ]
+          },
+          {
+            "topic": "时序图",
+            "id": "fca440c53de1eef4",
+            "children": [
+              {
+                "topic": "时钟信号为高电平期间读取信号",
+                "id": "fca443edcec75f1b"
+              },
+              {
+                "topic": "时钟信号为低电平期间写入信号",
+                "id": "fca449fc3634baa3"
+              }
+            ]
+          },
+          {
+            "topic": "字节传输和应答信号",
+            "id": "fca4652cc77570e6",
+            "children": [
+              {
+                "topic": "在第九个字节进行判断",
+                "id": "fca467bed7fba254",
+                "children": [
+                  {
+                    "topic": "如果第九个字节读取时（SCL线为高电平）从机为低电平时表示应答信号",
+                    "id": "fca47a7e69bc64ed"
+                  },
+                  {
+                    "topic": "如果第九个字节读取时（SCL线为高电平）从机为低电平时表示非应答信号",
+                    "id": "fca488f2b3fab114"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "arrows": [],
+  "summaries": [],
+  "direction": 1,
+  "theme": {
+    "name": "薄荷绿",
+    "type": "light",
+    "palette": [
+      "#10a37f",
+      "#a9dcc8",
+      "#10a37f",
+      "#a9dcc8",
+      "#10a37f",
+      "#a9dcc8",
+      "#10a37f",
+      "#a9dcc8",
+      "#10a37f",
+      "#a9dcc8"
+    ],
+    "cssVar": {
+      "--bgcolor": "#f4faf7",
+      "--color": "#37655a",
+      "--main-color": "#1d5d4b",
+      "--main-bgcolor": "#e4f5ee",
+      "--main-bgcolor-transparent": "#e4f5ee",
+      "--main-border": "1px solid #c7eadd",
+      "--root-color": "#ffffff",
+      "--root-bgcolor": "#10a37f",
+      "--root-border-color": "transparent",
+      "--accent-color": "#10a37f",
+      "--selected": "#10a37f",
+      "--panel-color": "#1d5d4b",
+      "--panel-bgcolor": "#e4f5ee",
+      "--panel-border-color": "#c7eadd"
+    }
+  },
+  "compact": false,
+  "themeTemplate": "mintLight",
+  "backgroundPattern": "grid",
+  "bgPatternColor": "#808080",
+  "bgPatternOpacity": 5,
+  "lineStyle": "curve"
+}

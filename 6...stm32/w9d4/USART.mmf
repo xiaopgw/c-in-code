@@ -1,0 +1,235 @@
+{
+  "nodeData": {
+    "id": "root",
+    "topic": "USART",
+    "root": true,
+    "children": [
+      {
+        "topic": "串口通信",
+        "id": "fb2f88370a5470ae",
+        "children": [
+          {
+            "topic": "什么是串口",
+            "id": "fb30c02a76f75ef2"
+          },
+          {
+            "topic": "什么是通信",
+            "id": "fb30c13bfacb2b63"
+          },
+          {
+            "topic": "按信号分",
+            "id": "fb30c53c7ace32ce",
+            "children": [
+              {
+                "topic": "电平信号",
+                "id": "fb30ce8fffc1a94d"
+              },
+              {
+                "topic": "差分信号",
+                "id": "fb30cfb47ec2e7f8"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "通信的划分",
+        "id": "fb30c99fe41b0f43",
+        "children": [
+          {
+            "topic": "按通信方式分",
+            "id": "fb30d2547734a5b2",
+            "children": [
+              {
+                "topic": "串行通信",
+                "id": "fb30d52bf6e167c4"
+              },
+              {
+                "topic": "并行通信",
+                "id": "fb30d68df975374c"
+              }
+            ]
+          },
+          {
+            "topic": "按通信的方法分",
+            "id": "fb30d9d17ac64331",
+            "children": [
+              {
+                "topic": "单工通信",
+                "id": "fb30db46fbfdebbb"
+              },
+              {
+                "topic": "半双工",
+                "id": "fb30de5cf7bef213"
+              },
+              {
+                "topic": "全双工",
+                "id": "fb30e1f708746409"
+              }
+            ]
+          },
+          {
+            "topic": "按时钟信号分",
+            "id": "fb30e5a7fa2cdcbc",
+            "children": [
+              {
+                "topic": "同步通信",
+                "id": "fb30e770081da77a"
+              },
+              {
+                "topic": "异步通信",
+                "id": "fb30e8bbfb597805"
+              },
+              {
+                "topic": "番外：通信速率",
+                "id": "fb30ec687e663ac6"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "串口通信协议",
+        "id": "fb311d150fbcebf5",
+        "children": [
+          {
+            "topic": "常见的通信协议",
+            "id": "fb30e47e708f9aa2",
+            "children": [
+              {
+                "topic": "USART",
+                "id": "fb30f44c876cd4b8",
+                "children": [
+                  {
+                    "topic": "UART",
+                    "id": "fc7c10780ffdb665"
+                  },
+                  {
+                    "topic": "USART",
+                    "id": "fc7c113ef83cc7d8"
+                  }
+                ]
+              },
+              {
+                "topic": "SPI",
+                "id": "fb30f68dfe24ee89"
+              },
+              {
+                "topic": "I2C",
+                "id": "fb30f77c7afe43c1"
+              }
+            ]
+          },
+          {
+            "topic": "数据帧",
+            "id": "fb311ff2f963ae99"
+          },
+          {
+            "topic": "逻辑电平",
+            "id": "fb312467f75340f9"
+          },
+          {
+            "topic": "相关寄存器",
+            "id": "fb3125fbf6fa3d6a"
+          }
+        ]
+      },
+      {
+        "topic": "串口实验",
+        "id": "fb312d4c7dad8063",
+        "children": [
+          {
+            "topic": "流程",
+            "id": "fb3138bc87be94e6",
+            "children": []
+          },
+          {
+            "topic": "函数",
+            "id": "fb313970055c4de8",
+            "children": [
+              {
+                "topic": "HAL_USART_Transmit(USART_HandleTypeDef * husart,                      const uint8_t * pTxData, uint16_t Size, uint32_t Timeout)",
+                "id": "fb313fe6f2136346",
+                "children": [
+                  {
+                    "topic": "功能：",
+                    "id": "fb315664091ec466",
+                    "children": [
+                      {
+                        "topic": "以阻塞的形式发送大量的数据",
+                        "id": "fb3157e17fb2d50d"
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "参数",
+                    "id": "fb315b7074249383",
+                    "children": [
+                      {
+                        "topic": "句柄",
+                        "id": "fb315e9074e04748"
+                      },
+                      {
+                        "topic": "要发送的数据",
+                        "id": "fb315f7ef3642dba"
+                      },
+                      {
+                        "topic": "要发送的数据的大小",
+                        "id": "fb31608d0ee6a320"
+                      },
+                      {
+                        "topic": "timeout超时检测",
+                        "id": "fb3162410c2a4723"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "arrows": [],
+  "summaries": [],
+  "direction": 1,
+  "theme": {
+    "name": "薄荷绿",
+    "type": "light",
+    "palette": [
+      "#10a37f",
+      "#a9dcc8",
+      "#10a37f",
+      "#a9dcc8",
+      "#10a37f",
+      "#a9dcc8",
+      "#10a37f",
+      "#a9dcc8",
+      "#10a37f",
+      "#a9dcc8"
+    ],
+    "cssVar": {
+      "--bgcolor": "#f4faf7",
+      "--color": "#37655a",
+      "--main-color": "#1d5d4b",
+      "--main-bgcolor": "#e4f5ee",
+      "--main-bgcolor-transparent": "#e4f5ee",
+      "--main-border": "1px solid #c7eadd",
+      "--root-color": "#ffffff",
+      "--root-bgcolor": "#10a37f",
+      "--root-border-color": "transparent",
+      "--accent-color": "#10a37f",
+      "--selected": "#10a37f",
+      "--panel-color": "#1d5d4b",
+      "--panel-bgcolor": "#e4f5ee",
+      "--panel-border-color": "#c7eadd"
+    }
+  },
+  "compact": false,
+  "themeTemplate": "mintLight",
+  "backgroundPattern": "grid",
+  "bgPatternColor": "#808080",
+  "bgPatternOpacity": 5,
+  "lineStyle": "curve"
+}

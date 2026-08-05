@@ -1,0 +1,49 @@
+{
+  "nodeData": {
+    "id": "root",
+    "topic": "Central Topic",
+    "root": true,
+    "children": []
+  },
+  "arrows": [],
+  "summaries": [],
+  "direction": 1,
+  "theme": {
+    "name": "暖阳橙",
+    "type": "light",
+    "palette": [
+      "#e0733a",
+      "#ecc9ad",
+      "#e0733a",
+      "#ecc9ad",
+      "#e0733a",
+      "#ecc9ad",
+      "#e0733a",
+      "#ecc9ad",
+      "#e0733a",
+      "#ecc9ad"
+    ],
+    "cssVar": {
+      "--bgcolor": "#fbf7f3",
+      "--color": "#6f5545",
+      "--main-color": "#8a4a24",
+      "--main-bgcolor": "#fbeee2",
+      "--main-bgcolor-transparent": "#fbeee2",
+      "--main-border": "1px solid #f2d9c4",
+      "--root-color": "#ffffff",
+      "--root-bgcolor": "#e0733a",
+      "--root-border-color": "transparent",
+      "--accent-color": "#e0733a",
+      "--selected": "#e0733a",
+      "--panel-color": "#8a4a24",
+      "--panel-bgcolor": "#fbeee2",
+      "--panel-border-color": "#f2d9c4"
+    }
+  },
+  "compact": false,
+  "themeTemplate": "clayLight",
+  "backgroundPattern": "grid",
+  "bgPatternColor": "#808080",
+  "bgPatternOpacity": 5,
+  "lineStyle": "curve"
+}
