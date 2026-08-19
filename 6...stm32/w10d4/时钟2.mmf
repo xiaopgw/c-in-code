@@ -1,0 +1,313 @@
+{
+  "nodeData": {
+    "id": "root",
+    "topic": "w10d4",
+    "root": true,
+    "children": [
+      {
+        "topic": "New Node",
+        "id": "fd5e942f0f94ee15"
+      },
+      {
+        "topic": "定时器",
+        "id": "fd5f5edb681ad609",
+        "children": [
+          {
+            "topic": "在外设中",
+            "id": "fd6bcdfbe7a18c29"
+          },
+          {
+            "topic": "基本概念",
+            "id": "fd6bd36df51786f6",
+            "children": [
+              {
+                "topic": "类似于我们生活中的闹钟。可以作为基本的定时器/计时器，用于生成周期性的定时中断或作为计数器来计数外部事件的脉冲数。",
+                "id": "fd6bda07ef93e4eb"
+              },
+              {
+                "topic": "定时器可以配置为产生脉冲宽度调制(PWM)信号，用来控制各种外设",
+                "id": "fd6bf389eeb86fd7"
+              },
+              {
+                "topic": "存在于单片机STM32U5中的定时器，总共有11个，2个高级，7个通用，2个基本定时器",
+                "id": "fd6bf7dd6c8600e6"
+              }
+            ]
+          },
+          {
+            "topic": "基本框图",
+            "id": "fd6c109ad4221f75"
+          },
+          {
+            "topic": "时基单元",
+            "id": "fd6c13d75c29ba68",
+            "children": [
+              {
+                "topic": "PSC：预分频器",
+                "id": "fd6c170d6cc51085",
+                "children": []
+              },
+              {
+                "topic": "ARR：自动重传寄存器",
+                "id": "fd6c1a85e0901ee7"
+              },
+              {
+                "topic": "CNT计数器",
+                "id": "fd6c1ccc60dc0bfb"
+              }
+            ]
+          },
+          {
+            "topic": "New Node",
+            "id": "fd6c22a253e585c5"
+          }
+        ]
+      },
+      {
+        "topic": "PWM",
+        "id": "fd5f5f2672926144",
+        "children": [
+          {
+            "topic": "定义",
+            "id": "fd6c569bd479ba4d",
+            "children": [
+              {
+                "topic": "脉冲宽度调制",
+                "id": "fd6c576163d768c7",
+                "children": []
+              },
+              {
+                "topic": "通过改变信号的高电平和低电平的时间比例来控制输出的平均电压或功率",
+                "id": "fd6c5b725ebbe064"
+              }
+            ]
+          },
+          {
+            "topic": "参数",
+            "id": "fd6c7aebec7cb6d5",
+            "children": [
+              {
+                "topic": "周期：高低电平变化所需时间",
+                "id": "fd6c7c2c522d9067"
+              },
+              {
+                "topic": "频率：1秒内信号变化的周期次数",
+                "id": "fd6c8151ecbd05f1"
+              },
+              {
+                "topic": "占空比：高电平占整个周期时间的比例",
+                "id": "fd6c8a16d17ea86d"
+              }
+            ]
+          },
+          {
+            "topic": "生成原理",
+            "id": "fd6ca3005aed01cb",
+            "children": [
+              {
+                "topic": "1.输入滤波器和边沿检测：平滑时钟曲线，改变信号的质量，精准的控制时间，准确的检测到时钟的边沿，确保PWM波形的周期和占空比的准确性。",
+                "id": "fd6ca419d7e1177e"
+              },
+              {
+                "topic": "2.预分频器：对过滤好的时钟信号进行分频，生成计数时钟，分频系数由PSC寄存器决定，可以调整计数频率。",
+                "id": "fd6ca69cc1328176"
+              },
+              {
+                "topic": "3.捕获比较寄存器：定时器中有多个捕获比较寄存器，用于存储比较的值，当计数器的值与捕获比较寄存器的值相匹配的时候会触发相应的输出控制。",
+                "id": "fd6ca95c6aed9f3e"
+              },
+              {
+                "topic": "4.输出控制：每一个捕获会比较寄存器都会对应一个输出通道，输出控制模块根据计数器和捕获比较寄存器的值以及设置好的输出设置，生成PWM信号。",
+                "id": "fd6caaadda0096e3"
+              }
+            ]
+          },
+          {
+            "topic": "常见的PWM生成模式",
+            "id": "fd6caf72dbd13886",
+            "children": [
+              {
+                "topic": "PWM模式1",
+                "id": "fd6cb3126dbc30c1",
+                "children": []
+              },
+              {
+                "topic": "PWM模式2",
+                "id": "fd6cb455d72ea513"
+              }
+            ]
+          },
+          {
+            "topic": "New Node",
+            "id": "fd6cb28ada0cb8b0"
+          }
+        ]
+      },
+      {
+        "topic": "ADC",
+        "id": "fd64a1cd359afcb8",
+        "children": [
+          {
+            "topic": "ADC基础",
+            "id": "fd64a2affdd335e9",
+            "children": [
+              {
+                "topic": "A：模拟信号",
+                "id": "fd64a6adebddfd58",
+                "children": [
+                  {
+                    "topic": "连续的信号，传输的过程中，会把信息信号转换成几乎一模一样的波动电信号，因此叫模拟",
+                    "id": "fd64aeaf6547e1fd"
+                  }
+                ]
+              },
+              {
+                "topic": "D：数字",
+                "id": "fd64a90eeae3b5f5",
+                "children": [
+                  {
+                    "topic": "离散的数字信号",
+                    "id": "fd64cf3de6f128f8"
+                  }
+                ]
+              },
+              {
+                "topic": "C：转换器",
+                "id": "fd64ab0ee4d0994b",
+                "children": [
+                  {
+                    "topic": "将一种信号转换成另一种信号",
+                    "id": "fd64d37bf861834d"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "概念",
+            "id": "fd64ad26ea9ed202",
+            "children": [
+              {
+                "topic": "全称模数转换器",
+                "id": "fd64d9e8017d16e2"
+              },
+              {
+                "topic": "ADC的作用就是将连续变化的模拟信号转换为离散的数字信号",
+                "id": "fd64dd5c7056742d"
+              }
+            ]
+          },
+          {
+            "topic": "使用场景",
+            "id": "fd64df75d525c732",
+            "children": [
+              {
+                "topic": "1.智能手机：光传感器，陀螺仪，温度传感器，马克风，加速度计",
+                "id": "fd64e1195b27a23b"
+              },
+              {
+                "topic": "2.温度计，湿度计，烟雾，土壤湿度",
+                "id": "fd64f95e6bed5274"
+              },
+              {
+                "topic": "3.体重秤：压力传感器",
+                "id": "fd65069fe665ccb7"
+              },
+              {
+                "topic": "4.万用表",
+                "id": "fd6516ced055801d"
+              }
+            ]
+          },
+          {
+            "topic": "转换过程",
+            "id": "fd6519fcd579aaa9",
+            "children": [
+              {
+                "topic": "采样",
+                "id": "fd6cce2f5263de20",
+                "children": [
+                  {
+                    "topic": "将连续时间的模拟信号转化为离散时间信号",
+                    "id": "fd76d4a09fbb58af"
+                  }
+                ]
+              },
+              {
+                "topic": "保持",
+                "id": "fd6cd08563c5d79d",
+                "children": [
+                  {
+                    "topic": "将采样瞬间的信号在转换过程中保持不变",
+                    "id": "fd770ca314bb2ade"
+                  }
+                ]
+              },
+              {
+                "topic": "量化",
+                "id": "fd6cd1026137ace0",
+                "children": [
+                  {
+                    "topic": "将采样得到的电压值映射到最接近的数字值",
+                    "id": "fd76fc8d9b5ac5fb"
+                  }
+                ]
+              },
+              {
+                "topic": "编码",
+                "id": "fd6cd1b6681b8747",
+                "children": [
+                  {
+                    "topic": "将量化后的值转换成二进制代码",
+                    "id": "fd7706b71ef45876"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "arrows": [],
+  "summaries": [],
+  "direction": 1,
+  "theme": {
+    "name": "薄荷绿",
+    "type": "light",
+    "palette": [
+      "#10a37f",
+      "#a9dcc8",
+      "#10a37f",
+      "#a9dcc8",
+      "#10a37f",
+      "#a9dcc8",
+      "#10a37f",
+      "#a9dcc8",
+      "#10a37f",
+      "#a9dcc8"
+    ],
+    "cssVar": {
+      "--bgcolor": "#f4faf7",
+      "--color": "#37655a",
+      "--main-color": "#1d5d4b",
+      "--main-bgcolor": "#e4f5ee",
+      "--main-bgcolor-transparent": "#e4f5ee",
+      "--main-border": "1px solid #c7eadd",
+      "--root-color": "#ffffff",
+      "--root-bgcolor": "#10a37f",
+      "--root-border-color": "transparent",
+      "--accent-color": "#10a37f",
+      "--selected": "#10a37f",
+      "--panel-color": "#1d5d4b",
+      "--panel-bgcolor": "#e4f5ee",
+      "--panel-border-color": "#c7eadd"
+    }
+  },
+  "compact": false,
+  "themeTemplate": "mintLight",
+  "backgroundPattern": "grid",
+  "bgPatternColor": "#808080",
+  "bgPatternOpacity": 5,
+  "lineStyle": "curve"
+}

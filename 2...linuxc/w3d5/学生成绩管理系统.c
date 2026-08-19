@@ -90,7 +90,7 @@ void menu()
     printf("\033[%d;%dH", DISTANCE_H + 12, DISTANCE_W + 10);
     printf("Q = 退出系统");
     printf("\033[%d;%dH", DISTANCE_H + 14, DISTANCE_W + 7);
-    printf("按ALT + F4打开作者隐藏小彩蛋");
+    printf("按Ctrl + C打开作者隐藏小彩蛋");
     printf("\033[%d;%dH", DISTANCE_H + MENU_H - 1, DISTANCE_W + 5);
     printf("Copyright <C> 2011.06.12 By 姓名");
     
@@ -217,12 +217,12 @@ void Search()
     scanf("%d", &l);
     printf("学生成绩如下\n");
     printf("学号\t语文\t数学\t外语\t平均分\n");
-    printf(" %d\t", student[l].stnum);
+    printf(" %d\t", student[l - 1].stnum);
     for (size_t t = 0; t < SUBJECT; t++)
         {
-            printf("%.1f\t", student[l].subject[t]);
+            printf("%.1f\t", student[l - 1].subject[t]);
         }
-    printf(" %.1f\n", student[l].av);
+    printf(" %.1f\n", student[l - 1].av);
 
 
 }

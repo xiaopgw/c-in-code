@@ -1,0 +1,171 @@
+{
+  "nodeData": {
+    "id": "root",
+    "topic": "PCB",
+    "root": true,
+    "children": [
+      {
+        "topic": "基本元器件",
+        "id": "ff0b7bef018d45e0",
+        "children": [
+          {
+            "topic": "电阻",
+            "id": "ff0b73371e19d371",
+            "children": [
+              {
+                "topic": "作用",
+                "id": "ff0c1c54a7ee6c63",
+                "children": [
+                  {
+                    "topic": "限制电流，调节电压和电流，保护电路",
+                    "id": "ff0c207e171060c1"
+                  }
+                ]
+              },
+              {
+                "topic": "公式",
+                "id": "ff0c2559adab256a",
+                "children": [
+                  {
+                    "topic": "I = U/R",
+                    "id": "ff0c26a3a01f8bab"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "电容",
+            "id": "ff0b73fda093a649",
+            "children": []
+          },
+          {
+            "topic": "电感",
+            "id": "ff0b757b173aee16"
+          },
+          {
+            "topic": "二极管",
+            "id": "ff0b75d41ad95fb6"
+          },
+          {
+            "topic": "三极管",
+            "id": "ff0b7685140690ff"
+          },
+          {
+            "topic": "mos管",
+            "id": "ff0b79209a5bddbd"
+          }
+        ]
+      },
+      {
+        "topic": "运放",
+        "id": "ff0b8f0e9531c6a4",
+        "children": [
+          {
+            "topic": "概念",
+            "id": "ff0b924d25babedc",
+            "children": [
+              {
+                "topic": "做比较器、稳压、滤波、信号整形",
+                "id": "ff0bcb7b1cfc6f9b"
+              },
+              {
+                "topic": "电压跟随，隔离缓冲",
+                "id": "ff0bd417931b36f3"
+              },
+              {
+                "topic": "放大微弱信号",
+                "id": "ff0bd6509cde7f8d"
+              }
+            ]
+          },
+          {
+            "topic": "三大核心电路",
+            "id": "ff0b94e19f1d89ba",
+            "children": [
+              {
+                "topic": "电压比较器",
+                "id": "ff0bb6b7a1b8e9f2"
+              },
+              {
+                "topic": "电压跟随器",
+                "id": "ff0bb7d515743e66"
+              },
+              {
+                "topic": "电压放大器",
+                "id": "ff0bb9442ffcace9"
+              }
+            ]
+          },
+          {
+            "topic": "经典芯片",
+            "id": "ff0b97089b1d837c"
+          }
+        ]
+      },
+      {
+        "topic": "PCB基础",
+        "id": "ff0b9ba11cd53d1a",
+        "children": [
+          {
+            "topic": "设计软件",
+            "id": "ff0ba20b1efee53a",
+            "children": [
+              {
+                "topic": "立创EDA",
+                "id": "ff0baa891cee7126",
+                "children": [
+                  {
+                    "topic": "继电器模块",
+                    "id": "ff0bae179d29f55d"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "arrows": [],
+  "summaries": [],
+  "direction": 1,
+  "theme": {
+    "name": "深海青",
+    "type": "dark",
+    "palette": [
+      "#2dd4bf",
+      "#274156",
+      "#2dd4bf",
+      "#274156",
+      "#2dd4bf",
+      "#274156",
+      "#2dd4bf",
+      "#274156",
+      "#2dd4bf",
+      "#274156"
+    ],
+    "cssVar": {
+      "--bgcolor": "#0b1220",
+      "--color": "#8fb0b8",
+      "--main-color": "#cbe7e6",
+      "--main-bgcolor": "#111c2e",
+      "--main-bgcolor-transparent": "#111c2e",
+      "--main-border": "1px solid #22344a",
+      "--root-color": "#04201b",
+      "--root-bgcolor": "#2dd4bf",
+      "--root-border-color": "transparent",
+      "--accent-color": "#2dd4bf",
+      "--selected": "#2dd4bf",
+      "--panel-color": "#cbe7e6",
+      "--panel-bgcolor": "#111c2e",
+      "--panel-border-color": "#22344a"
+    }
+  },
+  "compact": false,
+  "themeTemplate": "oceanDark",
+  "backgroundPattern": "grid",
+  "bgPatternColor": "#808080",
+  "bgPatternOpacity": 5,
+  "lineStyle": "curve"
+}
