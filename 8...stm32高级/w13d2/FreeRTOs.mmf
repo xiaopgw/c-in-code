@@ -1,0 +1,600 @@
+{
+  "nodeData": {
+    "id": "root",
+    "topic": "FreeRTOS",
+    "root": true,
+    "children": [
+      {
+        "topic": "RTOS",
+        "id": "038e2a99549c5574",
+        "children": [
+          {
+            "topic": "实时操作系统",
+            "id": "038e2dcedfb76254"
+          },
+          {
+            "topic": "保证个任务的及时执行",
+            "id": "038e3304ddb6291a"
+          }
+        ]
+      },
+      {
+        "topic": "操作系统与裸机",
+        "id": "038e3660d5fdd9af",
+        "children": [
+          {
+            "topic": "裸机",
+            "id": "038e3be35f8e26c9",
+            "children": [
+              {
+                "topic": "单线程，触发其他任务只能用中断，所以资源占用低，开发逻辑简单但复杂系统难维护，需手动利用标志位同步，应用于简单的设备",
+                "id": "038e3e3857fbf14d"
+              },
+              {
+                "topic": "任务数量",
+                "id": "03e2722f42d5e422"
+              },
+              {
+                "topic": "资源占用量",
+                "id": "03e2771e311f0833"
+              },
+              {
+                "topic": "开发复杂度",
+                "id": "03e279cb3aa560a8"
+              },
+              {
+                "topic": "同步机制",
+                "id": "03e27b933eb218fe"
+              },
+              {
+                "topic": "应用场景",
+                "id": "03e27ce6b0b27699"
+              }
+            ]
+          },
+          {
+            "topic": "操作系统",
+            "id": "038e3cc7ce300da9",
+            "children": [
+              {
+                "topic": "支持多任务并发，利用时间片和抢占优先级管理任务，所以资源占用高，开发逻辑教难但模块化编程操作清晰，有信号量，队列，事件组等同步机制。",
+                "id": "038e4620560af968"
+              },
+              {
+                "topic": "任务数量",
+                "id": "03e28259a0ac43a5"
+              },
+              {
+                "topic": "资源占用",
+                "id": "03e2831b3e73f644"
+              },
+              {
+                "topic": "开发复杂度",
+                "id": "03e28560b5c44230"
+              },
+              {
+                "topic": "同步机制",
+                "id": "03e28639351b83dd"
+              },
+              {
+                "topic": "应用场景",
+                "id": "03e286e33500b44c"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "FreeRTOS与Linux",
+        "id": "038e4eeadb8a992d",
+        "children": [
+          {
+            "topic": "RTOS",
+            "id": "038e96a25ae7a829",
+            "children": [
+              {
+                "topic": "任务调度处理",
+                "id": "03e33e2439ac7a74"
+              },
+              {
+                "topic": "优先级数量",
+                "id": "03e34b18c8a5e503"
+              },
+              {
+                "topic": "资源占用",
+                "id": "03e341013fb38cc9"
+              },
+              {
+                "topic": "响应实时性",
+                "id": "03e34218ab3aad74"
+              },
+              {
+                "topic": "任务概念",
+                "id": "03e344113a3448d1"
+              },
+              {
+                "topic": "静动态内存支持程度",
+                "id": "03e34f9bbd545b05"
+              },
+              {
+                "topic": "功能复杂度",
+                "id": "03e3533cb2350933"
+              },
+              {
+                "topic": "通信机制",
+                "id": "03e359de3f871b81"
+              }
+            ]
+          },
+          {
+            "topic": "Linux",
+            "id": "039309f06a8d100a",
+            "children": [
+              {
+                "topic": "任务调度处理",
+                "id": "03e363a6bfe0357b"
+              },
+              {
+                "topic": "优先级数量",
+                "id": "03e5e1b2cb5a930a"
+              },
+              {
+                "topic": "资源占用",
+                "id": "03e3651cb3a36918"
+              },
+              {
+                "topic": "响应实时性",
+                "id": "03e367c33a9d46b5"
+              },
+              {
+                "topic": "进线程概念",
+                "id": "03e36a7932a1047b"
+              },
+              {
+                "topic": "静动态内存支持程度",
+                "id": "03e375ac34edd95e"
+              },
+              {
+                "topic": "功能复杂度",
+                "id": "03e5e73336d3e8c6"
+              },
+              {
+                "topic": "通信机制",
+                "id": "03e3771237773bf9",
+                "children": [
+                  {
+                    "topic": "有名管道、无名管道、共享内存、消息队列、信号量、信号灯集、套接字",
+                    "id": "040c544d0572d2dc"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "多任务概念",
+        "id": "03930c2a7b2639cb",
+        "children": [
+          {
+            "topic": "操作系统RTOS基本组成单元",
+            "id": "03931fcfe3ec4e9e"
+          },
+          {
+            "topic": "类似进程/线程概念",
+            "id": "039324fd69aafcbd",
+            "children": [
+              {
+                "topic": "通过全局变量通信",
+                "id": "03935336f50cca83",
+                "children": []
+              },
+              {
+                "topic": "每个任务有一个独立空间",
+                "id": "039358d97177a3ac",
+                "children": []
+              },
+              {
+                "topic": "用互斥锁、信号量PV",
+                "id": "03936232e19e70c9"
+              }
+            ]
+          },
+          {
+            "topic": "高优先级先执行",
+            "id": "0393677cf70d6c55",
+            "children": [
+              {
+                "topic": "高优先级抢占低优先级",
+                "id": "03936daf6d24c790"
+              },
+              {
+                "topic": "中断先执行",
+                "id": "039372116c17cf5b"
+              }
+            ]
+          },
+          {
+            "topic": "通过时间片解决同优先级",
+            "id": "0393758153c36296"
+          }
+        ]
+      },
+      {
+        "topic": "调度原理",
+        "id": "03937c4df7fa6060",
+        "children": [
+          {
+            "topic": "调度器决定执行哪个任务",
+            "id": "03937e09f77536f9"
+          },
+          {
+            "topic": "调度策略是算法判断",
+            "id": "03941e5dfc678439"
+          },
+          {
+            "topic": "三种任务调度方式",
+            "id": "039438e0784addb9",
+            "children": [
+              {
+                "topic": "抢占",
+                "id": "039440e4e64eda96",
+                "children": [
+                  {
+                    "topic": "高优先级任务抢占低优先级任务",
+                    "id": "03944d8f6a5c2a83"
+                  }
+                ]
+              },
+              {
+                "topic": "时间片",
+                "id": "039443f3f7163135",
+                "children": [
+                  {
+                    "topic": "靠FreeRTOS滴答轮流运行同优先级任务",
+                    "id": "039451faf380ed1c",
+                    "children": [
+                      {
+                        "topic": "如果设置为1ms那这1ms就是一滴答",
+                        "id": "039461a773cfeeda"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "协程",
+                "id": "039447b508bf0b1d"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "任务状态",
+        "id": "03944b7ce107b849",
+        "children": [
+          {
+            "topic": "运行态",
+            "id": "039469aa7edb50a3",
+            "children": [
+              {
+                "topic": "被调度的任务",
+                "id": "039472e37a7d22dd"
+              }
+            ]
+          },
+          {
+            "topic": "就绪态",
+            "id": "03946b537b717603",
+            "children": [
+              {
+                "topic": "等待执行的任务",
+                "id": "03947768774fd9e1"
+              }
+            ]
+          },
+          {
+            "topic": "阻塞态",
+            "id": "03946c45ed1d0501",
+            "children": [
+              {
+                "topic": "无法被运行的任务",
+                "id": "039479ab0345f12c"
+              }
+            ]
+          },
+          {
+            "topic": "挂起态",
+            "id": "03946da9f6f11291",
+            "children": [
+              {
+                "topic": "通用无法被运行，一般通过函数 vTaskSuspend()和函数 vTaskResums()进入和退出挂起态与阻塞态",
+                "id": "03948927fd5392e2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "创建任务函数",
+        "id": "0394b092f103bf36",
+        "direction": 1,
+        "children": [
+          {
+            "topic": "osThreadId_t osThreadNew (osThreadFunc_t func, void *argument, const osThreadAttr_t *attr)",
+            "id": "0394b2696e2c2aef"
+          },
+          {
+            "topic": "osThreadId_t 为返回值，其实就是在操作该任务时候的句柄",
+            "id": "03baf7618facb774"
+          },
+          {
+            "topic": "参数 1：osThreadFunc_t func           这是任务函数，类似于线程函数",
+            "id": "03b98fb61e1fd8d4"
+          },
+          {
+            "topic": "参数 2：void *argument                   给任务函数传的参数，不传填 NULL",
+            "id": "03b992e7de2bff35"
+          },
+          {
+            "topic": "参数 3：const osThreadAttr_t *attr  任务相关的属性值，包括任务名字、优先级、栈空间大小等",
+            "id": "03b9942d5c2a7158"
+          }
+        ]
+      },
+      {
+        "topic": "挂起与释放任务",
+        "id": "0394b9a5f36d71fc",
+        "direction": 1,
+        "children": [
+          {
+            "topic": "void vTaskSuspend( osThreadId_t xTaskToSuspend );                                 功能：挂起任务参数：xTaskToSuspend\t                                                      要挂起的任务句柄。若传递 NULL，表示挂起当前正在执行的任务自身。",
+            "id": "0394bf4564af9e5e"
+          },
+          {
+            "topic": "void vTaskResume( osThreadId_t xTaskToResume );                                        功能：恢复任务参数：xTaskToResume\t                                                        要恢复的任务句柄。必须是此前通过",
+            "id": "03b9a9525762e38d"
+          },
+          {
+            "topic": "vTaskSuspend() 挂起的任务",
+            "id": "03b9ae555d72f95b"
+          },
+          {
+            "topic": "osStatus_t osThreadTerminate(osThreadId_t thread_id);                            参数：任务的句柄",
+            "id": "03b9af60da8683e4"
+          }
+        ]
+      },
+      {
+        "topic": "空闲任务",
+        "id": "040adf85997cc62d",
+        "children": [
+          {
+            "topic": "无其他任务运行时维持系统基本运作，防止cpu空转",
+            "id": "040ae5e6f59859ee"
+          },
+          {
+            "topic": "空闲钩子函数",
+            "id": "040b6a64763a9456",
+            "children": [
+              {
+                "topic": "空闲任务调用的函数，可以实现各种应用功能",
+                "id": "040b6baaf2e0477a"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "CMSIS",
+        "id": "040b0704011d5123",
+        "children": [
+          {
+            "topic": "是一套标准",
+            "id": "040ce042fcbadffc"
+          }
+        ]
+      },
+      {
+        "topic": "同步、互斥",
+        "id": "040b0b87fbd67283",
+        "direction": 1,
+        "children": [
+          {
+            "topic": "同步（协作关系）",
+            "id": "040b0e38f9e91441",
+            "children": [
+              {
+                "topic": "标志位",
+                "id": "040b0fae4a2ff71f",
+                "children": [
+                  {
+                    "topic": "volatile",
+                    "id": "040b10a6f212cd5c",
+                    "children": [
+                      {
+                        "topic": "强制从内存中读取，防止编译器优化",
+                        "id": "040b147c7b109366"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "消息队列",
+                "id": "040b1e2c8b45be28",
+                "children": [
+                  {
+                    "topic": "队列的长度就是能保存数据的最大数量",
+                    "id": "040b2c50f39a9809",
+                    "children": []
+                  },
+                  {
+                    "topic": "多任务读取/写入数据空间不够时会阻塞，多个任务阻塞时，解除阻塞后最高优先级的任务先解除阻塞",
+                    "id": "040b34207c38c32f"
+                  },
+                  {
+                    "topic": "创建",
+                    "id": "040cf53df837b7aa",
+                    "children": [
+                      {
+                        "topic": "osMessageQueueId_t osMessageQueueNew                                             (uint32_t msg_count,uint32_t msg_size,                                                 const osMessageQueueAttr_t * attr)",
+                        "id": "040d73c97ee765ac"
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "写入",
+                    "id": "040d16287238628e",
+                    "children": [
+                      {
+                        "topic": "osStatus_t osMessageQueuePut (osMessageQueueId_t mq_id,                                    const void *msg_ptr,uint8_t msg_prio,uint32_t timeout",
+                        "id": "040d82491385534e"
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "读取",
+                    "id": "040cf60701e5f868",
+                    "children": [
+                      {
+                        "topic": "osStatus_t osMessageQueueGet (osMessageQueueId_t mq_id, void *msg_ptr,  uint8_t *msg_prio, uint32_t timeout",
+                        "id": "040d8a9104549f40"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "信号量",
+                "id": "040b1f7d7de99593",
+                "children": [
+                  {
+                    "topic": "创建",
+                    "id": "040cf28a720ff487",
+                    "children": [
+                      {
+                        "topic": "osSemaphoreId_t osSemaphoreNew(uint32_t max_count, uint32_t initial_count, const osSemaphoreAttr_t *attr);",
+                        "id": "040daade887842c3"
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "PV操作",
+                    "id": "040b58487975b854",
+                    "children": [
+                      {
+                        "topic": "P",
+                        "id": "040b5976cbbdfd5e",
+                        "children": [
+                          {
+                            "topic": "获取信号量",
+                            "id": "040b5b9179d8e93c",
+                            "children": [
+                              {
+                                "topic": "osStatus_t osSemaphoreAcquire(osSemaphoreId_t semaphore_id, uint32_t timeout);",
+                                "id": "040bfa40f86c81c3",
+                                "children": [
+                                  {
+                                    "topic": "阻塞",
+                                    "id": "040dd8e473a2cd75"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "topic": "V",
+                        "id": "040b5ab5771f4b69",
+                        "children": [
+                          {
+                            "topic": "释放信号量",
+                            "id": "040b88c97ef7974c",
+                            "children": [
+                              {
+                                "topic": "osStatus_t osSemaphoreRelease(osSemaphoreId_t semaphore_id);",
+                                "id": "040c018b1e9d4bd4",
+                                "children": [
+                                  {
+                                    "topic": "不阻塞",
+                                    "id": "040dd70a78fe8976"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "互斥（竞争关系）",
+            "id": "040b20a3fc76f6f3",
+            "children": [
+              {
+                "topic": "标志位",
+                "id": "040b212774862ea4"
+              },
+              {
+                "topic": "消息队列",
+                "id": "040b23dc1fbf03b0"
+              },
+              {
+                "topic": "信号量",
+                "id": "040b24d976908069"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "arrows": [],
+  "summaries": [],
+  "direction": 1,
+  "theme": {
+    "name": "深海青",
+    "type": "dark",
+    "palette": [
+      "#2dd4bf",
+      "#274156",
+      "#2dd4bf",
+      "#274156",
+      "#2dd4bf",
+      "#274156",
+      "#2dd4bf",
+      "#274156",
+      "#2dd4bf",
+      "#274156"
+    ],
+    "cssVar": {
+      "--bgcolor": "#0b1220",
+      "--color": "#8fb0b8",
+      "--main-color": "#cbe7e6",
+      "--main-bgcolor": "#111c2e",
+      "--main-bgcolor-transparent": "#111c2e",
+      "--main-border": "1px solid #22344a",
+      "--root-color": "#04201b",
+      "--root-bgcolor": "#2dd4bf",
+      "--root-border-color": "transparent",
+      "--accent-color": "#2dd4bf",
+      "--selected": "#2dd4bf",
+      "--panel-color": "#cbe7e6",
+      "--panel-bgcolor": "#111c2e",
+      "--panel-border-color": "#22344a"
+    }
+  },
+  "compact": false,
+  "themeTemplate": "oceanDark",
+  "backgroundPattern": "grid",
+  "bgPatternColor": "#808080",
+  "bgPatternOpacity": 5,
+  "lineStyle": "curve"
+}

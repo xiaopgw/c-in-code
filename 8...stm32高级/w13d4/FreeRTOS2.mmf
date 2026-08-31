@@ -1,0 +1,292 @@
+{
+  "nodeData": {
+    "id": "root",
+    "topic": "FreeRTOS",
+    "root": true,
+    "children": [
+      {
+        "topic": "计数型信号量",
+        "id": "042f4863048ab671",
+        "children": [
+          {
+            "topic": "目标：理解计数型信号量如何管理资源池",
+            "id": "042f5cb49286a2ca"
+          },
+          {
+            "topic": "场景：模拟有5个车位的停车场，10辆车随机进出",
+            "id": "042f6a8a596546ab"
+          },
+          {
+            "topic": "主要是理解各个模块的作用和整体的框架",
+            "id": "042f73ad96db6d20"
+          }
+        ]
+      },
+      {
+        "topic": "互斥量",
+        "id": "042f7ab5082fe7e5",
+        "children": [
+          {
+            "topic": "基本概念",
+            "id": "042f8fdc04d8e3a6",
+            "children": [
+              {
+                "topic": "信号量是可以由任何任务释放，还有优先级反转的问题，所以需要互斥量，互斥量只有谁上锁谁才能解锁",
+                "id": "042f9b6d91aa45a9"
+              },
+              {
+                "topic": "放停车场项目里可以用来防止串口的临界资源占用问题",
+                "id": "043005ceab9ca834"
+              }
+            ]
+          },
+          {
+            "topic": "函数操作接口",
+            "id": "042fdf79160c9e32",
+            "children": [
+              {
+                "topic": "创建新的互斥锁对象",
+                "id": "042fe11e9ae15dca",
+                "children": [
+                  {
+                    "topic": "osMutexId_t osMutexNew(const osMutexAttr_t *attr);",
+                    "id": "042fe5bc90fab058"
+                  }
+                ]
+              },
+              {
+                "topic": "获取互斥锁所有权",
+                "id": "042fe9ed136bfc85",
+                "children": [
+                  {
+                    "topic": "osStatus_t osMutexAcquire(osMutexId_t mutex_id, uint32_t timeout);",
+                    "id": "042fec851fe225f7"
+                  }
+                ]
+              },
+              {
+                "topic": "释放互斥锁所有权",
+                "id": "042ff043aac21e82",
+                "children": [
+                  {
+                    "topic": "osStatus_t osMutexRelease(osMutexId_t mutex_id);",
+                    "id": "042ff2c626b09a27"
+                  }
+                ]
+              },
+              {
+                "topic": "删除互斥锁并释放资源",
+                "id": "042ff4469b84841d",
+                "children": [
+                  {
+                    "topic": "osStatus_t osMutexDelete(osMutexId_t mutex_id);",
+                    "id": "042ff6929a3e95db"
+                  }
+                ]
+              },
+              {
+                "topic": "获取当前持有互斥锁的任务的ID",
+                "id": "042ff93c2d797f69",
+                "children": [
+                  {
+                    "topic": "osThreadId_t osMutexGetOwner(osMutexId_t mutex_id);",
+                    "id": "042ffdaf8e6ab271"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "优先级反转与优先级继承",
+            "id": "04302eb19571c825",
+            "children": [
+              {
+                "topic": "优先级反转",
+                "id": "043031dd4c9956e5",
+                "children": [
+                  {
+                    "topic": "普通的信号量",
+                    "id": "0430566716a15fe2",
+                    "children": [
+                      {
+                        "topic": "低优先级上锁，此时高优先级抢占时如果同样需要上锁，此时会阻塞，然后只能继续去低优先级的任务，然后此时中优先级抢占，此时会运行中优先级的任务，而中优先级任务没有需要上锁，那就会把高优先级任务杀死",
+                        "id": "04306f129875e419"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "优先级继承",
+                "id": "0430372991f5f94c",
+                "children": [
+                  {
+                    "topic": "互斥量内置的一种机制",
+                    "id": "04306537d3fca9a1",
+                    "children": [
+                      {
+                        "topic": "防止优先级反转的情况",
+                        "id": "0430bb47a9cee04b"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "事件组",
+        "id": "0430e9d9bd49ccb8",
+        "children": [
+          {
+            "topic": "应用场景",
+            "id": "0430ed93ac3c87b9",
+            "children": [
+              {
+                "topic": "可以用来等待多个事件之一或者多个事件都发生的情况",
+                "id": "0430f0acb74eba30"
+              }
+            ]
+          },
+          {
+            "topic": "事件组核心概念",
+            "id": "0430fd8024eab50b",
+            "children": [
+              {
+                "topic": "位操作",
+                "id": "0430ff3ab9af7857",
+                "children": [
+                  {
+                    "topic": "类似select一共32位，每一位代表一个事件",
+                    "id": "04310226ae399236"
+                  }
+                ]
+              },
+              {
+                "topic": "对事件发生对应的位置要置1",
+                "id": "04310a0939faf14c"
+              },
+              {
+                "topic": "零消耗等待",
+                "id": "043115453e40ee23"
+              },
+              {
+                "topic": "广播机制",
+                "id": "04311a0d543c27bf"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "操作接口",
+        "id": "04311b943565f43e",
+        "children": [
+          {
+            "topic": "创建新事件组",
+            "id": "043128f0a0122a49",
+            "children": [
+              {
+                "topic": "osEventFlagsId_t osEventFlagsNew(const osEventFlagsAttr_t *attr);",
+                "id": "0431334bbfe7795d"
+              }
+            ]
+          },
+          {
+            "topic": "等待事件位",
+            "id": "04312d2cc87b18c4",
+            "children": [
+              {
+                "topic": "uint32_t osEventFlagsWait(osEventFlagsId_t ef_id,                          uint32_t flags,uint32_t options,uint32_t timeout);",
+                "id": "043134a7b8e86fce"
+              }
+            ]
+          },
+          {
+            "topic": "设置事件位",
+            "id": "04312ec93ea079b3",
+            "children": [
+              {
+                "topic": "uint32_t osEventFlagsSet(osEventFlagsId_t ef_id, uint32_t flags);",
+                "id": "043135daafc44a0a"
+              }
+            ]
+          },
+          {
+            "topic": "删除事件组",
+            "id": "0431307c2fc859ae",
+            "children": [
+              {
+                "topic": "osStatus_t osEventFlagsDelete(osEventFlagsId_t ef_id);",
+                "id": "0431373e358bf85d"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "练习",
+        "id": "043180d04542807e",
+        "children": [
+          {
+            "topic": "三个任务处理",
+            "id": "043191fbc5dd324b",
+            "children": [
+              {
+                "topic": "判断两个任务是否有数据返回，第三个任务监控",
+                "id": "043196ec6850ec6f"
+              }
+            ]
+          },
+          {
+            "topic": "中断只起通知的作用",
+            "id": "045e44ac5145b53c"
+          }
+        ]
+      }
+    ]
+  },
+  "arrows": [],
+  "summaries": [],
+  "direction": 1,
+  "theme": {
+    "name": "深海青",
+    "type": "dark",
+    "palette": [
+      "#2dd4bf",
+      "#274156",
+      "#2dd4bf",
+      "#274156",
+      "#2dd4bf",
+      "#274156",
+      "#2dd4bf",
+      "#274156",
+      "#2dd4bf",
+      "#274156"
+    ],
+    "cssVar": {
+      "--bgcolor": "#0b1220",
+      "--color": "#8fb0b8",
+      "--main-color": "#cbe7e6",
+      "--main-bgcolor": "#111c2e",
+      "--main-bgcolor-transparent": "#111c2e",
+      "--main-border": "1px solid #22344a",
+      "--root-color": "#04201b",
+      "--root-bgcolor": "#2dd4bf",
+      "--root-border-color": "transparent",
+      "--accent-color": "#2dd4bf",
+      "--selected": "#2dd4bf",
+      "--panel-color": "#cbe7e6",
+      "--panel-bgcolor": "#111c2e",
+      "--panel-border-color": "#22344a"
+    }
+  },
+  "compact": false,
+  "themeTemplate": "oceanDark",
+  "backgroundPattern": "grid",
+  "bgPatternColor": "#808080",
+  "bgPatternOpacity": 5,
+  "lineStyle": "curve"
+}

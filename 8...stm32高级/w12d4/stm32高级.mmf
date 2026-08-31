@@ -1,0 +1,390 @@
+{
+  "nodeData": {
+    "id": "root",
+    "topic": "STM32高级",
+    "root": true,
+    "children": [
+      {
+        "topic": "WIFI",
+        "id": "01de7cb892e90494",
+        "children": [
+          {
+            "topic": "ESP8266芯片",
+            "id": "01de7fb716b7d02b",
+            "children": [
+              {
+                "topic": "ESP8266系列模组",
+                "id": "01dea99a92d0a83c",
+                "children": [
+                  {
+                    "topic": "ESP-12F模组",
+                    "id": "01dea0552bba5558",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "固件",
+            "id": "01deb459bd149f0c",
+            "children": [
+              {
+                "topic": "程序",
+                "id": "01deb5612c785a94",
+                "children": [
+                  {
+                    "topic": "用指令控制",
+                    "id": "01deb69e9cefaefc"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "原理图",
+            "id": "01deb84810f82573",
+            "children": [
+              {
+                "topic": "如果三个开关s1是调模式，s2s3是调整与哪端通信",
+                "id": "01efd5efcd395ff1",
+                "children": [
+                  {
+                    "topic": "跟电脑端通信",
+                    "id": "01efeeb597f5334a",
+                    "children": [
+                      {
+                        "topic": "s1到运行模式",
+                        "id": "01eff11a1fa32f09"
+                      },
+                      {
+                        "topic": "s2s3到USB端",
+                        "id": "01eff83dd4e8e007"
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "跟U5通信",
+                    "id": "01effc759fc39a16",
+                    "children": [
+                      {
+                        "topic": "s1到运行模式",
+                        "id": "01efffc30bd66bfd"
+                      },
+                      {
+                        "topic": "s2s3到MCU端",
+                        "id": "01f002ea14001f10"
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "下载固件",
+                    "id": "01f00d53a857e19f",
+                    "children": [
+                      {
+                        "topic": "s1到下载模式",
+                        "id": "01f00f0680e7aec9"
+                      },
+                      {
+                        "topic": "s2s3到USB端",
+                        "id": "01f012bc8585c369"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "AT指令",
+            "id": "01f0157e0ffd5236",
+            "children": [
+              {
+                "topic": "检测",
+                "id": "01f016329dbe30b9",
+                "children": [
+                  {
+                    "topic": "AT",
+                    "id": "01f01ca81645460f"
+                  }
+                ]
+              },
+              {
+                "topic": "复位",
+                "id": "01f01d3b88757f60",
+                "children": [
+                  {
+                    "topic": "AT+RST",
+                    "id": "01f01e370227da3f"
+                  }
+                ]
+              },
+              {
+                "topic": "WIFI模式设置",
+                "id": "01f021721787b6bb",
+                "children": [
+                  {
+                    "topic": "AT+CWMODE=",
+                    "id": "01f0234d910a870a",
+                    "children": [
+                      {
+                        "topic": "0",
+                        "id": "01f0256e98300a3e",
+                        "children": [
+                          {
+                            "topic": "无WIFI模式",
+                            "id": "01f026c11983095a"
+                          }
+                        ]
+                      },
+                      {
+                        "topic": "1",
+                        "id": "01f029629f358396",
+                        "children": [
+                          {
+                            "topic": "Station模式",
+                            "id": "01f02a2c1e8f6da1",
+                            "children": [
+                              {
+                                "topic": "可以连接其他热点√√",
+                                "id": "01f02d87157a12eb"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "topic": "2",
+                        "id": "01f02f989a313155",
+                        "children": [
+                          {
+                            "topic": "SoftAP模式",
+                            "id": "01f030270ec70934",
+                            "children": [
+                              {
+                                "topic": "可以发射热点",
+                                "id": "01f0318d04111fde"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "topic": "3",
+                        "id": "01f0344d9f15c13c",
+                        "children": [
+                          {
+                            "topic": "Station+SoftAP",
+                            "id": "01f034a990074b19",
+                            "children": [
+                              {
+                                "topic": "两个模式的混合模式√",
+                                "id": "01f038a0061e2275"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "连接热点",
+                "id": "01f0445a1da0d1ed",
+                "children": [
+                  {
+                    "topic": "AT+CWJAP",
+                    "id": "01f0458805fa5f8b",
+                    "children": [
+                      {
+                        "topic": "语法",
+                        "id": "01f049861e6dc34b",
+                        "children": [
+                          {
+                            "topic": "AT+CWJAP=\"热点名\",\"热点密码\"",
+                            "id": "01f04a971e7c598c"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "错误码",
+                    "id": "01f0535901c80f5e",
+                    "children": [
+                      {
+                        "topic": "1：超时",
+                        "id": "01f054b290b7eb9f"
+                      },
+                      {
+                        "topic": "2：密码错误",
+                        "id": "01f0573c94fcb3ec"
+                      },
+                      {
+                        "topic": "3：找不到AP（热点）",
+                        "id": "01f0585787abfd19"
+                      },
+                      {
+                        "topic": "4：连接失败",
+                        "id": "01f05a829d57806b"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "连接TCP服务器",
+                "id": "01f0517b00dd0360",
+                "children": [
+                  {
+                    "topic": "AT+CIPSTART",
+                    "id": "01f06318885006aa",
+                    "children": [
+                      {
+                        "topic": "语法",
+                        "id": "01f0679b14f7ba14",
+                        "children": [
+                          {
+                            "topic": "AT+CIPSTART=\"TCP\",\"IP地址\",端口",
+                            "id": "01f06cd4101a8ea9"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "数据发送",
+                "id": "01f075c62ae2f140",
+                "children": [
+                  {
+                    "topic": "固定长度发送",
+                    "id": "01f0776704c63133",
+                    "children": [
+                      {
+                        "topic": "AT+CIPSEND",
+                        "id": "01f07b198d18b5c8",
+                        "children": [
+                          {
+                            "topic": "语法",
+                            "id": "01f07f6f902113af",
+                            "children": [
+                              {
+                                "topic": "AT+CIPSEND=发送的字符数",
+                                "id": "01f0800d3192b74c"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "不固定长度（透传模式）",
+                    "id": "01f0856704c2d057",
+                    "children": [
+                      {
+                        "topic": "不对用户数据做任何处理，仅作为透明通道，原封不动的传输到另一端",
+                        "id": "01f0897680808d92"
+                      },
+                      {
+                        "topic": "设置透传指令",
+                        "id": "01f09a121f5b04f6",
+                        "children": [
+                          {
+                            "topic": "AT+CIPMODE=1",
+                            "id": "01f09d6d8672c30f",
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "topic": "使用透传模式",
+                        "id": "01f0a07084a9c1a3",
+                        "children": [
+                          {
+                            "topic": "AT+CIPSEND",
+                            "id": "01f0a284850a0dad"
+                          }
+                        ]
+                      },
+                      {
+                        "topic": "退出透传模式",
+                        "id": "01f0a755175c7eeb",
+                        "children": [
+                          {
+                            "topic": "+++",
+                            "id": "01f0ac590104f917",
+                            "children": [
+                              {
+                                "topic": "不加\\r\\n",
+                                "id": "01f0ad8a0239438a"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "单片机控制ESP8266",
+            "id": "01f0b3070b1e2b54",
+            "children": [
+              {
+                "topic": "通过引脚发送数据，发送指令使ESP8266连接到服务器，然后可以根据服务器发送的数据，让ESP8266通过引脚传输回单片机，让单片机做对应的处理",
+                "id": "01f0b63b0397ecdb"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "arrows": [],
+  "summaries": [],
+  "direction": 1,
+  "theme": {
+    "name": "暖阳橙",
+    "type": "light",
+    "palette": [
+      "#e0733a",
+      "#ecc9ad",
+      "#e0733a",
+      "#ecc9ad",
+      "#e0733a",
+      "#ecc9ad",
+      "#e0733a",
+      "#ecc9ad",
+      "#e0733a",
+      "#ecc9ad"
+    ],
+    "cssVar": {
+      "--bgcolor": "#fbf7f3",
+      "--color": "#6f5545",
+      "--main-color": "#8a4a24",
+      "--main-bgcolor": "#fbeee2",
+      "--main-bgcolor-transparent": "#fbeee2",
+      "--main-border": "1px solid #f2d9c4",
+      "--root-color": "#ffffff",
+      "--root-bgcolor": "#e0733a",
+      "--root-border-color": "transparent",
+      "--accent-color": "#e0733a",
+      "--selected": "#e0733a",
+      "--panel-color": "#8a4a24",
+      "--panel-bgcolor": "#fbeee2",
+      "--panel-border-color": "#f2d9c4"
+    }
+  },
+  "compact": false,
+  "themeTemplate": "clayLight",
+  "backgroundPattern": "grid",
+  "bgPatternColor": "#808080",
+  "bgPatternOpacity": 5,
+  "lineStyle": "curve"
+}
