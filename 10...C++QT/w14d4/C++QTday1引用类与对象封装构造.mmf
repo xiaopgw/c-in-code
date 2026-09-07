@@ -1,0 +1,49 @@
+{
+  "nodeData": {
+    "id": "root",
+    "topic": "Central Topic",
+    "root": true,
+    "children": []
+  },
+  "arrows": [],
+  "summaries": [],
+  "direction": 1,
+  "theme": {
+    "name": "深海青",
+    "type": "dark",
+    "palette": [
+      "#2dd4bf",
+      "#274156",
+      "#2dd4bf",
+      "#274156",
+      "#2dd4bf",
+      "#274156",
+      "#2dd4bf",
+      "#274156",
+      "#2dd4bf",
+      "#274156"
+    ],
+    "cssVar": {
+      "--bgcolor": "#0b1220",
+      "--color": "#8fb0b8",
+      "--main-color": "#cbe7e6",
+      "--main-bgcolor": "#111c2e",
+      "--main-bgcolor-transparent": "#111c2e",
+      "--main-border": "1px solid #22344a",
+      "--root-color": "#04201b",
+      "--root-bgcolor": "#2dd4bf",
+      "--root-border-color": "transparent",
+      "--accent-color": "#2dd4bf",
+      "--selected": "#2dd4bf",
+      "--panel-color": "#cbe7e6",
+      "--panel-bgcolor": "#111c2e",
+      "--panel-border-color": "#22344a"
+    }
+  },
+  "compact": false,
+  "themeTemplate": "oceanDark",
+  "backgroundPattern": "grid",
+  "bgPatternColor": "#808080",
+  "bgPatternOpacity": 5,
+  "lineStyle": "curve"
+}
