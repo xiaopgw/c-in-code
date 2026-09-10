@@ -1,0 +1,1 @@
+/usr/bin/cc -rdynamic CMakeFiles/test11.dir/test11.c.o -o test11  -Wl,-rpath,/home/xiaopgw/26051/c/文件及网址之类的/paho/paho.mqtt.c-1.3.0/src ../src/libpaho-mqtt3a.so.1.3.0 -lc -ldl -lpthread 

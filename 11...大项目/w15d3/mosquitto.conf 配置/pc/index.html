@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>MQTT.js Test</title>
+		<script src="./js/mqtt.min.js"></script>
+	</head>
+
+	<body>
+		<h1>MQTT.js Test</h1>
+
+		<script>
+			// Create a client instance
+			var options = {
+			    clientId: 'my-client-id'
+			};
+			
+			// var addr = "ws://" + window.location.hostname + ":9001";
+			var addr = "ws://192.168.50.3:9001";
+			var client = mqtt.connect(addr, options);
+			console.log(addr); // 输出如：www.example.com:8080
+
+			// Set event handlers
+			client.on('connect', function() {
+				console.log('Connected to MQTT Broker');
+				client.subscribe('/device/event/status');
+				client.subscribe('/device/event/dev1/data');
+			});
+
+			client.on('message', function(topic, message) {
+				console.log('Received message on topic: ' + topic + ' with message: ' + message.toString());
+				client.publish('mytopic', 'Hello World!');
+			});
+			
+			client.on('reconnect', (error) => {
+				console.log('正在重连:', error)
+			});
+			
+			// 链接异常处理
+			client.on('error', (error) => {
+				console.log('连接失败:', error)
+			})
+			
+			client.on('error', function(err) {
+				console.log('Connection Error: ' + err.toString());
+			});
+		</script>
+	</body>
+</html>

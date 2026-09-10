@@ -1,0 +1,12 @@
+netsh interface portproxy delete v4tov4 listenaddress=192.168.137.1 listenport=8888
+// 删除某个监听
+
+netsh interface portproxy show v4tov4
+// 查看目前的监听
+
+netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=8888 connectaddress=$wsl_ip connectport=8888
+// 添加监听
+
+$wsl_ip = (wsl hostname -I).Trim().Split()[0]
+echo $wsl_ip
+//查看当前linux的ip

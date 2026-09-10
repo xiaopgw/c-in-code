@@ -1,0 +1,2433 @@
+
+
+| 版本 | 作者 | 参与者 | 修改时间 | 更新记录 |
+| :---: | :---: | :---: | :---: | --- |
+| V1.0 | 徐栋霖 |  | 2023-07 | 学长徐栋霖整理的初版 |
+| V1.1 | 吕良 |  | 2024-05 | 学长吕良修正 |
+| V1.2 | 全体讲师 |  | 2024-11 | 全体讲师检错、修订版 |
+|  |  |  |  |  |
+
+
+:::info
+说明：此文档是23031班徐栋霖学长发起，将平时适合背诵的基础知识进行整理，形成第一版八股文，原八股文是基于腾讯文档编写；后24011吕良学长在24年年中进行二次修正；24年10月份，因内容较多出现一些错误问题，全体讲师对整个文档进行了检错修订，并从腾讯文档转移到语雀，自此关闭编辑权限。<font style="background-color:#FBDE28;">为后续方便大家继续贡献文档的内容且保证内容的准确性，可通过评论区来进行提交，提交后我们会进行收录整理并在相应知识点上标明贡献者，以这种方式继续丰富这个重要的资源库。因内容较多，难免仍有错误和遗漏，如大家发现可在评论区反馈。</font>
+
+:::
+
+:::warning
+<font style="color:#DF2A3F;">这个文档内容我们把它定义为八股文，八股文可以背，但是别死背，也别太依赖这个东西，这里边的知识点只能应付面试中20~30%的问题，剩下的还要靠理解。所以复习过程中一定要想想每个知识点内在的逻辑和应用场景，有句话叫尽信书则不如无书，理解对技术来讲尤为重要。大家一定要注意这个思想。</font>
+
+:::
+
+# 一、C：
+## static作用
++ <font style="color:#ffffff;">限制作用域</font>
+
+<font style="color:#ffffff;">static修饰的</font>全局变量或函数 <font style="color:#ffffff;">，仅在当前文件内可用，其他文件不能引用 </font>
+
+<font style="color:#ffffff;">static修饰的局部变量只能在本函数中使用。</font>
+
++ <font style="color:#ffffff;">延长生命周期</font>
+
+<font style="color:#ffffff;">static修饰的变量生命周期为整个程序</font>
+
++ <font style="color:#ffffff;">存放位置</font>
+
+<font style="color:#ffffff;">static修饰的变量存放在静态区 </font>
+
++ <font style="color:#ffffff;">初始化</font>
+
+<font style="color:#ffffff;">static变量未赋初值时初值为0，且只初始化一次</font>
+
+## const的作用
+<font style="color:#ffffff;">const 含义是常量化                                     </font>
+
+<font style="color:#ffffff;">可以修饰变量，可以修饰指针。</font>
+
+<font style="color:#ffffff;">当修饰变量时，在定义时需要赋初值，定义后不能再修改其值；</font>
+
+<font style="color:#ffffff;">当修饰指针时，const位置不同，修饰的指针指向或内容不能改变。</font>
+
+<font style="color:#ffffff;">char *const a	指向不可修改，内容可以修改</font>
+
+<font style="color:#ffffff;">char const *a	内容不可以修改，指向可以修改</font>
+
+<font style="color:#ffffff;">const char *const a	内容和指向都不可以修改</font>
+
+## typedef和define的区别
++ **<font style="color:#ffffff;">原理不同‌</font>**<font style="color:#ffffff;">：</font>
+
+<font style="color:#ffffff;">‌define‌是预处理指令，在预处理时进行简单的字符串替换，不进行类型检查。</font>
+
+<font style="color:#ffffff;">‌</font><font style="color:#ffffff;">typedef</font><font style="color:#ffffff;">‌</font><font style="color:#ffffff;">是关键字，在编译时处理，具有类型检查功能。</font>
+
++ <font style="color:#ffffff;">‌</font>**<font style="color:#ffffff;">功能不同‌</font>**<font style="color:#ffffff;">：</font>
+
+<font style="color:#ffffff;">‌</font><font style="color:#ffffff;">define</font><font style="color:#ffffff;">‌</font><font style="color:#ffffff;">不仅可以为类型取别名，还可以定义常量、变量、编译开关等。</font>
+
+<font style="color:#ffffff;">‌</font><font style="color:#ffffff;">typedef</font><font style="color:#ffffff;">‌</font><font style="color:#ffffff;">主要用于定义类型的别名，增加代码的可读性和类型安全性。</font>
+
++ <font style="color:#ffffff;">‌</font>**<font style="color:#ffffff;">作用域不同‌</font>**<font style="color:#ffffff;">：</font>
+
+<font style="color:#ffffff;">‌</font><font style="color:#ffffff;">define</font><font style="color:#ffffff;">‌</font><font style="color:#ffffff;">没有作用域的限制，只要之前预定义过的宏，在以后的程序中都可以使用。</font>
+
+<font style="color:#ffffff;">‌</font><font style="color:#ffffff;">typedef</font><font style="color:#ffffff;">‌</font><font style="color:#ffffff;">有自己的作用域，不会影响到其他作用域的定义。</font>
+
++ <font style="color:#ffffff;">‌</font>**<font style="color:#ffffff;">对指针的操作不同‌</font>**<font style="color:#ffffff;">：</font>
+
+<font style="color:#ffffff;">‌</font><font style="color:#ffffff;">define</font><font style="color:#ffffff;">‌</font><font style="color:#ffffff;">定义的宏在处理指针时需要进行特殊的处理，否则可能会导致错误。</font>
+
+<font style="color:#ffffff;">‌</font><font style="color:#ffffff;">typedef</font><font style="color:#ffffff;">‌</font><font style="color:#ffffff;">定义的类型别名在处理指针时更加方便和安全。</font>
+
++ <font style="color:#ffffff;">‌</font>**<font style="color:#ffffff;">内存占用不同‌</font>**<font style="color:#ffffff;">：</font>
+
+<font style="color:#ffffff;">‌</font><font style="color:#ffffff;">define</font><font style="color:#ffffff;">‌</font><font style="color:#ffffff;">定义的宏在预处理阶段进行文本替换，可能会产生额外的代码和内存占用。</font>
+
+<font style="color:#ffffff;">‌typedef‌定义的类型别名不会产生额外的内存占用，只是为已有类型赋予新的名称。</font>
+
+## define和枚举的区别
+1. <font style="color:#ffffff;">#define 宏常量是在预编译阶段进行简单替换。枚举常量则是在编译的时候确定其值。</font>
+2. <font style="color:#ffffff;">一般在编译器里，可以调试枚举常量，但是不能调试宏常量。</font>
+3. <font style="color:#ffffff;">枚举可以一次定义大量相关的常量，而#define 宏一次只能定义一个。</font>
+
+<font style="color:#ffffff;">枚举是一种用户自定义的数据类型，它为一组相关的整数常量赋予了有意义的名称，枚举里成员系统会自动赋初值，第一个成员为0，依次类推；如果程序员想赋值的，假设第一个成员赋值为1，那么第二个成员系统会赋值为2，依次类推</font>
+
+## volatile作用
+<font style="color:#ffffff;">    	</font>volatile<font style="color:#ffffff;">是一个关键字，用于在 C 和 C++ 中修饰变量，它主要用于告诉编译器该变量的值可能在程序执行期间发生变化，从而禁止编译器对该变量进行优化。</font>
+
+1. <font style="color:#ffffff;">告知编译器不要优化： 优化代码时，会对变量进行优化，如寄存器优化、常量传播等，以提高执行效率。但对于被 volatile 修饰的变量，编译器会认为其值可能在程序执行期间被意外地更改，因此不会进行优化，确保变量的值每次都从内存中读取。</font>
+2. <font style="color:#ffffff;">防止可能会存在多个线程或处理器同时访问同一个变量时出现问题：如果该变量不使用 volatile 修饰，编译器可能会将其缓存到寄存器或者优化编译器缓存变量值，这样可能导致线程间不同步或者中断处理程序无法正确获取最新的变量值。而使用 volatile 修饰后，编译器每次都会从内存中读取变量的值，确保变量的值始终是最新的。</font>
+3. <font style="color:#ffffff;">与外部设备的交互： 当程序与外部设备进行交互时，如硬件寄存器或存储映射 I/O 等，外部设备可能会在任何时候更改这些变量的值。在这种情况下，使用 volatile 修饰这些变量可以确保程序正确读取设备的状态，而不会受到编译器的优化干扰。</font>
+
+:::info
+到底是怎么优化的？可以看下面的例子
+
+[volatile关键字的作用：防止变量被编译器优化_volatile关键字的作用怎么不让编译器不被优化-CSDN博客](https://blog.csdn.net/xiaodingqq/article/details/79186202)
+
+:::
+
+## Extern作用
+<font style="color:#ffffff;">外部引用，引用其他文件中定义的全局变量或函数。</font>
+
+## sizeof和strlen区别
+<font style="color:#ffffff;">strlen是库函数，用于计算字符串的长度；当计算字符串长度时不包含`\0`</font><font style="color:#ffffff;">;</font>
+
+<font style="color:#ffffff;">sizeof是关键字，用于计算变量、数组、数据类型等所占内存空间的大小;</font>
+
+## 数组和链表的区别（顺序表和链表）
++ **<font style="color:#ffffff;">数组</font>**
+
+<font style="color:#ffffff;">数组是一个相同类型的数据集合，在内存中连续存储；数组元素可以使用数组索引随机访问；数组的内存是静态分配的，在编译期间完成；进行插入和删除操作时比较耗时，更易于随机访问和修改操作；数组的大小必须在数组的声明或初始化的时候指定</font>
+
++ **<font style="color:#ffffff;">链表</font>**
+
+<font style="color:#ffffff;">链表是一种链式存储的数据结构，在内存中是不连续的，其中每个元素使用指针链接；链表不允许随机访问，通过指针进行顺序访问；链表的内存分配一般是在堆区空间开辟，在运行时动态分配；链表的插入和删除操作方便；链表的大小随元素的插入或删除动态变化</font>
+
+## 指针和数组的区别
++ <font style="color:#ffffff;">指针就是地址，指针变量就是存放地址的变量；指针可以使用简单的运算符操作；指针加一或者自加，代表指向下一个元素；对于32位系统，指针占4字节；使用指针更加灵活，可以任意指向某个地址空间方便操作</font>
++ <font style="color:#ffffff;">数组是相同类型的数据集合，内存连续；数组名代表数组的首地址，是地址常量，不可以进行自加等操作；</font>
+
+## 指针数组和数组指针区别
++ <font style="color:#ffffff;">指针数组：本质是数组，数组里存放的是指针；指针数组一般用于存放多个一维数组，比如在main函数参数中argv是一个指针数组</font>
++ <font style="color:#ffffff;">数组指针：本质是指针，是指向数组的指针。通过数组指针可以间接的访问二维数组的地址或元素。</font>
+
+## 什么是函数指针
+<font style="color:#ffffff;">函数指针本质是指针，用于指向函数的指针  ，一般用做函数的参数或函数的返回值，实现函数的回调，从而实现代码复用，如：在学习线程函数时其中第三个参数就是函数指针，给它传递线程函数名实现回调；也可以作为结构体成员，指向某个函数，在内核源码中这种用法比较多。</font>
+
+## 结构体和共用体区别
+<font style="color:#ffffff;">二者都是构造数据类型</font>
+
++ <font style="color:#ffffff;">结构体：让C语言实现面向对象的思想。结构体中每一个成员都有自己的内存空间；计算结构体大小的时按照字节对齐的原则计算结构体大小；常</font><font style="color:#2C2C36;">用于组合不同类型的变量以形成一个复合数据类型、或表示复杂的数据结构；</font>
++ <font style="color:#ffffff;">共用体又叫联用体，共用体大小等于成员中占内存最大的数据类型的大小；每一个成员共享一块内存空间；常</font><font style="color:#2C2C36;">用于节省内存，当多个数据成员不可能同时使用时</font>
+
+## 结构体字节对齐原则
+<font style="color:#ffffff;">#pragma 是一个预处理指令，它的作用是设定编译器的状态或者是指示编译器完成一些特定的动作，#pragma pack 的	主要作用就是改变编译器的内存对齐方式</font>
+
+1. <font style="color:#ffffff;">结构体各个成员变量的首地址必须是 min{自身对齐值，指定对齐值}的整数倍。</font>
+2. <font style="color:#ffffff;">结构体各个成员相对于结构体起始地址的偏移量(offset)是 min{该成员数据类型大小，指定对齐值} 的整数倍，如有需要，编译器会在成员之间加上填充字节。</font>
+3. <font style="color:#ffffff;">结构体分配的总空间大小必须是 min {其最宽基本数据类型成员，指定对齐值} 的整数倍，如有需要编译器会在最末一个成员之后加上填充字节。 </font>
+
+**<font style="color:#ffffff;">或者</font>**
+
+1. 在32为系统下，默认的value值为4字节，判断结构体中类型最大成员的字节大小，和默认的value值进行比较，按小的数进行对齐
+2. 结构体成员进行对齐时遵循地址偏移量是成员类型大小的整数倍，double类型数据存放在4字节的整数倍上
+3. 结构体成员按顺序进行存储
+
+<font style="background-color:#FBDE28;">以上两种解释一个意思，哪个更易记忆选哪个</font>
+
+## 为什么要进行字节对齐
+1. <font style="color:#ffffff;">平台原因：不是所有的硬件平台都能访问任意地址上的任意数据的；某些硬件平台只能在某些地址处取某些特定类型的数据，否则抛出硬件异常。（提高程序的移植性）</font>
+2. <font style="color:#ffffff;">性能原因：数据结构(尤其是栈)应该尽可能地在自然边界上对齐。原因在于，为了访问未对齐的内存，处理器需要作两次内存访问；而对齐的内存访问仅需要一次访问。</font>
+3. <font style="color:#ffffff;">内存原因：在设计结构体时，通过对齐规则尽可能优化结构体的空间大小至最小空间</font>
+
+## 堆和栈的区别
++ 内存分配方式不同：
+
+栈是由操作系统自动分配和释放的，而堆则需要程序员手动申请和释放‌
+
++ 数据结构不同：
+
+栈是一种线性数据结构，遵循后进先出（LIFO）的原则，主要用于存储函数的局部变量、参数和返回地址等。堆则通常实现为完全二叉树，用于存储对象的实例和复杂数据结构‌
+
++ 访问方式不同，堆区的元素需要通过指针或引用进行访问，访问方式相对灵活。而栈区的访问只能通过栈顶进行，遵循LIFO原则。
++ 内存分配效率不同：
+
+栈的分配和释放由系统自动完成，效率较高，但堆的分配需要遍历内存空闲链表，效率较低，且容易产生内存碎片‌。
+
++ 空间大小和限制方面，栈的空间是固定的，通常较小，而堆的空间是动态的，可以根据需求增长，但可能导致内存泄漏或溢出‌
+
+## 内存空间划分
++ <font style="color:#ffffff;">代码段（Text Segment）：存放程序的机器指令。</font>
++ <font style="color:#ffffff;">数据段（Data Segment）：存放</font><font style="color:#FF0000;">已初始化</font><font style="color:#ffffff;">的全局变量和静态变量。</font>
++ <font style="color:#ffffff;">BSS段（BSS Segment）：存放</font><font style="color:#FF0000;">未初始化</font><font style="color:#ffffff;">的全局变量和静态变量及初值为0。</font>
++ <font style="color:#ffffff;">堆（Heap）：动态分配的内存区域，如使用malloc或new分配的内存。</font>
++ <font style="color:#ffffff;">栈（Stack）：用于局部变量、形参、返回地址存储。</font>
+
+## 全局变量和局部变量的区别
++ <font style="color:#ffffff;">定义位置：全局变量是定义在函数外部的变量，局部变量是定义在函数内部的变量</font>
++ <font style="color:#ffffff;">存储位置：全局变量存储在全局区，局部变量存储在栈区</font>
++ <font style="color:#ffffff;">作用域：全局变量可以在程序任意位置使用，局部变量只能在本函数内部使用</font>
++ <font style="color:#ffffff;">生命周期：全局变量的生命周期为整个程序，程序结束空间释放，局部变量生命周期为本函数，函数结束空间释放</font>
++ <font style="color:#ffffff;">初始化：全局变量未初始化初值为0，局部变量未初始化时值为随机值</font>
+
+## memcpy和strcpy的区别？			
++ <font style="color:#ffffff;">拷贝内容方面：</font>
+
+<font style="color:#ffffff;">memcpy：memcpy 是用于拷贝指定大小的数据块（字节），它不会自动检测字符串结束符（'\0'），因此适用于拷贝任意数据，包括字符串和非字符串数据。</font>
+
+<font style="color:#ffffff;">strcpy：strcpy 是用于拷贝第一个以 '\0' 结尾的字符串，它会自动拷贝整个字符串，包括字符串结束符 '\0'。</font>
+
++ <font style="color:#ffffff;">安全性方面</font>
+
+<font style="color:#ffffff;">memcpy：memcpy 不会检查目标地址是否足够大，如果目标地址空间不够大，可能会发生缓冲区溢出的问题，导致程序崩溃或数据损坏。因此，在使用 memcpy 时需要确保目标地址有足够的空间来容纳源数据。</font>
+
+<font style="color:#ffffff;">strcpy：strcpy 会自动添加符字串结束符 '\0'，但如果源字符串太长，超出了目标字符串的空间，也会导致缓冲区溢出问题。因此，使用 strcpy 时应留足够的空间来·容纳源字符串。</font>
+
++ <font style="color:#ffffff;">性能方面</font>
+
+<font style="color:#ffffff;">memcpy：memcpy 是按字节拷贝数据，因此在拷贝大块数据时比较高效。</font>
+
+<font style="color:#ffffff;">strcpy：strcpy 需要遍历整个源字符串直到遇到字符串结束符 '\0'，因此在拷贝较长字符串时性能可能较差。</font>
+
+## 什么是段错误？怎么解决段错误？
+<font style="color:#ffffff;">当程序尝试访问它没有权限访问的内存地址时容易出现段错误</font>
+
+<font style="color:#ffffff;">段错误通常是由以下几种情况引起的：</font>
+
+1. <font style="color:#ffffff;">访问空指针： 当程序试图访问一个空指针所指向的内存地址时，就会发生段错误。例如，未初始化的指针或者指向已释放的内存的指针。</font>
+2. <font style="color:#ffffff;">数组越界： 当程序试图访问数组越界的元素时，就会发生段错误。例如，访问数组下标小于 0 或者大于等于数组大小的元素。</font>
+3. <font style="color:#ffffff;">非法内存访问： 当程序试图访问未分配的内存区域，或者试图访问系统保留的内存区域，就会发生段错误。</font>
+4. <font style="color:#ffffff;">对只读内存的写操作：当程序试图对只读内存进行写操作时，例如对常量字符串进行修改，就会发生段错误。</font>
+
+<font style="color:#ffffff;">要解决段错误问题，可以通过以下几种方式：</font>
+
+<font style="color:#ffffff;">方式一：</font>
+
+<font style="color:#ffffff;">在程序中加一些打印调试语句，确定段错误的位置，再根据产生错误的原因进行分析具体问题</font>
+
+1. <font style="color:#ffffff;">检查空指针： 在使用指针之前，先确保指针不是空指针。可以使用条件语句或者断言来检查指针是否为空。</font>
+2. <font style="color:#ffffff;">数组边界检查： 在访问数组元素之前，先确保访问的下标在合法的范  围内。</font>
+3. <font style="color:#ffffff;">动态内存管理： 在动态分配内存（例如使用 malloc、calloc、new m等函数）后，要确保在不再使用该内存时释放它（例如使用 free、delete 等函数）。</font>
+4. <font style="color:#ffffff;">避免对只读内存进行写操作： 对于常量字符串或者是只读内存区域，避免对其进行写操作，可以使用 const 关键字来声明指向只读内存的   指针。</font>
+
+方式二：
+
+<font style="color:#ffffff;">使用工具检查： 可以使用一些工具，如gdb、</font><font style="color:rgb(64, 72, 91);">rdynamic、</font><font style="color:#ffffff;">Valgrind等，在程序运行时检查内存错误，包括段错误、内存泄漏等。</font>
+
+## 什么是内存泄漏？
+<font style="color:#ffffff;">内存泄漏（Memory Leak）： 内存泄漏通常是由于程序未能释放已经不再使用的内存，或者由于引用丢失导致对象无法被垃圾回收器回收。如果程序中存在内存泄漏，随着程序的执行，内存占用会逐渐增加，最终可能导致程序崩溃或系统资源耗尽。内存泄漏的常见原因包括： </font>
+
++ <font style="color:#ffffff;">忘记释放通过 malloc、calloc、new 等动态分配的内存。</font>
++ <font style="color:#ffffff;">在循环或迭代过程中，每次分配内存却未及时释放导致累积。</font>
++ <font style="color:#ffffff;">保存了指向动态分配内存的指针，但在后续程序中指针又指向其他位置从而丢失了释放的机会。</font>
+
+## 什么是野指针？
+<font style="color:#ffffff;">野指针（Wild Pointer）： 野指针是指指向未知或者无效内存地址的指针。野指针通常产生于以下几种情况：</font>
+
++ <font style="color:#ffffff;">指针未初始化：指针没有初始化，即没有赋予合法的地址，指针的初始值是随机的。</font>
++ <font style="color:#ffffff;">内存释放后未置空:指针指向的内存已经被释放，</font><font style="color:#ffffff;">但</font><font style="color:#ffffff;">指针没有置为 nullptr 或 NULL。</font>
++ <font style="color:#ffffff;">指针越界访问：‌指针指向的内存已经被释放，但程序继续使用该指针。</font>
+
+## -------------编程题---------------
+## define比较两个数的大小
+```c
+#define MIN(a, b) ((a) < (b)?(a) : (b))
+```
+
+例如：用define表示一年有多少秒
+
+```c
+#define SECONDS_PER_YEAR (365UL * 24UL * 60UL * 60UL)
+```
+
+用define交换两个变量的值
+
+```c
+#define SWAP(a, b) do { \
+    (a) ^= (b); \
+    (b) ^= (a); \
+    (a) ^= (b); \
+} while (0)
+```
+
+## 将字符串进行倒置
+```c
+void reverseString(char *str) {		
+    int length = strlen(str);
+    char *start = str;
+    char *end = str + length - 1;
+
+    while (start < end) {
+        char temp = *start;
+        *start = *end;
+        *end = temp;
+        start++;
+        end--;
+    }
+}
+int main() {
+    char str[] = "Hello, World!";
+    printf("原始字符串：%s\n", str);
+    reverseString(str);
+    printf("逆序输出：%s\n", str);
+
+    return 0;
+}
+```
+
+## 冒泡排序
+```c
+void bubbleSort(int arr[], int n) {
+    int i, j;
+    for (i = 0; i < n-1; i++) {
+        // 每次循环将最大的元素冒泡到末尾，因此每轮循环只需比较前 n-i-1 个元素
+        for (j = 0; j < n-i-1; j++) {
+            if (arr[j] > arr[j+1]) {
+                // 如果前一个元素大于后一个元素，则交换它们的位置
+                int temp = arr[j];     //arr[j] ^= arr[j + 1];
+                arr[j] = arr[j+1];     //arr[j + 1] ^= arr[j];
+                arr[j+1] = temp;       //arr[j] ^= arr[j + 1];
+            }
+        }
+    }
+}
+```
+
+## strlen、strcpy、strcat、strcmp
+```c
+//strlen
+size_t my_strlen(const char *str) { 
+    size_t len = 0;
+    while (*str) {
+        len++;
+        str++;
+    }
+    return len;
+}
+//strcpy
+char *my_strcpy(char *dest, const char *src) {
+    char *temp = dest;	// 暂存dest字符串的首地址
+    while (*src) {
+        *dest = *src;                      
+        dest++;
+        src++;
+    }
+    *dest = '\0'; // 在目标字符串末尾加上 null 终止符
+    return temp;
+}
+//strcat
+char *my_strcat(char *dest, const char *src) {
+    char *temp = dest;                                                                                                                        
+    // 移动 dest 指针到目标字符串的末尾
+    while (*dest) {
+        dest++;
+    }
+    // 将源字符串复制到目标字符串的末尾
+    while (*src) {
+        *dest = *src;
+        dest++;                                                                 
+        src++;
+    }
+    // 添加目标字符串的 null 终止符
+    *dest = '\0';
+    return temp;
+}
+//strcmp
+int my_strcmp(const char *str1, const char *str2) {
+    while (*str1 && *str2) {
+        if (*str1 != *str2) {
+            return *str1 - *str2;
+        }
+        str1++;
+        str2++;
+    } 
+    
+    // 如果两个字符串长度不等，返回长度差值
+    return *str1 - *str2;
+}
+```
+
+## 打印杨辉三角前10行
+```c
+#include <stdio.h>
+int main(int argc, char const *argv[])
+{
+    int a[10][10] = {0}, i, j;
+    for (i = 0; i < 10; i++)
+    {
+        a[i][0] = 1;
+        for (j = 1; j <= i; j++)
+            a[i][j] = a[i - 1][j] + a[i - 1][j - 1];
+    }
+    for (i = 0; i < 10; i++)
+    {
+        for (j = 0; j <= i; j++)
+            printf("%-5d", a[i][j]);
+        putchar('\n');
+    }
+    return 0;
+}
+```
+
+## 实现atoi函数自定义
+```c
+int my_atoi(const char *str) {
+    int result = 0;
+    // 将数字字符转换为整数，并累加到 result
+    while (*str >= '0' && *str <= '9') {
+        result = result * 10 + (*str - '0');
+        str++;
+    }
+    return result;
+}
+```
+
+## 定义一个函数计算一个字节里（byte）里面有多少bit被置1
+```c
+int count(int x)
+{
+    int num=0;
+    for (int i = 0; i < 8; i++)//一个字节是8位
+    {
+		if((x&(1<<i))!=0)
+            num++;
+    }
+    return num;    
+}
+```
+
+# 二、linuxC：
+## makefile包含哪几部分 
+**<font style="color:#ffffff;">目标、依赖、命令 </font>**
+
+<font style="color:#ffffff;"># 编译器和编译选项  
+</font><font style="color:#ffffff;">CC := gcc  
+</font><font style="color:#ffffff;">CFLAGS := -Wall -Werror -g -c  # 目标文件和可执行文件名  
+</font><font style="color:#ffffff;">OBJ_FILES := main.o utils.o  
+</font><font style="color:#ffffff;">TARGET := my_program  
+  
+</font><font style="color:#ffffff;"># 默认规则：生成可执行文件  
+</font><font style="color:#ffffff;">$(TARGET): $(OBJ_FILES)  
+</font><font style="color:#ffffff;">	$(CC) $(CFLAGS) $^ -o $@  
+  
+</font><font style="color:#ffffff;"># 生成目标文件 main.o  
+</font><font style="color:#ffffff;">main.o: main.c utils.h  
+</font><font style="color:#ffffff;">	$(CC) $(CFLAGS) -c $< -o $@  
+  
+</font><font style="color:#ffffff;"># 生成目标文件 utils.o  
+</font><font style="color:#ffffff;">utils.o: utils.c utils.h  
+</font><font style="color:#ffffff;">	$(CC) $(CFLAGS) -c $< -o $@  
+  
+</font><font style="color:#ffffff;"># 伪目标：清理临时文件  特殊规则（还可以安装文件）  
+</font><font style="color:#ffffff;">.PHONY: clean  
+</font><font style="color:#ffffff;">clean:  
+</font><font style="color:#ffffff;">	rm -f $(TARGET) $(OBJ_FILES)  
+  
+</font><font style="color:#ffffff;">#   注释以 # 开头，$@ 表示目标文件，$< 表示第一个依赖文件，$^ 表示所有依赖文件等。</font>
+
+
+
+## linux命令
+1. <font style="color:#ffffff;">文件和目录操作：  
+</font><font style="color:#ffffff;">ls: 列出文件和目录  
+</font><font style="color:#ffffff;">cd: 切换目录  
+</font><font style="color:#ffffff;">pwd: 显示当前工作目录  
+</font><font style="color:#ffffff;">touch: 创建空文件或更新文件的访问时间  
+</font><font style="color:#ffffff;">mkdir: 创建新目录  
+</font><font style="color:#ffffff;">cp: 复制文件或目录  
+</font><font style="color:#ffffff;">mv: 移动文件或目录    
+</font><font style="color:#ffffff;">rm: 删除文件或目录  
+</font><font style="color:#ffffff;">cat: 查看文件内容  
+</font><font style="color:#ffffff;">more 或 less: 分页查看文件内容  
+</font><font style="color:#ffffff;">head: 查看文件开头部分   
+</font><font style="color:#ffffff;">tail: 查看文件结尾部分</font>
+2. **<font style="color:#ffffff;">文件内容处理：</font>**<font style="color:#ffffff;">  	  
+</font><font style="color:#ffffff;">grep: 在文件中搜索指定字符串  
+</font><font style="color:#ffffff;">find: 在目录中查找文件  
+</font><font style="color:#ffffff;">wc: 统计文件中的行数、字数和字节数  
+</font><font style="color:#ffffff;">sort: 对文件内容进行排序  
+</font><font style="color:#ffffff;">uniq: 删除文件中的重复行  
+</font><font style="color:#ffffff;">cut: 从文件中截取字段  
+</font><font style="color:#ffffff;">sed: 流编辑器，用于处理文本流  
+</font>
+3. **<font style="color:#ffffff;">文件权限和所有权管理：</font>**<font style="color:#ffffff;">  
+</font><font style="color:#ffffff;">chmod: 修改文件或目录的权限  
+</font><font style="color:#ffffff;">chown: 修改文件或目录的所有者和所属</font>
+4. **<font style="color:#ffffff;"> 系统信息查看：</font>**
+
+<font style="color:#ffffff;">date: 显示或设置系统时间和日期  
+</font><font style="color:#ffffff;">	uptime: 查看系统运行时间和负载  
+</font><font style="color:#ffffff;">	ps: 显示进程状态  
+</font><font style="color:#ffffff;">	top: 实时显示系统进程状态  
+</font><font style="color:#ffffff;">	df: 查看磁盘空间使用情况  
+</font><font style="color:#ffffff;">	du: 查看文件和目录的磁盘使用情况 </font>
+
+5. **<font style="color:#ffffff;">网络命令：  
+</font>**<font style="color:#ffffff;">ping: 测试网络连通性                                                                          
+</font><font style="color:#ffffff;">ifconfig 或 ip: 显示或配置网络接口信息  
+</font><font style="color:#ffffff;">netstat: 显示网络状态信息  
+</font><font style="color:#ffffff;">ssh: 安全远程登录  
+</font><font style="color:#ffffff;">scp: 安全复制文件或目录  
+</font><font style="color:#ffffff;">wget 或 curl: 下载文件或网页 </font>
+6. **<font style="color:#ffffff;">系统管理：</font>**<font style="color:#ffffff;">  
+</font><font style="color:#ffffff;">reboot: 重启系统  
+</font><font style="color:#ffffff;">shutdown: 关闭系统  
+</font><font style="color:#ffffff;">useradd: 添加新用户  
+</font><font style="color:#ffffff;">passwd: 修改用户密码</font>
+
+<font style="color:#ffffff;">userdel: 删除用户  
+</font><font style="color:#ffffff;">	su: 切换用户</font>
+
+7. **<font style="color:#ffffff;">压缩和解压缩：</font>**<font style="color:#ffffff;">  
+</font><font style="color:#ffffff;">tar: 打包和解包文件 -xvf   
+</font><font style="color:#ffffff;">gzip 或 gunzip: 压缩和解压缩文件  
+</font><font style="color:#ffffff;">zip 或 unzip: 压缩和解压缩zip文件</font>
+
+
+
+## <>和""的区别            
+1. <font style="color:#ffffff;"><>：用于包含系统提供的标准库头文件或编译器所附带的头文件。编译器会在系统默认的头文件搜索路径中查找这些头文件。通常，这些头文件的路径信息已经配置在编译器中，无需指定具体路径。示例：#include <stdio.h>  </font>
+2. <font style="color:#ffffff;">""：用于包含用户自定义的头文件或在当前工作目录下的头文件。编译器会首先在当前源文件所在的目录中查找头文件，如果没有找到，则在系统默认的头文件搜索路径中查找。示例：#include "my_header.h" </font>
+
+## #ifndef的作用
+<font style="color:#ffffff;">#ifndef是C语言预处理指令中的条件有编译指令之一，其作用是防止头文件被多次包含，从而避免重复定义错误。</font>
+
+<font style="color:#ffffff;">#ifndef HEADER_FILE_NAME_H  
+</font><font style="color:#ffffff;">#define HEADER_FILE_NAME_H  
+  
+</font><font style="color:#ffffff;">// 头文件内容  
+</font><font style="color:#ffffff;">   
+</font><font style="color:#ffffff;">#endif</font>
+
+## gdb调试                                                                             
+<font style="color:#ffffff;">启动GDB：在终端中运行gdb命令，然后在GDB提示符中输入要调试的可执行文件的路径，例如：gdb ./my_program。  
+</font><font style="color:#ffffff;">设置断点： 使用break命令设置断点，例如：break main在main函数处设置断点。   
+</font><font style="color:#ffffff;">运行程序：在GDB中使用run或r命令运行程序，例如：run。  
+</font><font style="color:#ffffff;">单步执行：使用step或s命令单步执行程序，按行执行并进入函数。  
+</font><font style="color:#ffffff;">运行到断点：使用continue或c命令运行程序，直到遇到下一个断点。</font>
+
+<font style="color:#ffffff;">查看变量：使用print或p</font><u><font style="color:#ffffff;">命令查看变量的值，例如：print my_variable。</font></u><font style="color:#ffffff;">  
+</font><font style="color:#ffffff;">查看堆栈：使用backtrace或bt命令查看函数调用堆栈。  
+</font><font style="color:#ffffff;">跟踪变量：使用watch命令跟踪 变量的值变化，例如：watch my_variable。  
+</font><font style="color:#ffffff;">删除断点：使用delete命令删除断点，例如：delete 1删除序号为1的断点。  
+</font><font style="color:#ffffff;">退出GDB：使用quit或q命令退出GDB。</font>
+
+## gcc编译步骤
+<font style="color:#ffffff;">预处理：对以#号开头的内容进行替换，不会检查语法错误。</font>
+
+<font style="color:#ffffff;">gcc -</font><font style="color:#E4495B;">E</font><font style="color:#ffffff;"> hello.c -o hello.</font><font style="color:#E4495B;">i</font>
+
+<font style="color:#ffffff;">编译：对代码进行编译，可以检查语法错误 。</font>
+
+<font style="color:#ffffff;">gcc -</font><font style="color:#E4495B;">S</font><font style="color:#ffffff;"> hello.i -o hello.</font><font style="color:#E4495B;">s</font>
+
+<font style="color:#ffffff;">汇编：将汇编代码转换成机器代码。</font>
+
+<font style="color:#ffffff;">gcc -</font><font style="color:#FF0000;">c</font><font style="color:#ffffff;"> hello.s -o hello.</font><font style="color:#DF2A3F;">o</font>
+
+<font style="color:#ffffff;">链接：将目标文件和其他可能需要的库文件链接在一起，生成可执行文件。</font>
+
+<font style="color:#ffffff;">gcc hello.o -o hello</font>
+
+# 三、数据结构：
+## 单链表的增删改查操作、实现思路
+```bash
+// 向单向链表的指定位置插入数据
+// p保存链表的头指针 post 插入的位置 data插入的数据
+int InsertIntoPostLinkList(link_node_t *p, int post, datatype data)
+{
+    // 0.容错判断
+    if (post < 0 || post > LengthLinkList(p))
+    {
+        perror("InsertIntoPostLinkList err");
+        return -1;
+    }
+    // 1.将头指针指向被插入位置的前一个节点
+    for (int i = 0; i < post; i++)
+        p = p->next;
+    // 2.创建一个新节点，存放数据
+    link_list_t pnew = (link_list_t)malloc(sizeof(link_node_t));
+    if (pnew == NULL)
+    {
+        perror("pnew malloc err");
+        return -1;
+    }
+    pnew->data = data;
+    pnew->next = NULL;
+    // 3.将新节点插入链表中（先连后面，再连前面）
+    pnew->next = p->next;
+    p->next = pnew;
+    return 0;
+}
+//6.判断单向链表是否为空 1代表空 0代表非空
+int IsEpLinkList(link_node_t *p)
+{
+    return p->next == NULL;
+}
+// 5.删除单向链表中指定位置的数据 post 代表的是删除的位置
+int DeletePostLinkList(link_node_t *p, int post)
+{
+    // 0.容错判断
+    if (post < 0 || post >= LengthLinkList(p))
+    {
+        perror("DeletePostLinkList err");
+        return -1;
+    }
+    // 1.将头指针指向被删除位置的前一个节点
+    for (int i = 0; i < post; i++)
+        p = p->next;
+    // 2.进行删除操作
+    // 1）定义一个指针pdel指向被删除位置
+    link_list_t pdel = p->next;
+    // 2）跨过被删除节点
+    p->next = pdel->next;
+    // 3）释放被删除节点
+    free(pdel);
+    pdel = NULL;
+    return 0;
+}
+//9.删除单向链表中出现的指定数据,data代表将单向链表中出现的所有data数据删除
+int DeleteDataLinkList(link_node_t *p, datatype data)
+{
+    //1.定义一个指针q指向头结点的前一个节点，此时可以看做q指向一个无头单向链表
+    link_list_t q = p->next;
+    //2.用q遍历链表，将每一个节点的数据域与data作比较，如果相同就删除该节点
+    while(q != NULL)
+    {
+        if(q->data == data)//如果相等，删除
+        {
+            p->next = q->next;
+            free(q);
+            q = p->next;
+        }
+        else//如果不相等，指针向后移动
+        {
+            p=p->next;
+            q=p->next;
+        }
+    }
+    return 0;
+}
+//7.修改指定位置的数据 post 被修改的位置 data修改成的数据
+int ChangePostLinkList(link_node_t *p, int post, datatype data)
+{
+    //0.容错判断
+    if(post < 0 || post >=LengthLinkList(p))
+    {
+        perror("ChangePostLinkList");
+        return -1;
+    }
+    //1.将头指针指向被修改的节点
+    for(int i=0;i<=post;i++)
+        p=p->next;
+    //2.修改数据
+    p->data = data;
+    return 0;
+
+}
+//8.查找指定数据出现的位置 data被查找的数据 //search 查找
+int SearchDataLinkList(link_node_t *p, datatype data)
+{
+    //1.定义变量记录查找位置
+    int post=0;
+    //2.遍历链表，查找数据
+    while(p->next != NULL)
+    {
+        p=p->next;
+        if(p->data == data)
+            return post;
+        post++;
+    }
+    return -1;
+}
+```
+
+
+
+##  单链表的倒置思路
+(1) 将头节点与当前链表断开，断开前保存下头节点的下一个节点，保证后面链表能找得到，定义一个q保存头节点的下一个节点，断开后前面相当于一个空的链表，后面是一个无头的单向链表
+
+(2) 遍历无头链表的所有节点，将每一个节点当做新节点，插入空链表头节点的下一个节点(每次插入的头节点的下一个节点位置)
+
+```bash
+
+void ReverseLinkList(link_node_t *p)
+{
+    link_node_t *q = p->next;
+    link_node_t *temp = NULL;
+    /*将头节点和下一个节点断开 */
+    p->next = NULL;
+    /*遍历无头单向节点 */
+    while (q != NULL)
+    {
+        temp = q->next;
+        /*进行插入操作 */
+        q->next = p->next;
+        p->next = q;
+        q = temp;
+    }
+}
+```
+
+##  单链表和双向链表的区别
+<font style="color:#ffffff;">单链表（Singly Linked List）和双向链表（Doubly Linked List）是两种常见的链式存储结构，它们在数据结构中有一些不同之处。</font>
+
+**<font style="color:#ffffff;">单链</font>**
+
+1. <font style="color:#ffffff;">单链表中的每个节点包含两个部分：数据域和指针域（通常称为next指针）。</font>
+2. <font style="color:#ffffff;">每个节点只有一个指针，指向下一个节点，最后一个节点的next指针指向NULL，表示链表结束。 </font>
+3. <font style="color:#ffffff;">单链表只能从头节点开始依次遍历访问节点，无法从后往前访问。</font>
+4. <font style="color:#ffffff;">在单链表中，如果要删除某个节点，需要知道其前驱节点，因为只有前驱节点的next指针可以修改。</font>
+
+**<font style="color:#ffffff;">双向链表：</font>**
+
+1. <font style="color:#ffffff;">双向链表中的每个节点包含三个部分：数据域、前驱指针（prev指针）和后继指针（next指针）。</font>
+2. <font style="color:#ffffff;">每个节点有两个指针，分别指向前一个节点和后一个节点。第一个节点的prev指针和最后一个节点的next指针指向NULL，表示链表的开始和结束。</font>
+3. <font style="color:#ffffff;">双向链表可以从头节点开始正向遍历访问节点，也可以从尾节点开始反向遍历访问节点，这使得双向链表的某些操作更加高效。</font>
+4. <font style="color:#ffffff;">在双向链表中，如果要删除某个节点，可以直接通过前驱指针和后继指针完成删除操作，不需要知道其前驱节点。</font>
+
+**<font style="color:#ffffff;">区别总结：</font>**
+
+1. <font style="color:#ffffff;">单链表每个节点只有一个指针域，只能从头节点开始单向遍历。</font>
+
+<font style="color:#ffffff;">双向链表每个节点有两个指针域，可以从头节点开始正向遍历，也可以从尾节点开始反向遍历，灵活性更高。</font>
+
+2. <font style="color:#ffffff;">双向链表相对于单链表，每个节点多了一个prev指针，这增加了一定的内存开销。</font>
+3. <font style="color:#ffffff;">在插入和删除操作上，双向链表的操作可能比单链表更复杂一些，因为需要同时修改前驱和后继节点的指针。但是在一些情况下，双向链表的操作效率更高，特别是对于涉及到反向遍历或删除操作时。</font>
+
+##  栈和队列的区别
+1. **<font style="color:#ffffff;">特点</font>**
+
+<font style="color:#ffffff;">栈：栈是一种后进先出（Last In First Out，LIFO）的数据结构，类似于把元素放在一个垂直的栈中，最后放入的元素最先被取出。</font>
+
+<font style="color:#ffffff;">队列：队列是一种先进先出（First In First Out，FIFO）的数据结构，类似于排队，最先放入的元素最先被取出。 </font>
+
+2. **<font style="color:#ffffff;">插入和删除操作：</font>**
+
+<font style="color:#ffffff;">栈：栈的插入操作称为入栈（Push），删除操作称为出栈（Pop）。元素只能从栈顶进。</font>
+
+<font style="color:#ffffff;">队列：队列的插入操作称为入队（Enqueue），删除操作称为出队（Dequeue）。元素只能从队列的前端出队，从队列的后端入队。</font>
+
+3. **<font style="color:#ffffff;">访问限制：</font>**
+
+<font style="color:#ffffff;">栈：栈只允许访问栈顶的元素，无法直接访问其他位置的元素。</font>
+
+<font style="color:#ffffff;">队列：队列只允许访问队列的前端和后端元素，无法直接访问其他位置的元素。</font>
+
+4. **<font style="color:#ffffff;">应用场景：</font>**
+
+<font style="color:#ffffff;">栈：常用于函数调用和递归调用的内存管理、表达式求值、括号匹配等场景。</font>
+
+<font style="color:#ffffff;">1）方法调用和递归：在方法调用过程中，每次调用一个方法时将其压入栈，方法执行完毕后再将其弹出，保证方法调用的顺序。</font>
+
+<font style="color:#ffffff;">2）表达式求值：在计算表达式的过程中，使用栈来存储运算符和操作数，根据运算符的优先级进行计算。</font>
+
+<font style="color:#ffffff;">3）括号匹配：使用栈来判断括号的匹配情况，当遇到左括号时将其压入栈，遇到右括号时弹出栈顶元素并进行匹配。</font>
+
+队列：常用于任务调度、缓冲区管理、打印任务队列等场景。
+
+<font style="color:#ffffff;">1）消息队列：在分布式系统中，使用队列来进行消息的传递和处理，确保消息的顺序和可靠性。</font>
+
+<font style="color:#ffffff;">2）多线程任务调度：使用队列来存储待执行的任务，并由多个线程从队列中取出任务进行执行。</font>
+
+<font style="color:#ffffff;">3）打印任务队列：在打印机服务中，使用队列来存储待打印的任务，保证打印任务的顺序和公平性。</font>
+
+##  两个栈怎样实现一个队列，思路说一下
+1. <font style="color:#ffffff;">使用栈 A 作为入队栈，栈 B 作为出队栈。</font>
+2. <font style="color:#ffffff;">入队操作时，直接将元素压入栈 A。</font>
+3. <font style="color:#ffffff;">出队操作时，首先检查栈 B 是否为空，如果不为空，则直接弹出栈顶元素；如果栈 B 为空，则将栈 A 中的所有元素逐个弹出并压入栈 B，然后再弹出栈 B 的栈顶元素作为出队元素。</font>
+
+<img src="https://cdn.nlark.com/yuque/0/2024/png/227204/1728530947110-5ecf0f76-ee27-4e93-9810-b6d38a5073ac.png" width="907" title="" crop="0,0,1,1" id="dEAuo" class="ne-image">
+
+##  冒泡排序原理？时间复杂度多少？
+<font style="color:#ffffff;">原理：冒泡排序是一种简单的排序算法，每次比较相邻的两个元素，如果它们的顺序错误，则交换位置，通过多次遍历，将最大的元素逐渐冒泡到正确的位置上。</font>
+
+<font style="color:#ffffff;">时间复杂度：冒泡排序的平均时间复杂度为O(n²)，其中n是待排序元素的数量，最好情况下时间复杂度为O（n）</font><font style="color:#ffffff;"> </font>
+
+## 什么是二叉树、满二叉树？
+<font style="color:#ffffff;">二叉树：是一种特殊的树结构，每个节点最多有两个子树，分别称为左子树和右子树</font>
+
+<font style="color:#ffffff;">满二叉树：</font><font style="color:#ffffff;">深度为k（k>=1）时，节点数为2k - 1(2的k次幂-1)个的二叉树</font><font style="color:#ffffff;">。</font>
+
+<font style="color:#ffffff;"></font>
+
+<font style="color:#ffffff;">有空再了解一下平衡二叉树和红黑树的相关知识。</font>
+
+##  二叉树的前序中序后序遍历
+<font style="color:#ffffff;">（1）前序遍历：先访问根节点，然后按照左子树、右子树的顺序进行遍历</font>
+
+<font style="color:#ffffff;">（2）中序遍历：按照左子树、根节点、右子树的顺序进行遍历</font>
+
+<font style="color:#ffffff;">（3）后序遍历：按照左子树、右子树、根节点的顺序进行遍历</font>
+
+## 查找算法学过哪些 ？二分查找的时间复杂度多少？
+<font style="color:#ffffff;">顺序查找：从头到尾逐个比较查找，时间复杂度为O（n）</font>
+
+<font style="color:#ffffff;">二分查找：对有序数组进行查找，每次将查找区间二分，并与目标值进行比较，时间复杂度为O（nlog n  ）</font>
+
+<font style="color:#ffffff;">分块查找：块间有序、块内无序 ，时间复杂度为</font><font style="color:rgb(77, 77, 77);">O(log(m)+n/m)</font>
+
+## 哈希表的原理？
+<font style="color:#ffffff;">哈希表：是一种通过哈希函数将键映射到存储位置的数据结构。查找元素时，先使用哈希函数计算出键的哈希值，然后根据哈希值找到对应的存储位置，在哈希冲突的情况下，通常采用开放地址法、</font><font style="color:#ffffff;">活链地址法</font><font style="color:#ffffff;">来解决.</font>
+
+##  排序算法学过哪些？快速排序的实现原理？
+1. 冒泡排序：比较相邻元素，将较大的元素向后移动，时间复杂度为O(n²)
+2. 选择排序：从数列中找最小值，找到后和第一个位置的数据进行交互，再从剩下数中找最小值，依次类推。 
+3. 快速排序：采用“分治”的思想，对于一组数据，选择一个基准元素（base），通常选择第一个或最后一个元素，通过第一轮扫描，比base小的元素都在base左边，比base大的元素都在base右边，再有同样方法递归排序这两部分，直到序列中所有数据均有序为止。
+
+<img src="https://cdn.nlark.com/yuque/0/2024/png/227204/1728530947482-a2dae6f0-5446-4ded-ab54-4043f9e5ddbc.png" width="728" title="" crop="0,0,1,1" id="C8ntL" class="ne-image">
+
+
+
+# 四、IO进程：IPC 
+## 标准IO和系统IO的区别
+**<font style="color:#ffffff;">标准文件IO</font>**
+
+<font style="color:#ffffff;">概念：C库中定义的一组用于输入输出的函数      </font>
+
+<font style="color:#ffffff;">特点</font>
+
+<font style="color:#ffffff;">（1）有缓存机制，减少系统调用	</font>
+
+<font style="color:#ffffff;">（2）围绕</font><font style="color:#FF0000;">文件流</font><font style="color:#ffffff;">进行操作</font>
+
+<font style="color:#ffffff;">（3）默认打开三个文件流，stdin、stdout、stderr</font>
+
+<font style="color:#ffffff;">（4）一般只对普通文件进行操作 </font>
+
+**<font style="color:#ffffff;">系统文件IO</font>**
+
+<font style="color:#ffffff;">概念：系统中定义的一组用于输入输出的函数</font>
+
+<font style="color:#ffffff;">特点</font>
+
+<font style="color:#ffffff;">（1）无缓存机制，每次都要系统调用</font>
+
+<font style="color:#ffffff;">（2）围绕</font><font style="color:#FF0000;">文件描述符</font><font style="color:#ffffff;">进行操作</font>
+
+<font style="color:#ffffff;">（3）默认打开三个文件描述符，0、1、2 </font>
+
+<font style="color:#ffffff;">（4）可以对任意类型的文件操作，不能操作目录  </font>
+
+## 静态库和动态库的区别
+<font style="color:#ffffff;">静态库和动态库，本质区别是代码被载入时刻不同。</font>
+
++ **<font style="color:#ffffff;">静态库：</font>**<font style="color:#ffffff;">在程序编译时会被连接到目标代码中。</font>
+    - <font style="color:#ffffff;">优点：程序运行时将不再需要该静态库，运行速度更快，移植性更好 ；</font>
+    - <font style="color:#ffffff;">缺点：静态库中的代码复制到了程序中，因此体积较大；静态库升级后，程序需要重新编译链接</font>
++ **<font style="color:#ffffff;">动态库</font>**<font style="color:#ffffff;">：在程序运行被载入代码中。</font>
+    - <font style="color:#ffffff;">优点：程序在执行时加 载动态库，代码体积小；程序升级更简单；不同应用程序如果调用相同的库，那么在内存里只需要有一份该共享库的实例。</font>
+    - <font style="color:#ffffff;">缺点：运行时还需要动态库的存在，移植性较差 </font>
+
+## 怎么创建进程
+<font style="color:#ffffff;">使用fork()函数创建一个新的进程 （子进程）。fork()会复制当前进程，并创建一个新的子进程。当调用fork()时，当前的进程被复制，产生一个新的进程，称为子进程。父进程和子进程几乎完全相同，但它们各自拥有不同的进程ID（PID）。</font>
+
+<details class="lake-collapse"><summary id="ucf7dba74"><strong><span class="ne-text">fork() 的基本操作过程</span></strong></summary><ul class="ne-ul"><li id="u1665a153" data-lake-index-type="0"><span class="ne-text">父进程调用 fork()，操作系统为子进程分配独立的进程控制块（PCB）。</span></li><li id="uae7fc020" data-lake-index-type="0"><span class="ne-text">操作系统会将父进程的地址空间拷贝到子进程，但</span><strong><span class="ne-text">实际内存是共享的</span></strong><span class="ne-text">，直到子进程或父进程发生</span><strong><span class="ne-text">写操作（COW机制）</span></strong><span class="ne-text">。</span></li><li id="ub328aad8" data-lake-index-type="0"><span class="ne-text">父子进程开始各自执行，各自拥有独立的进程ID、堆栈和其他资源。</span></li></ul></details>
+<details class="lake-collapse"><summary id="uccdeffb2"><strong><span class="ne-text" style="font-size: 19px">写时拷贝  Copy-On-Write, COW  </span></strong></summary><ul class="ne-ul"><li id="u0841bc9e" data-lake-index-type="0"><span class="ne-text"> 写时复制的原理是：当父进程和子进程运行时，它们</span><strong><span class="ne-text">共享相同的物理内存页面</span></strong><span class="ne-text">。只有当父进程或子进程试图</span><strong><span class="ne-text">写入内存</span></strong><span class="ne-text">时，操作系统才会为该进程创建独立的内存页面，避免二者互相影响。</span></li><li id="u5d6eeb51" data-lake-index-type="0"><span class="ne-text">这种方式极大地减少了 fork() 时的内存开销，因为在许多情况下，父进程和子进程只读共享的内存数据。</span></li></ul></details>
+## 什么是守护进程
+概念： 在后台运行、不直接与用户交互的进程。<font style="color:#ffffff;">它是脱离控制终端且周期执行的进程。</font>它通常在系统启动时自动启动，执行一些系统或服务相关的任务，并且在整个系统运行期间持续运行，直到系统关闭或手动终止它。守护进程可以提供各种服务，如日志记录、网络服务、作业调度等。 
+
+<details class="lake-collapse"><summary id="ud6c32204"><strong><span class="ne-text" style="font-size: 19px">如何创建一个守护进程</span></strong></summary><p id="u50225e8d" class="ne-p" style="text-align: left"><span class="ne-text" style="color: #ffffff; font-size: 19px">1） 创建子进程，父进程退出       </span></p><p id="ucc487ecf" class="ne-p" style="text-align: left"><span class="ne-text" style="color: #ffffff; font-size: 19px">2） 在子进程中创建新会话</span></p><p id="u0ea2cf32" class="ne-p" style="text-align: left"><span class="ne-text" style="color: #ffffff; font-size: 19px">3） 改变进程运行路径为根目录</span></p><p id="u336e3621" class="ne-p" style="text-align: left"><span class="ne-text" style="color: #ffffff; font-size: 19px">4） 重设文件权限掩码</span></p><p id="u1556fa71" class="ne-p" style="text-align: left"><span class="ne-text" style="color: #ffffff; font-size: 19px">5） 关闭其他不必要的文件描述符</span></p></details>
+## 什么是僵尸进程？什么是孤儿进程？    
++ **<font style="color:#ffffff;">僵尸进程</font>**<font style="color:#ffffff;">： 子进程先结束，父进程如果没有及时回收，子进程变成僵尸进程（要避免僵尸进程产生）。</font>
++ **<font style="color:#ffffff;">孤儿进程</font>**<font style="color:#ffffff;">： 若父进程先结束，子进程成为孤儿进程，被init进程收养，会让子进程变成后台进程。                                           </font>
+
+<details class="lake-collapse"><summary id="u3a3bacb9"><strong><span class="ne-text" style="font-size: 19px">避免僵尸进程产生的方法</span></strong></summary><ol class="ne-ol"><li id="u0e0d3d70" data-lake-index-type="0" style="text-align: left"><span class="ne-text" style="color: #ffffff; font-size: 19px">使用wait()或waitpid()系统调用：父进程应该在子进程结束后及时调用wait()或waitpid()系统调用来回收子进程的资源。这样可以确保子进程的进程描述符被及时释放，从而避免僵尸进程的产生。</span></li><li id="uaf52d6fa" data-lake-index-type="0" style="text-align: left"><span class="ne-text" style="color: #ffffff; font-size: 19px">设置SIGCHLD信号的处理函数：父进程可以设置一个SIGCHLD信号的处理函数，当子进程结束时，该信号会被发送到父进程。在信号处理函数中，父进程可以调用wait()或waitpid()来回收子进程的资源。</span></li></ol><pre data-language="c" id="FsSXa" class="ne-codeblock language-c"><code>signal(SIGCHLD, sigchld_handler);
+
+// 在该函数内利用wait或者waitpid来回收子进程资源
+void sigchld_handler(int sig) 
+{
+    (void)sig;  // 避免未使用参数警告
+    while (waitpid(-1, NULL, WNOHANG) &gt; 0);  // 非阻塞回收所有子进程
+}
+</code></pre><ol start="3" class="ne-ol"><li id="uac3a26a6" data-lake-index-type="0" style="text-align: left"><span class="ne-text" style="color: #ffffff; font-size: 19px">忽略SIGCHLD信号：如果父进程不关心子进程的退出状态，可以选择忽略SIGCHLD信号。这样，当子进程结束时，内核会自动回收子进程的资源，不会产生僵尸进程。但需要注意的是，这种方法会使得父进程无法获取子进程的退出状态。</span></li></ol><pre data-language="c" id="XkPOL" class="ne-codeblock language-c"><code> signal(SIGCHLD, SIG_IGN);</code></pre></details>
+## 时间片了解么？
++ <font style="color:#ffffff;">时间片是操作系统中用于调度进程的基本单位。在多道程序设计和多任务处理中，操作系统将 CPU 的执行时间划分成一小段小的时间片，每个进程在一个时间片内运行，然后切换到下一个进程。 </font>
++ <font style="color:#ffffff;">时间片轮转算法是一种常见的调度算法，它将每个进程分配一个时间片，当时间片用完后，操作系统会暂停当前进程的执行，并将 CPU 分配给下一个就绪的进程，然后继续执行下一个时间片。这样，所有进程会依次获得 CPU 的执行机会，从用户的角度看，它们似乎是同时运行的。</font>
++ <font style="color:#ffffff;">时间片的大小通常由操作系统调度器决定，可以根据系统的性能、负载和策略来调整。如果时间片太小，会导致频繁的进程切换，增加系统开销；如果时间片太大，可能会导致长时间运行的进程占用 CPU 时间过长，导致其他进程响应变慢。</font>
+
+<img src="https://cdn.nlark.com/yuque/0/2024/png/227204/1728530947807-8be2109d-1822-4535-be5e-86ab5e0669c8.png" width="728" title="" crop="0,0,1,1" id="l7Bj2" class="ne-image">
+
+## 进程与线程的共性和区别？
++ **<font style="color:#ffffff;">共性</font>**
+    - <font style="color:#ffffff;">动态性：进程和线程都是动态的概念，它们的存在和消亡都是动态的，具有一定的生命周期。</font>
+    - <font style="color:#ffffff;">并发性：进程和线程都可以并发执行，即多个进程或多个线程可以同时存在于内存中，并在操作系统的调度下交替执行。</font>
+    - <font style="color:#ffffff;">独立性：进程和线程在各自的执行空间内是相对独立的，它们拥有各自的数据结构和堆栈空间，互不干扰。</font>
+    - <font style="color:#ffffff;">资源分配：无论是进程还是线程，操作系统都会为它们分配必要的资源，如内存、文件、I/O设备等。</font>
++ **<font style="color:#ffffff;">区别</font>**
+    - <font style="color:#ffffff;">资源开销：进程是资源分配的基本单位，它拥有独立的内存空间和系统资源，因此创建和销毁进程的开销相对较大。而线程是处理器调度的基本单位，它共享进程的资源，因此创建和销毁线程的开销较小。</font>
+    - <font style="color:#ffffff;">执行过程：进程是独立执行的，它拥有一个完整的执行环境。而线程是在进程内部执行的，多个线程共享进程的内存空间和资源。</font>
+    - <font style="color:#ffffff;">通信机制：进程间通信（IPC）需要操作系统提供特殊的机制，如管道、消息队列、共享内存等。而线程间通信则相对简单，因为它们共享进程的内存空间，可以直接读写共享变量或使用简单的同步机制。</font>
+    - <font style="color:#ffffff;">稳定性：进程是操作系统分配资源的基本单位，因此进程崩溃通常不会影响到其他进程。而线程是进程的一部分，一个线程的崩溃可能导致整个进程的崩溃。</font>
+
+## 线程的同步怎么实现
+<font style="color:#ffffff;">同步：在互斥的基础上按约定好的顺序对临界资源进行操作</font>
+
+<font style="color:#ffffff;">实现同步的机制：信号量、互斥锁+条件变量</font>
+
+##  线程的互斥怎么实现
+<font style="color:#ffffff;">互斥：同一时间只有一个线程对临界资源进行操作</font>
+
+<font style="color:#ffffff;">实现互斥的机制：互斥锁 </font>
+
+## 进程间通信方式有哪些？哪种效率最高
++ <font style="color:#ffffff;">无名管道、有名管道、信号、共享内存、信号灯集、消息队列、套接字</font>
++ <font style="color:#ffffff;">效率最高是共享内存：</font>
+
+<font style="color:#ffffff;">共享内存效率最高的主要原因是它避免了数据的复制和传输。在共享内存中，多个进程可以直接访问同一块物理内存，无需进行数据的拷贝和传输，因此在数据量较大的情况下，共享内存的效率要远高于其他进程间通信方式。</font>
+
+<font style="color:#ffffff;">具体来说，以下是共享内存效率高的几个关键点：</font>
+
+    - <font style="color:#ffffff;">避免数据拷贝：在其他进程间通信方式（如管道、消息队列等）中，数据需要从一个进程的地址空间复制到内核缓冲区，然后再从内核缓冲区复制到另一个进程的地址空间，涉及两次数据拷贝操作。而在共享内存中，多个进程共享同一块物理内存，不需要进行数据拷贝，直接读写共享内存即可。</font>
+    - <font style="color:#ffffff;">高效的数据访问：共享内存的数据直接位于物理内存中，而其他进程间通信方式的数据位于内核缓冲区，因此在共享内存中访问数据更加高效。</font>
+    - <font style="color:#ffffff;">无需内核介入：在共享内存中，数据的读写不需要内核的介入，减少了系统调用和上下文切换，提高了通信的速度和效率。</font>
+
+## 进程间通信方式的优缺点对比
++ **<font style="color:#ffffff;">共享内存：</font>**
+
+<font style="color:#ffffff;">优点：速度快、低开销、适合大数据量。</font>
+
+<font style="color:#ffffff;">缺点：需要额外的同步机制、内存管理复杂。</font>
+
++ **<font style="color:#ffffff;">无名管道（Pipes）：</font>**
+
+<font style="color:#ffffff;">优点：简单易用，适合父子进程。</font>
+
+<font style="color:#ffffff;">缺点：有缓冲区限制，效率较低。</font>
+
++ **<font style="color:#ffffff;">命名管道（FIFO）：</font>**
+
+<font style="color:#ffffff;">优点：可在无亲缘关系的进程间使用，易于实现。</font>
+
+<font style="color:#ffffff;">缺点：也有缓冲区限制，效率相对较低。</font>
+
++ **<font style="color:#ffffff;">消息队列：</font>**
+
+<font style="color:#ffffff;">优点：支持优先级，灵活性高，可以按照类型添加读取消息。</font>
+
+<font style="color:#ffffff;">缺点：内核管理开销大，可能会满。</font>
+
++ **<font style="color:#ffffff;">信号：</font>**
+
+<font style="color:#ffffff;">优点：简单易用，用于进程同步。</font>
+
+<font style="color:#ffffff;">缺点：只用于信号，不传输数据。</font>
+
++ **<font style="color:#ffffff;">套接字（Sockets）：</font>**
+
+<font style="color:#ffffff;">优点：支持网络通信，跨主机灵活性高。</font>
+
+<font style="color:#ffffff;">缺点：开销大，特别是本地通信时，实施复杂。</font>
+
+## 有名管道和无名管道的区别？
++ **<font style="color:#ffffff;">无名管道</font>**
+
+<font style="color:#ffffff;">具有亲缘关系的进程间。</font>
+
+<font style="color:#ffffff;">半双工通信方式，有固定的读端和写端，看做一种特殊文件，通过文件描述符操作 。</font>
+
+<font style="color:#ffffff;">管道中没有数据时，读阻塞；管道中写满数据时，写阻塞；读端关闭，往管道写数据导致管道破裂。</font>
+
++ **<font style="color:#ffffff;">有名管道</font>**
+
+<font style="color:#ffffff;">互不相关的两个进程间。</font>
+
+<font style="color:#ffffff;">在路径中存在管道文件，数据存放在内核空间。</font>
+
+<font style="color:#ffffff;">遵循先进先出，不支持lseek。</font>
+
+<font style="color:#ffffff;">只写方式，写阻塞，一直到另一个进程把读打开；只读方式，读阻塞，一直到另一个进程把写打开；可读可写，如果管道中没有数据，读阻塞。</font>
+
+## 共享内存的实现方式
++ <font style="color:#ffffff;">创建共享内存：</font>
+
+<font style="color:#ffffff;">首先，需要创建一块共享内存区域。在 Linux 系统中，可以使用 shmget 系统调用来创建或获取共享内存。需要提供一个唯一的键值来标识共享内存区域，并可以指定一些标志和权限来控制内存区域的属性。</font>
+
++ <font style="color:#ffffff;">映射共享内存：</font>
+
+<font style="color:#ffffff;">一旦共享内存区域被创建，进程可以使用 shmat 系统调用将共享内存区域关联到自己的地址空间中。需要提供共享内存的标识符，如果有多块共享内存区域，可以通过指定不同的标识符来关联不同的区域。关联后，进程就可以直接访问共享内存中的数据。</font>
+
++ <font style="color:#ffffff;">使用共享内存：</font>
+
+<font style="color:#ffffff;">一旦共享内存区域被关联到进程的地址空间中，进程可以像访问普通内存一样直接读写共享内存中的数据。多个进程可以共享同一块物理内存，无需进行数据的拷贝和传输，提高了通信的效率。 </font>
+
++ <font style="color:#ffffff;">解除关联：</font>
+
+<font style="color:#ffffff;">当不再需要共享内存时，进程可以使用 shmdt 系统调用将共享内存区域从自己的地址空间中解除关联。解除关联后，进程将无法再访问共享内存中的数据。</font>
+
++ <font style="color:#ffffff;">删除共享内存：</font>
+
+<font style="color:#ffffff;">当所有进程都解除了对共享内存的关联，可以使用 shmctl 系统调用删除共享内存区域，释放相关资源。需要注意，删除共享内存只是将共享内存标记为删除状态，实际的内存回收会在所有进程都解除关联后进行。  </font>
+
+## 消息队列的实现方式
++ <font style="color:#ffffff;">创建消息队列：</font>
+
+<font style="color:#ffffff;">需要创建一个唯一的值key键来标识该消息队列，并可以指定一些标志来控制队列的属性。</font>
+
+<font style="color:#ffffff;">使用系统调用（如 msgget）来创建一个消息队列。如果消息队列已经存在，可以通过指定相同的键值获取已有的消息队列。</font>
+
++ <font style="color:#ffffff;">发送消息到队列：</font>
+
+<font style="color:#ffffff;">使用系统调用（如 msgsnd）将消息发送到队列中。需要指定消息队列的标识符、要发送的消息内容、消息的大小和一些标志。发送的消息需要封装成特定格式，包括消息类型和实际数据。</font>
+
++ <font style="color:#ffffff;">接收消息：</font>
+
+<font style="color:#ffffff;">其他进程可以使用系统调用（如 msgrcv）从消息队列中接收消息。需要指定消息队列的标识符、用于接收消息的缓冲区、缓冲区的大小、要接收的消息类型和一些标志。如果队列中没有符合条件的消息，接收进程可以选择阻塞或立即返回。</font>
+
++ <font style="color:#ffffff;">删除消息队列：</font>
+
+<font style="color:#ffffff;">当不再需要消息队列时，可以使用系统调用（如 msgctl）将其删除，释放相关资源。删除消息队列前，需要确保所有进程都已经停止使用该队列。</font>
+
+## fork和vfork区别
+<font style="color:#ffffff;">fork 和 vfork 是两种在 Linux/Unix系统中用于创建新进程的系统调用，它们有一些区别：</font>
+
++ **<font style="color:#ffffff;">fork</font>**<font style="color:#ffffff;">: </font>
+
+<font style="color:#ffffff;">fork 是创建新进程的标准方法，它会复制当前进程的所有资源（包括代码、数据、堆栈等），创建一个与父进程几乎完全相同的子进程。</font>
+
+<font style="color:#ffffff;">父进程和子进程之间的地址空间是独立的，互相不会影响。子进程从 fork 调用之后的位置开始执行，可以通过返回值来判断当前进程是父进程还是子进程。</font>
+
+<font style="color:#ffffff;">在 fork 调用后，父进程和子进程并发执行，并共享一些资源，比如打开的文件描述符、信号处理器等。</font>
+
+<font style="color:#ffffff;">父进程和子进程的执行顺序是不确定的，取决于系统调度器的调度策略。</font>
+
++ **<font style="color:#ffffff;">vfork</font>**<font style="color:#ffffff;">:</font>
+
+<font style="color:#ffffff;">vfork 也是用于创建新进程的系统调用，但它与 fork 有一些不同之处。</font>
+
+<font style="color:#ffffff;">vfork 创建的子进程与父进程共享地址空间，即子进程与父进程共用同一份数据和代码。这意味着在子进程中执行的任何修改都会直接影响到父进程，因此 vfork 的使用要非常小心。</font>
+
+<font style="color:#ffffff;">vfork 是为了在子进程中立即执行一个新程序（通常是通过 exec 系统调用），然后立即退出，不需要复制父进程的地址空间，以节省资源。</font>
+
+<font style="color:#ffffff;">在 vfork 调用后，父进程会被阻塞，直到子进程执行完毕或调用 exec 系统调用后才会继续执行。</font>
+
+<font style="color:#ffffff;">总的来说，fork 是创建新进程的常规方法，而 vfork 适用于在子进程中立即执行一个新程序。在使用 vfork 时需要格外小心，避免对父进程的地址空间造成破坏。通常情况推荐使用 fork 来创建新进程。</font>
+
+## 线程的死锁，怎么避免？
+**<font style="color:#ffffff;">死锁：</font>**
+
+<font style="color:#ffffff;">是指两个或两个以上的线程在执行过程中，由于竞争资源或者由于彼此通信而造成 的一种阻塞的现象，若无外力作用，它们都将无法推进下去。</font>
+
+**<font style="color:#ffffff;">死锁产生的四个必要条件</font>**<font style="color:#ffffff;">：</font>
+
+<font style="color:#ffffff;">（1）</font><font style="color:#FF0000;">互斥使用</font><font style="color:#ffffff;">，即当资源被一个线程使用(占有)时，别的线程不能使用</font>
+
+<font style="color:#ffffff;">（2）</font><font style="color:#FF0000;"> 不可抢占</font><font style="color:#ffffff;">，资源请求者不能强制从资源占有者手中夺取资源，资源只能由资源占有者主动释放</font>
+
+<font style="color:#ffffff;">（3）</font><font style="color:#FF0000;">请求和保持</font><font style="color:#ffffff;">，即当资源请求者在请求其他的资源的同时保持对原有资源的占有。 </font>
+
+<font style="color:#ffffff;">（4）</font><font style="color:#FF0000;">循环等待</font><font style="color:#ffffff;">，即存在一个等待队列：P1占有P2的资源，P2占有P3的资源，P3占有P1的资源。这样就形成了一个等待环路。  </font>
+
+<font style="color:#ffffff;">注意：当上述四个条件都成立的时候，便形成死锁。当然，死锁的情况下如果打破上述任何一个条件，便可让死锁消失。</font>
+
+**<font style="color:#ffffff;">解决方法</font>**
+
+<font style="color:#ffffff;">（1）避免循环等待：确保线程获取资源的顺序是一致的，避免形成循环等待的情况</font>
+
+<font style="color:#ffffff;">（2）使用资源分级：将资源分为不同的等级或优先级，确保线程按照一定的顺序获取资源</font>
+
+<font style="color:#ffffff;">（3）使用超时机制：在获取资源时，设置一个超时时间，并在超过时间限制后放弃获取资源并释放已持有的资源</font>
+
+<font style="color:#ffffff;">（4）避免资源的重复占用：尽量避免在一个线程中重复获取已经持有的资源</font>
+
+<font style="color:#ffffff;">（5）合理规划资源的利用</font>
+
+<font style="color:#ffffff;">（6）使用死锁检测和恢复机制</font>
+
+<font style="color:#ffffff;"></font>
+
+## <font style="color:#ffffff;">线程如何回收？</font>
+1、pthread_join()
+
+2、pthread_detach()
+
+# 五、网络编程：
+## TCP与UDP的异同点
++ <font style="color:#ffffff;">共同点： </font>
+
+<font style="color:#ffffff;">同为传输层协议</font>
+
++ <font style="color:#ffffff;">不同点：	</font>
+
+<font style="color:#ffffff;">TCP：有连接，可靠：无误、数据无丢失、数据无失序、数据无重复到达。</font>
+
+<font style="color:#ffffff;">流式传输。</font>
+
+<font style="color:#ffffff;">UDP：无连接，不保证可靠。</font>
+
+<font style="color:#ffffff;">报文式传输。</font>
+
++ <font style="color:#ffffff;">应用场合：</font>
+
+<font style="color:#ffffff;">TCP：传输质量较高，如qq登陆操作 </font>
+
+<font style="color:#ffffff;">UDP：对传输质量要求不高，但要保证效率，如qq聊天、语聊、视频。广播和组播</font>
+
+## TCP的三次握手过程
+<font style="color:#ffffff;">三次握手过程：</font>
+
+<font style="color:#ffffff;">第一次握手：建立连接时，客户端发送syn包（seq=j）到服务器，并进入SYN_SEND 状态，等待服务器确认（SYN：同步序列编号（Sync  hronize Sequence Numbers））。 </font>
+
+<font style="color:#ffffff;">第二次握手：服务器收到syn包，必须确认客户的SYN（ack=j+1），同时自己也发送一个SYN包（seq=k），即SYN+ACK包，此时服务器进入SYN_RECV状态。  </font>
+
+<font style="color:#ffffff;">第三次握手：客户端收到服务器的SYN+ACK包，向服务器发送确认包ACK(ack=k+1），此包发送完毕，客户端和服务器进入ESTABLISHED（TCP连接成功）状态，完成三次握手。</font>
+
+<img src="https://cdn.nlark.com/yuque/0/2024/png/227204/1728530948105-16522d12-9d32-4dc3-9af8-15cc25cbf4d6.png" width="890" title="" crop="0,0,1,1" id="ITlJt" class="ne-image">
+
+## TCP的四次挥手过程
+<font style="color:#ffffff;">四次挥手过程：</font>
+
+<font style="color:#ffffff;">第一次挥手：某个应用进程首先调用close，我们称这一端执行主动关闭。于是这一端的TCP发送一个FIN分节，表示数据发送完毕。</font>
+
+<font style="color:#ffffff;">第二次挥手：接收到FIN的另一端执行被动关闭（passive close）。这个FIN由TCP确认。它的接收也作为文件结束符传递给接收端应用进程（放在已排队等候应用进程接收到任何其他数据之后）</font>
+
+<font style="color:#ffffff;">第三次挥手：一段时间后，接收到文件结束符的应用进程将调用close关闭它的套接口。这导致它的TCP也发送一个FIN。</font>
+
+<font style="color:#ffffff;">第四次挥手：接收到这个FIN的原发送端TCP对它进行确认。</font>
+
+<img src="https://cdn.nlark.com/yuque/0/2024/png/227204/1728530948480-af7bd372-3a36-415e-9fb4-e48e79e67cf4.png" width="561" title="" crop="0,0,1,1" id="dXpPj" class="ne-image">
+
+##  TCP是如何保证可靠传输的
++ **<font style="color:#ffffff;">校验</font>**<font style="color:#ffffff;">：TCP 将保持它首部和数据的检验和</font><font style="color:#ffffff;">。</font><font style="color:#ffffff;">这是一个端到端的检验和，目的是检测数据在传输过程中的任何变化。如果收到端的检验和有差错，TCP 将丢弃这个报文段和不确认收到此报文段。 </font>
++ **<font style="color:#ffffff;">序列号</font>**<font style="color:#ffffff;">：TCP 传输时将每个字节的数据都进行了编号，这就是序列号。（为了应对延时抵达和排序混乱）。每个连接都会选择一个初始序列号，初始序列号（视为一个 32 位计数器），会随时间而改变（每 4 微秒加 1）。因此，每一个连接都拥有不同的序列号。序列号的作用不仅仅是应]答的作用，有了序列号能够将接收到的数据根据序列号排序，并且去掉重复序列号的数据。这也是 TCP 传输可靠性的保证之一。</font>
++ **<font style="color:#ffffff;">确认应答</font>**<font style="color:#ffffff;">：TCP 传输的过程中，每次接收方收到数据后，都会对传输方进行确认应答。也就是发送 ACK 报文。这个 ACK 报文当中带有对应的确认序列号，告诉发送方，接收到了哪些数据，下一次的数据从哪里发。</font>
++ **<font style="color:#ffffff;">超时重传</font>**<font style="color:#ffffff;">：超时重传机制。简单理解就是发送方在发送完数据后等待一个时间，时间到达没有接收到 ACK 报文，那么对刚才发送的数据进行重新发送。如果是刚才第一个原因，接收方收到二次重发的数据后，便进行 ACK 应答。如果是第二个原因，接收方发现接收的数据已存在（判断存在的根据就是序列号，所以上面说序列号还有去除重复数据的作用），那么直接丢弃，仍旧发送 ACK 应答。</font>
++ **<font style="color:#ffffff;">连接管理</font>**<font style="color:#ffffff;">：说白了就是三次握手四次挥手。</font>
++ **<font style="color:#ffffff;">流量控制</font>**<font style="color:#ffffff;">：当接收方来不及处理发送方的数据，能提示发送方降低发送的速率，防止包丢失。</font>
++ **<font style="color:#ffffff;">拥塞控制</font>**<font style="color:#ffffff;">：拥塞控制是 TCP 在传输时尽可能快的将数据传输，并且避免拥塞造成的一系列问题。是可靠性的保证，同时也是维护了传输的高效性。</font>
+
+## 如何实现并发服务器
++ **<font style="color:#ffffff;">多线程并发服务器（详细步骤见网络编程笔记）</font>**
++ **<font style="color:#ffffff;">多进程并发服务器（详细步骤见网络编程笔记）</font>**
++ **IO 多路复用并服务器****<font style="color:#ffffff;">（详细步骤见网络编程笔记）</font>**
+
+<details class="lake-collapse"><summary id="ud7a33d80"><strong><span class="ne-text" style="font-size: 19px">各方法优缺点对比</span></strong></summary><p id="uf257590e" class="ne-p" style="text-align: left"><strong><span class="ne-text" style="color: #ffffff; font-size: 16px">多进程:   </span></strong></p><p id="u9d234268" class="ne-p" style="text-align: left"><strong><span class="ne-text" style="color: #FF0000; font-size: 16px">优点:  服务器更稳定 , 父子进程资源独立,  安全性高一点</span></strong></p><p id="ue5807678" class="ne-p" style="text-align: left"><strong><span class="ne-text" style="color: #FF0000; font-size: 16px">缺点:  需要开辟多个进程,大量消耗资源</span></strong></p><p id="u03b83523" class="ne-p" style="text-align: left"><strong><span class="ne-text" style="color: #ffffff; font-size: 16px">多线程: </span></strong></p><p id="ud760d534" class="ne-p" style="text-align: left"><strong><span class="ne-text" style="color: #FF0000; font-size: 16px">优点:   相对多进程, 资源开销小,  线程共享同一个进程的资源</span></strong></p><p id="u2bcccef3" class="ne-p" style="text-align: left"><strong><span class="ne-text" style="color: #FF0000; font-size: 16px">缺点:   需要开辟多个线程,而且线程安全性较差</span></strong></p><p id="u47add327" class="ne-p" style="text-align: left"><strong><span class="ne-text" style="color: #ffffff; font-size: 16px">IO多路复用: </span></strong></p><p id="u91aa3faa" class="ne-p" style="text-align: left"><strong><span class="ne-text" style="color: #FF0000; font-size: 16px">优点:  节省资源, 减小系统开销,性能高;</span></strong></p><p id="u905585c0" class="ne-p" style="text-align: left"><strong><span class="ne-text" style="color: #FF0000; font-size: 16px">缺点:  代码复杂性高</span></strong></p></details>
+## select、poll、epoll的区别 
++ **<font style="color:#ffffff;">select</font>**<font style="color:#ffffff;">:</font>
+
+<font style="color:#ffffff;">1. 一个进程最多只能监听1024个文件描述符 （千级别）</font>
+
+<font style="color:#ffffff;">2.select被唤醒之后需要重新轮询一遍，效率比较低（消耗CPU资源）;</font>
+
+<font style="color:#ffffff;">3. select每次会清空表，每次都需要拷贝用户空间的表到内核空间，效率低（一个</font><font style="color:#ffffff;">进行</font><font style="color:#ffffff;">0~4G，0~3G是用户态，3G~4G是内核态，拷贝是非常耗时的）;  </font>
+
++ **<font style="color:#ffffff;">poll</font>**<font style="color:#ffffff;">:</font>
+
+<font style="color:#ffffff;">1. 优化文件描述符个数的限制;(根据poll函数第一个函数的参数来定，如果监听的事件为1个，则结构体数组的大小为1，如果想监听100个，那么这个结构体数组的大小就为100，由程序员自己来决定)</font>
+
+<font style="color:#ffffff;">2. poll被唤醒之后需要重新轮询一遍驱动的poll函数，效率比较低</font>
+
+<font style="color:#ffffff;">3. poll不需要重新构造文件描述符表，只需要从用户空间向内核空间拷贝一次数据即可</font>
+
++ **<font style="color:#ffffff;">epoll:</font>**<font style="color:#ffffff;">（本世纪最好用的io多路复用机制）</font>
+
+<font style="color:#ffffff;">1. 监听的最大的文件描述符没有个数限制（理论上，取决与你自己的系统）</font>
+
+<font style="color:#ffffff;">2. epoll当有事件产生被唤醒之后，文件描述符主动调用callback函数直接拿到唤醒的文件描述符，将文件描述符拷贝到用户空间即可</font>
+
+<font style="color:#ffffff;">3.epoll不需要重新构造文件描述符表，只需要从用户空间向内核空间拷贝一次数据即可</font>
+
+## Tcp的粘包问题
++ **<font style="color:#ffffff;">概念：</font>**<font style="color:#ffffff;"> 指在传输过程中，由于TCP协议的特性，多个数据包可能会被合并成一个大的数据包，或者一个数据包被拆分成多个小的数据包，从而导致接收端无法正确解析和处理数据。</font>
++ **<font style="color:#ffffff;">主要原因</font>**<font style="color:#ffffff;">：是TCP协议是面向流的，数据流在发送端和接收端之间是连续不断的，而没有消息边界的概念。因此，多个数据包在传输过程中可能会被合并成一个大的数据流，或者一个数据包被拆分成多个小的数据流。</font>
++ **解决方法**
+
+**<font style="color:#ffffff;">固定长度消息：</font>**
+
+<font style="color:#ffffff;">发送端将每个数据包固定长度发送，接收端按照固定长度来接收和解析数据。这种方法简单直接，但可能会造成数据浪费，因为某些数据包可能会很大，而其他数据包可能会很小。</font>
+
+**<font style="color:#ffffff;">消息边界标志：</font>**
+
+<font style="color:#ffffff;">发送端在每个数据包的末尾添加特定的标志来表示消息的结束，接收端通过检测标志来识别消息的边界。例如，可以在每个数据包的末尾添加换行符或其他特定字符作为消息边界。</font>
+
+**<font style="color:#ffffff;">消息长度字段： </font>**
+
+<font style="color:#ffffff;">发送端在每个数据包的头部添加一个表示消息长度的字段，接收端先读取消息长度字段，然后根据消息长度来接收和解析数据。这种方法比固定长度消息更灵活，但需要处理消息长度字段可能被拆分的情况。</font>
+
+**<font style="color:#ffffff;">使用专门的消息协议：</font>**
+
+<font style="color:#ffffff;">可以定义自己的消息协议，在消息中包含消息长度字段、消息类型等信息，使得接收端可以正确解析和处理数据。</font>
+
+**<font style="color:#ffffff;">应用层处理：</font>**
+
+<font style="color:#ffffff;">在应用层进行数据的拼接和解析，将多个小数据包合并成一个完整的消息。</font>
+
+## UDP的丢包问题
++ **<font style="color:#ffffff;">概念：</font>**<font style="color:#ffffff;">指在UDP协议传输过程中，由于网络原因或接收端处理能力不足，部分数据包可能在传输过程中丢失，导致接收端无法收到完整的数据。</font>
++ **<font style="color:#ffffff;">主要原因：</font>**
+
+**<font style="color:#ffffff;">网络拥堵</font>**<font style="color:#ffffff;">：当网络中的数据流量超过网络设备处理能力时，会导致数据包丢失。</font>
+
+**<font style="color:#ffffff;">网络延迟</font>**<font style="color:#ffffff;">：网络传输的延迟会导致数据包到达接收端的时间不确定，从而可能造成数据包的丢失。</font>
+
+**<font style="color:#ffffff;">缓冲区溢出</font>**<font style="color:#ffffff;">：接收端的缓冲区大小有限，如果数据到达速度过快，缓冲区可能会溢出，导致部分数据包丢失。</font>
+
+**<font style="color:#ffffff;">数据包大小</font>**<font style="color:#ffffff;">：UDP本身没有数据包大小限制，但在网络传输中，数据包过大可能会）被分片，而分片可能会造成部分数据包丢失。</font>
+
++ **<font style="color:#ffffff;">解决方法</font>**
+
+**<font style="color:#ffffff;">重传机制</font>**<font style="color:#ffffff;">：在应用层实现重传机制，发送端定时重发未确认的数据包，确保接收端收到完整的数据。</font>
+
+**<font style="color:#ffffff;">数据包校验</font>**<font style="color:#ffffff;">：可以在应用层添加数据包序号和校验码等信息，接收端通过校验和来检查数据的完整性，丢弃校验和错误的数据包。</font>
+
+**<font style="color:#ffffff;">网络优化</font>**<font style="color:#ffffff;">：优化网络拓扑和带宽，减少网络延迟和拥堵，提高数据传输的稳定性。</font>
+
+<font style="color:#ffffff;">应用层处理：在应用层对数据进行分段、拼接和校验，确保数据的完整性。</font>
+
+## TCP编程框架
++ <font style="color:#ffffff;">服务器端：</font>
+
+<font style="color:#ffffff;">socket（）函数创建流式套接字用于建立连接</font>
+
+<font style="color:#ffffff;">bind（）函数绑定服务器ip和端口号</font>
+
+<font style="color:#ffffff;">listen（）函数改变套接字属性化主动为被动</font>
+
+<font style="color:#ffffff;">accept(）函数等待连接产生用于通信的套接字</font>
+
+<font style="color:#ffffff;">send()/recv()函数读写</font>
+
+<font style="color:#ffffff;">close（）关闭文件描述符  </font>
+
++ <font style="color:#ffffff;">客户端：</font>
+
+<font style="color:#ffffff;">socket（）函数创建流式套接字用于通信</font>
+
+<font style="color:#ffffff;">connect()函数建立与服务器的连接</font>
+
+<font style="color:#ffffff;">send()/recv()函数读写</font>
+
+<font style="color:#ffffff;">close函数关闭文件描述符</font>
+
+## 用过抓包工具么？抓过什么数据包？
++ Wireshark
+
+[Wireshark过滤规则及使用方法](https://blog.csdn.net/nanhuaibeian/article/details/103091594)
+
++ tcpdump
+
+[https://www.cnblogs.com/jiujuan/p/9017495.html](https://www.cnblogs.com/jiujuan/p/9017495.html)
+
+## 广播和组播的区别
+1. **<font style="color:#ffffff;">主体不同</font>**
+
+<font style="color:#ffffff;">组播：为了减少在广播中涉及的不必要的开销，可以只向特定的一部分接收方（可以是域内也可以是域间）发送流量。</font>
+
+<font style="color:#ffffff;">广播：将报文发送到网络中的所有可能的接收者。</font>
+
+2. **<font style="color:#ffffff;">原理不同</font>**
+
+<font style="color:#ffffff;">组播：在通信中参与或感兴趣的主机需要处理相关的分组，流量只会被承载于它将被使用的链路上，并且只有任意组播数据报的一个副本被承载于这样的链路上。</font>
+
+<font style="color:#ffffff;">广播：路由器简单地将它接收到的任何广播报文副本转发到除该报文到达的接口以外的每个接口。</font>
+
+3. **<font style="color:#ffffff;">特点不同</font>**
+
+<font style="color:#ffffff;">组播：通过发送方指明接收方，或是通过接收方独立地指明就可以完成这项工作。然后网络只负责向预期的或感兴趣的收件方发送流量。</font>
+
+<font style="color:#ffffff;">广播：通过将地址中的主机部分全部置1形成的，特殊地址255.255.255.255对应于本地网络广播。</font>
+
+## TCP/IP 网络模型分为几层？每一层什么作用？都有哪些协议？
++ **<font style="color:#ffffff;">应用层（Application Layer）：</font>**
+
+<font style="color:#ffffff;">应用协议和应用程序的集合</font>
+
+<font style="color:#ffffff;">常见协议：HTTP、FTP、SMTP、DNS、Telnet、SSH、SNMP等。 </font>
+
++ **<font style="color:#ffffff;">传输层（Transport Layer）：</font>**
+
+<font style="color:#ffffff;">端到端，决定数据交给机器的哪个任务（进程）去处理，通过端口寻址。</font>
+
+<font style="color:#ffffff;">常见协议：TCP（传输控制协议）、UDP（用户数据报协议）。</font>
+
++ **<font style="color:#ffffff;">网络层（Internet Layer）：</font>**
+
+<font style="color:#ffffff;">提供设备对设备的传输，可以理解为通过IP寻址机器。</font>
+
+<font style="color:#ffffff;">常见协议：IP、ICMP、IGMP。</font>
+
++ **<font style="color:#ffffff;">网络接口和物理层</font>****<font style="color:#ffffff;">（</font>****Network interfaces and physical layers****<font style="color:#ffffff;">）：</font>**
+
+<font style="color:#ffffff;">屏蔽硬件差异（驱动），向上层提供统一的操作接口。</font>
+
+<font style="color:#ffffff;">常见协议：Ethernet、PPP（Point-to-Point Protocol）、ARP（Address Resolution Protocol）、RARP（Reverse Address Resolution Protocol）。</font>
+
+## OSI模型？
++ **<font style="color:#ffffff;">物理层（Physical Layer）：</font>**<font style="color:#ffffff;">物理层负责传输比特流，主要定义物理介质和电气特性，以及数据传输的硬件细节。</font>
++ **<font style="color:#ffffff;">数据链路层（Data Link Layer）：</font>**<font style="color:#ffffff;">数据链路层负责将数据包划分成帧，并处理帧的传输和接收。</font>
++ **<font style="color:#ffffff;">网络层（Network Layer）</font>**<font style="color:#ffffff;">：网络层负责决定数据从源节点到目的节点的路径选择。它处理逻辑地址（如 IP 地址）的分配和路由，确保数据能够跨越不同的网络到达目标。常见的网络层协议包括 IP、ICMP 等。</font>
++ **<font style="color:#ffffff;">传输层（Transport Layer）：</font>**<font style="color:#ffffff;">传输层提供端到端的数据传输服务，确保数据的可靠传输和错误恢复。提供端口号、流量控制和数据重传等功能，常见的传输层协议有TCP和UDP。</font>
++ **<font style="color:#ffffff;">会话层（Session Layer）：</font>**<font style="color:#ffffff;">会话层负责建立、管理和终止会话（通信连接）。管理不同设备之间的对话，确保数据传输的顺序和同步。</font>
++ **<font style="color:#ffffff;">表示层（Presentation Layer）</font>**<font style="color:#ffffff;">：表示层负责数据的格式化和转换，确保数据在不同系统中的表示和解释相互兼容。对数据进行加密、压缩、编码和解码等处理。</font>
++ **<font style="color:#ffffff;">应用层（Application Layer）：</font>**<font style="color:#ffffff;">应用层提供网络应用程序和用户之间的接口，负责应用程序的通信。各种网络应用，如电子邮件、文件传输、远程登录等都在应用层实现。  </font>
+
+## 学过什么数据库？增删改查语句？
++ **<font style="color:#ffffff;">SQLite </font>**
+
+[常见SQL语句](https://www.cnblogs.com/GarfieldEr007/p/5793638.html)
+
++ **<font style="color:#ffffff;">MySQL</font>**
+
+[常见MySQL语句](https://blog.csdn.net/qq_66345100/article/details/132085522)
+
+## 常用的数据库
+<font style="color:#ffffff;">大型数据库 ：Oracle                                     </font>
+
+<font style="color:#ffffff;">中型数据库 ：Server是微软开发的数据库产品，主要支持windows平台 </font>
+
+<font style="color:#ffffff;">小型数据库 : MySQL是一个小型关系型数据库管理系统。开放源码 (嵌入式不需要存储太多数据)</font>
+
+## MySQL和SQLite区别
++ **<font style="color:#ffffff;">嵌入式数据库</font>**<font style="color:#ffffff;">： </font>
+
+<font style="color:#ffffff;">MySQL是典型的客户端-服务器架构数据库，需要通过网络连接来访问数据库。它支持多用户、多</font><font style="color:#ffffff;">线程的并发操作</font><font style="color:#ffffff;">，适用于大型应用和高并发场景。</font>
+
+<font style="color:#ffffff;">SQLite是一种嵌入式数据库，直接嵌入到应用程序中，不需要独立的服务器进程。它适用于轻量级应用和单用户环境。</font>
+
++ **<font style="color:#ffffff;">数据库大小和性能</font>**<font style="color:#ffffff;">：</font>
+
+<font style="color:#ffffff;">MySQL适用于大型数据库和高性能需求，支持复杂的查询和大规模的数据存储。</font>
+
+<font style="color:#ffffff;">SQLite适用于小型数据库和低资源环境，它的存储引擎简单高效，适合移动设备和嵌入式系统。</font>
+
++ **<font style="color:#ffffff;">数据库特性</font>**<font style="color:#ffffff;">：</font>
+
+<font style="color:#ffffff;">MySQL持支完整的SQL语法，包括事务处理、视图、存储过程、触发器等高级特性。</font>
+
+<font style="color:#ffffff;">SQLite支持大部分SQL语法，但不支持存储过程和触发器等高级特性。</font>
+
++ **<font style="color:#ffffff;">部署和管理</font>**<font style="color:#ffffff;">：</font>
+
+<font style="color:#ffffff;">MySQL需要单独部署和配置数据库服务器，需要额外的管理和维护工作。</font>
+
+<font style="color:#ffffff;">SQLite作为嵌入式数据库，不需要独立的服务器，部署和管理比较简单。</font>
+
++ **<font style="color:#ffffff;">存储引擎</font>**<font style="color:#ffffff;">：</font>
+
+<font style="color:#ffffff;">MySQL支持多种存储引擎，如InnoDB、M0yISAM等，可以根据需求选择不同的存储引擎。</font>
+
+<font style="color:#ffffff;">SQLite只有一个存储引擎，但它在大部分场景下性能较好。</font>
+
+## 网络编程中做的项目，在简历中写的重点会问到
++ **模拟 FTP 实现**
++ **UDP 聊天室**
++ **电子词典**
++ **速递**
+
+## 四种 IO 模型
++ **阻塞IO**：最常见、效率低、不浪费cpu
++ **非阻塞式IO**：轮询、耗费CPU、可以处理多路IO
++ **信号驱动IO/异步IO**：异步通知方式，需要底层驱动的支持
++ **IO多路复用**：可以同时处理多路IO，不需要轮询，效率高
+
+# 六、C++：
+中国人总是喜欢强行拿两个东西去对比或归纳，个人是极为反感XX和XX的区别这种面试题，想问什么就直接问，但是没办法，你懂的。
+
+## 1. 指针和引用区别 
+引用：
+
++ 引用必须在定义时被初始化，并且必须指向一个有效的对象（不能指向空地址）。
++ 一旦引用被初始化后，就不能再改变其引用的对象（即不可更改指向）。
+
+可以重新赋值的部分：
+
++ 指针：可以重新赋值以指向不同的内存地址。
++ 引用：（无需提及，因为已经说明不能重新赋值）
+
+空间占用：
+
++ 指针：通常占用4个字节（在32位系统）或8个字节（在64位系统），具体取决于系统架构。
++ 引用：不占用额外的空间，因为引用在编译时会被编译器处理为指针操作的一种优化，但它本身在运行时并不作为一个独立的实体存在。
+
+用途：
+
++ 指针：广泛用于动态内存分配（如使用`new`和`delete`在C++中）、数组操作、函数指针、数据结构（如链表、树等）的节点指针等复杂场景。
++ 引用：主要用于作为函数参数传递（避免拷贝，提高性能），函数返回值（特别是返回大型对象时），以及为变量提供别名（增加代码可读性）。
+
+总体来说：
+
++ 指针提供了更高的灵活性，允许直接操作内存地址，但这也带来了更高的复杂性和潜在的错误风险，如空指针解引用、内存泄漏等。
++ 引用则更加简洁和安全，有助于提高代码的可读性和维护性，但使用时需要注意引用的生命周期（确保引用的对象在引用存在期间有效）和初始化（必须初始化且不能改变）。
+
+## 2. 类和结构体区别
+**<font style="color:#ffffff;">默认访问权限：</font>**
+
+<font style="color:#ffffff;">类：默认的访问权限是私有（private），即类中定义的成员（包括变量和函数）默认情况下都是私有的，只能在类内部访问。</font>
+
+<font style="color:#ffffff;">结构体：默认的访问权限是公有（public），即结构体中定义的成员默认情况下都是公共的，可以在结构体外部访问。</font>
+
+**<font style="color:#ffffff;">成员变量和成员函数：</font>**
+
+<font style="color:#ffffff;">类和结构体都可以包含成员变量和成员函数。在类中，成员函数通常被称为方法（Method），而在结构体中，成员函数也被称为函数（Function）。</font>
+
+**<font style="color:#ffffff;">继承：</font>**
+
+<font style="color:#ffffff;">类和结构体都支持继承。子类可以从父类中继承成员变量和成员函数，并且可以通过访问权限来控制继承的可见性。</font>
+
+**<font style="color:#ffffff;">类型别名：</font>**
+
+<font style="color:#ffffff;">类：类不可以直接使用typedef定义类型别名。</font>
+
+<font style="color:#ffffff;">结构体：结构体可以使用typedef定义类型别名。</font>
+
+**<font style="color:#ffffff;">类的继承关系中的默认访问权限：</font>**
+
+<font style="color:#ffffff;">类：默认继承权限为私有继承（private），意味着基类的成员在派生类中是私有的。</font>
+
+<font style="color:#ffffff;">结构体：默认继承权限为公共继承（public），意味着基类的成员在派生类中是公共的。</font>
+
+## 3. C++中static、const作用
+`static`<font style="color:#ffffff;">：</font>
+
+**<font style="color:#ffffff;">静态变量：</font>**<font style="color:#ffffff;">在函数内部使用</font>`static`<font style="color:#ffffff;">关键字定义的变量称为静态局部变量。静态变量的生命周期从程序开始执行到程序结束，其存储位置在静态存储区，而不是栈上。因此，它的值在不同函数调用之间保持不变。</font>
+
+**<font style="color:#ffffff;">静态函数：</font>**<font style="color:#ffffff;">在函数定义时使用</font>`static`<font style="color:#ffffff;">关键字修饰的函数称为静态函数（也称为文件作用域函数或内部链接函数）。它只能在定义它的源文件中被调用，不能被其他文件调用。这有助于限制函数的作用域，减少命名冲突。</font>
+
+**<font style="color:#ffffff;">静态数据成员：</font>**<font style="color:#ffffff;">属于类的一部分，但不是类的每个实例（对象）都有独立的副本。所有类实例共享同一份静态数据成员。特点：需要在类外进行初始化（通常在实现文件中）。</font>
+
+<font style="color:#ffffff;"></font>
+
+`const`<font style="color:#ffffff;">：</font>
+
+**<font style="color:#ffffff;">常量：</font>**<font style="color:#ffffff;">使用</font>`const`<font style="color:#ffffff;">关键字定义的变量是常量，其值在初始化后不可修改。常量可以用于声明不会被修改的变量，从而增加程序的可读性和安全性。</font>
+
+**<font style="color:#ffffff;">常量指针：</font>**<font style="color:#ffffff;">使用</font>`const`<font style="color:#ffffff;">关键字修饰指针，表示指针指向的变量是常量（即指针所指向的内容是常量），不能通过该指针修改变量的值。例如：</font>`const int* ptr;`<font style="color:#ffffff;"> 这里，</font>`ptr`<font style="color:#ffffff;">是一个指向</font>`int`<font style="color:#ffffff;">型常量的指针。</font>
+
+**<font style="color:#ffffff;">指针常量：</font>**<font style="color:#ffffff;">使用</font>`const`<font style="color:#ffffff;">关键字修饰指针本身，表示指针本身是常量，即指针的指向不能改变，但指针所指向的内容可以修改（除非该内容也被声明为常量）。例如：</font>`int* const ptr;`<font style="color:#ffffff;"> 这里，</font>`ptr`<font style="color:#ffffff;">是一个指向</font>`int`<font style="color:#ffffff;">型变量的常量指针。</font>
+
+**<font style="color:#ffffff;">常量引用：</font>**<font style="color:#ffffff;">使用</font>`const`<font style="color:#ffffff;">关键字修饰引用，表示引用的对象是常量，不能通过该引用修改变量的值。例如：</font>`const int& ref;`<font style="color:#ffffff;"> 这里，</font>`ref`<font style="color:#ffffff;">是一个对</font>`int`<font style="color:#ffffff;">型常量的引用。</font>
+
+<font style="color:#ffffff;"></font>
+
+**<font style="color:#ffffff;">注意：</font>**`const`<font style="color:#ffffff;">和</font>`static`<font style="color:#ffffff;">不能够同时修饰成员函数的情况需要澄清。实际上，</font>`const`<font style="color:#ffffff;">和</font>`static`<font style="color:#ffffff;">是可以同时用于修饰成员函数的，但它们的意义不同。</font>`const`<font style="color:#ffffff;">成员函数表示该成员函数不会修改类的任何数据成员（除了通过</font>`mutable`<font style="color:#ffffff;">修饰的数据成员）。而</font>`static`<font style="color:#ffffff;">成员函数则没有</font>`this`<font style="color:#ffffff;">指针，因此它不能访问类的非静态数据成员和非常量成员函数。如果同时用</font>`const`<font style="color:#ffffff;">和</font>`static`<font style="color:#ffffff;">修饰成员函数，则意味着该函数既不会修改类的静态数据成员（如果它尝试这样做的话，由于缺少</font>`this`<font style="color:#ffffff;">指针，这实际上是不可能的），也不会修改任何通过参数传递进来的对象的状态（如果它是通过对象调用的，但实际上</font>`static`<font style="color:#ffffff;">成员函数通常是通过类名直接调用的）。然而，这种组合在实践中并不常见，因为</font>`static`<font style="color:#ffffff;">成员函数通常不操作对象状态，而</font>`const`<font style="color:#ffffff;">成员函数则通常用于保证不修改对象状态。因此，虽然语法上允许这种组合，但逻辑上可能并不总是有意义。</font>
+
+## 4. C和C++的区别
+这问题可真烂啊，让我回答就是直接站在宏观上回答，编程思想不同——面向过程与面向对象，然后就可以进入封装继承多态的内容了，实际上可以一直说下去，直接上来就第一点第二点第三点罗列的，太公式化了，我不会给高分，但是会及格分。
+
+————以上是个人观点，喜欢刻板回答的请参考下面内容。
+
+**<font style="color:#ffffff;">编程范式：</font>**
+
+<font style="color:#ffffff;">C语言是一种典型的过程式编程语言，它侧重于按顺序执行一系列步骤，主要关注数据的处理和算法的实现。而C++则是一种面向对象的编程语言，它在继承C语言过程式特性的基础上，引入了封装、继承和多态等面向对象的概念，从而提供了更强大的抽象和封装能力。</font>
+
+**<font style="color:#ffffff;">类和对象：</font>**
+
+<font style="color:#ffffff;">在C语言中，没有类和对象的概念。程序员通常通过结构体（struct）和函数来模拟数据和函数的组合，但这种模拟无法提供真正的封装和抽象。而在C++中，类和对象的引入使得数据和函数可以被封装在类中，从而实现了更高层次的抽象和封装。</font>
+
+**<font style="color:#ffffff;">函数重载：</font>**
+
+<font style="color:#ffffff;">C语言不支持函数重载，即同名函数只能有一个实现。这在一定程度上限制了函数的灵活性和可读性。而C++则支持函数重载，它可以根据函数参数的类型和数量来自动选择调用不同的函数，从而提高了代码的灵活性和可读性。</font>
+
+**<font style="color:#ffffff;">异常处理：</font>**
+
+<font style="color:#ffffff;">C语言没有内置的异常处理机制，通常使用错误码或全局变量来处理错误情况。这种方式不仅繁琐，而且容易出错。而C++则引入了异常处理机制，它可以使用try-catch块来捕获和处理异常，从而更加优雅地处理错误情况。</font>
+
+**<font style="color:#ffffff;">标准库：</font>**
+
+<font style="color:#ffffff;">C语言的标准库主要包含输入输出、字符串处理、数学函数等基本功能。而C++的标准库则更加丰富和完善，它不仅包含了C语言的标准库，还增加了大量的面向对象的支持，如容器（如vector、map等）、算法（如sort、find等）、迭代器（如input_iterator、forward_iterator等）等。</font>
+
+**<font style="color:#ffffff;">头文件：</font>**
+
+<font style="color:#ffffff;">在C语言中，通常使用.h后缀的头文件来声明函数和全局变量。而在C++中，虽然也使用.h后缀的头文件来声明C语言的函数和全局变量（为了兼容C语言），但C++还引入了命名空间（namespace）等特性来更好地组织代码。此外，C++还推荐使用.hpp或.hxx等后缀来命名C++专用的头文件。</font>
+
+**<font style="color:#ffffff;">兼容性：</font>**
+
+<font style="color:#ffffff;">C++是C的超集，几乎所有的C代码都可以在C++中编译和运行。</font>
+
+## 5. 什么是构造函数、析构函数？
+**<font style="color:#ffffff;">构造函数</font>**<font style="color:#ffffff;">：</font>
+
+<font style="color:#ffffff;">构造函数是一种特殊的成员函数，在创建对象时被调用，用于初始化对象的成员变量和执行一些必要的初始化工作。 </font>
+
+<font style="color:#ffffff;">构造函数的名称与类的名称相同，没有返回类型（包括void），也不需要显式调用，在创建对象时自动调用。</font>
+
+<font style="color:#ffffff;">如果一个类没有定义构造函数，编译器会自动生成默认构造函数，但如果定义了自定义的构造函数，编译器就不会生成默认构造函数。</font>
+
+<font style="color:#ffffff;">可以定义多个构造函数，即函数重载，通过不同的参数列表来初始化对象的不同状态。</font>
+
+**<font style="color:#ffffff;">析构函数：</font>**
+
+<font style="color:#ffffff;">析构函数也是一种特殊的成员函数，在对象销毁时被调用，用于释放对象占用的资源和执行一些清理工作。</font>
+
+<font style="color:#ffffff;">析构函数的名称与类的名称相同，在名称前加上波浪号（~），没有返回类型（包括void），不需要显式调用， 通常内容包括关闭打开的文件、释放其他资源等。</font>
+
+## 6. new、delete、malloc、free区别
+这就是一个典型的强行归纳和对比的例子，老虎吃肉和马吃草有什么区别？但是面试喜欢问，你就必须得会，哈哈。
+
+**<font style="color:#ffffff;">new和delete：</font>**
+
+<font style="color:#ffffff;">new是C++中用于动态分配内存的操作符，它可以创建对象并返回指向对象的指针。例如：int* ptr = new int;</font>
+
+<font style="color:#ffffff;">delete是C++中用于释放通过new分配的内存的操作符，它会调用对象的析构函数并释放内存。例如：delete ptr;</font>
+
+<font style="color:#ffffff;">new和delete会自动调用对象的构造函数和析构函数，适用于类对象的动态内存分配和释放。</font>
+
+**<font style="color:#ffffff;">malloc和free：</font>**
+
+<font style="color:#ffffff;">malloc是C语言中用于动态分配内存的函数，它返回指向分配内存的指针。</font>
+
+<font style="color:#ffffff;">例如：int* ptr = (int*)malloc(sizeof(int));</font>
+
+<font style="color:#ffffff;">free是C语言中用于释放通过malloc分配的内存的函数，它不会调用对象的构造函数和析构函数。例如：free(ptr);</font>
+
+<font style="color:#ffffff;">malloc和free不会自动调用对象的构造函数和析构函数，适用于基本数据类型或者内存块的动态分配和释放。</font>
+
+## **7.虚函数的作用？**
+**<font style="color:#ffffff;">实现动态绑定：</font>**<font style="color:#ffffff;">虚函数允许在运行时根据对象的实际类型来调用相应的函数，而不是根据变量的静态类型来调用函数。这样可以实现动态绑定，即在运行时确定函数的调用地址，使得程序可以根据实际对象的类型执行正确的函数。</font>
+
+**<font style="color:#ffffff;">实现多态性：</font>**<font style="color:#ffffff;">多态性是面向对象编程的重要特性之一。通过虚函数，可以在父类中声明一个函数为虚函数，然后在子类中对其进行重写，使得不同的子类对象可以对同一个函数有不同的实现。这样，同样的代码可以根据不同的对象表现出不同的行为，增加了代码的灵活性和可扩展性。</font>
+
+**<font style="color:#ffffff;">支持继承和接口：</font>**<font style="color:#ffffff;">虚函数是面向对象编程中实现继承和接口的基础。通过在基类中定义虚函数，子类可以继承这些函数并进行重写，实现了类的继承和接口的规范。</font>
+
+
+
+<font style="color:#ffffff;">使用虚函数时，需要注意以下几点：</font>
+
++ <font style="color:#ffffff;">虚函数应该在基类中声明为virtual，并在子类中进行重写。子类中的函数签名（参数类型和返回类型）必须与基类中的虚函数一致，才能正确覆盖虚函数。</font>
++ <font style="color:#ffffff;">虚函数的调用会增加一层间接性，可能会稍微影响程序的执行效率，但这种开销通常是可以忽略的。</font>
++ <font style="color:#ffffff;">虚函数只适用于有继承关系的类，对于没有继承关系的类，使用虚函数是没有意义的。</font>
+
+## 8. 对多态的理解？多态的原理？
+先回答静态多态和动态多态，实际上面试官一定重点想听动态多态，然后就可以从概念入手，什么是多态：
+
+**<font style="color:#ffffff;">一个接口，多种状态</font>**
+
+<font style="color:#ffffff;">多态是面向对象编程的一个重要概念，它允许不同的对象对同一个方法做出不同的响应。多态性使得代码可以根据不同的对象类型表现出不同的行为，提高了代码的灵活性和可扩展性。  </font>
+
+好的回答不是背，在这里给我举例子，你就拿Qt里面的parent参数传递this指针举例就很好，人家一个构造函数的parent参数是不是可以支持所有QWidget甚至QObject对象的传递？如果你不知道我在说什么还是按照标准答案背吧，但是不会给你加分的，因为你是人机。
+
+<font style="color:#ffffff;">多态实现需要三个条件：公有继承、函数覆盖、基类引用或指针指向派生类对象。</font>
+
+这里可以重点提一下函数覆盖，为什么呢，因为函数覆盖有虚函数，而虚函数的设计实际上是为了动态类型绑定，还记得上课画图讲解的原理吗？
+
+**<font style="color:#ffffff;">动态类型绑定</font>**<font style="color:#ffffff;">是指在程序运行过程中，根据对象的实际类型来确定应该调用哪个函数。这与静态类型绑定（Static Type Binding）相对，后者在编译时就确定了函数的调用。在C++中，动态类型绑定通常通过基类的引用或指针来调用虚函数时发生。当使用基类的引用或指针指向派生类对象，并调用虚函数时，程序会在运行时根据对象的实际类型来查找并调用相应的函数实现。</font>
+
+**<font style="color:#ffffff;">虚函数表</font>**<font style="color:#ffffff;">是C++实现多态性的关键机制之一。每个包含虚函数的类都有一个虚函数表，该表是一个包含虚函数指针的数组。这些指针指向类中定义的虚函数的实际实现。</font>
+
+1. <font style="color:#ffffff;">虚函数表的创建</font><font style="color:#ffffff;">：</font>
+    - <font style="color:#ffffff;">编译器在编译阶段为每个包含虚函数的类创建一个虚函数表。</font>
+    - <font style="color:#ffffff;">虚函数表中的条目（即虚函数指针）在编译阶段就被确定并填充。</font>
+2. <font style="color:#ffffff;">虚函数表的使用</font><font style="color:#ffffff;">：</font>
+    - <font style="color:#ffffff;">每个类的对象都有一个指向其所属类的虚函数表的指针（通常称为虚表指针或vptr）。</font>
+    - <font style="color:#ffffff;">当通过基类的引用或指针调用虚函数时，程序会首先通过对象的虚表指针找到其所属类的虚函数表。</font>
+    - <font style="color:#ffffff;">然后在虚函数表中查找所调用的虚函数对应的条目，并根据该条目中的函数指针调用相应的函数实现。</font>
+3. <font style="color:#ffffff;">虚函数表与多态性的实现</font><font style="color:#ffffff;">：</font>
+    - <font style="color:#ffffff;">通过虚函数表，C++实现了运行时多态性。即使使用基类的引用或指针，程序也能根据对象的实际类型调用正确的虚函数实现。</font>
+    - <font style="color:#ffffff;">当派生类重写基类的虚函数时，派生类的虚函数表会相应地更新，以确保调用的是派生类的函数实现。</font>
+
+## 9. 为什么在继承中将析构函数定义为虚析构函数？
+还记得上课多态一开始造成内存泄漏的例子吗？
+
+<font style="color:#ffffff;">在继承关系中，将析构函数定义为虚析构函数是为了确保在删除一个指向派生类对象的基类指针时，能够正确调用派生类的析构函数。如果不将析构函数定义为虚析构函数，那么在使用基类指针删除派生类对象时，只会调用基类的析构函数，而不会调用派生类的析构函数，可能会导致资源泄漏或不正确的释放行为。</font>
+
+## 10. vector与list的区别，vector、list、map是什么存储结构
+**<font style="color:#ffffff;">存储结构：</font>**
+
+<font style="color:#ffffff;">vector是一个动态数组，它在内存中连续存储元素，通过指针偏移来访问元素，因此支持快速随机访问（通过下标索引）。</font>
+
+<font style="color:#ffffff;">list是一个双向链表，它的每个元素都包含一个指向前一个元素和后一个元素的指针，因此支持快速插入和删除操作，但不支持快速随机访问。</font>
+
+**<font style="color:#ffffff;">动态大小：</font>**
+
+<font style="color:#ffffff;">vector的大小可以动态调整，当添加或删除元素时，vector会自动调整内部的存储空间，保证能够容纳所有元素。</font>
+
+<font style="color:#ffffff;">list的大小也可以动态调整，但由于其双向链表的特性，不需要连续的存储空间，所以在添加或删除元素时，不需要重新分配内存。</font>
+
+**<font style="color:#ffffff;">内存开销：</font>**
+
+<font style="color:#ffffff;">vector在、每次增加元素时，可能需要重新分配内存，并将原有元素复制到新的内存空间中，这可能会产生一定的开销。 </font>
+
+<font style="color:#ffffff;">list在添加或删除元素时，只需要修改链表中的指针，不需要重新分配内存，因此对于频繁的插入和删除操作，list可能更高效。</font>
+
+
+
+<font style="color:#ffffff;">map是另一种C++标准库中的容器，它是一种关联容器，用于存储键值对。map通常是通过红黑树来实现的，这是一种平衡二叉搜索树，它可以保持元素有序。map的查找时间复杂度为O(log n)，因为它是通过二分查找来查找键值对的。而vector和list的查找时间复杂度分别为O(n)和O(n)，因为它们需要遍历所有元素来查找目标元素。</font>
+
+## 11. 迭代器的作用
+<font style="color:#ffffff;">迭代器是一种用于遍历容器中元素的对象。它提供了一种统一的访问方式，使得我们可以通过迭代器来访问容器中的元素，而无需关心容器的具体实现细节。</font>
+
+<font style="color:#ffffff;">迭代器的作用包括：</font>
+
++ <font style="color:#ffffff;">访问容器元素</font><font style="color:#ffffff;">：通过迭代器可以逐个访问容器中的元素，从第一个元素遍历到最后一个元素。</font>
++ <font style="color:#ffffff;">遍历容器</font><font style="color:#ffffff;">：使用迭代器可以在容器中进行循环遍历，对容器中的每个元素进行相同的操作。</font>
++ <font style="color:#ffffff;">实现算法</font><font style="color:#ffffff;">：许多算法和函数（如</font>`<font style="color:rgb(223, 218, 212);background-color:rgb(26, 28, 29);">std::find</font>`<font style="color:#ffffff;">、</font>`<font style="color:rgb(223, 218, 212);background-color:rgb(26, 28, 29);">std::sort</font>`<font style="color:#ffffff;">等）都可以使用迭代器作为参数，从而对容器中的元素进行操作。</font>
++ <font style="color:#ffffff;">支持泛型编程：通过使用迭代器，可以编写与容器无关的通用算法，使得代码更加灵活和可复用。</font>
+
+## 12. 智能指针有哪些？
+丢了一个auto_ptr，可以稍微说下，毕竟被废弃了。
+
+<font style="color:#ffffff;">智能指针是C++中用于管理动态内存的智能对象，它们可以自动管理内存的分配和释放，避免内存泄漏和悬挂指针等问题。C++标准库中提供了几种智能指针，包括：</font>
+
++ `**<font style="color:rgb(223, 218, 212);background-color:rgb(26, 28, 29);">auto_ptr</font>**`<font style="color:#ffffff;">（已废弃）：这是一个早期的智能指针，用于自动管理单个对象的生命周期。然而，由于存在所有权转移的问题（特别是在复制和赋值操作中），</font>`<font style="color:rgb(223, 218, 212);background-color:rgb(26, 28, 29);">auto_ptr</font>`<font style="color:#ffffff;">已经被认为是不安全的，并在C++11中被正式废弃。不建议在新代码中使用</font>`<font style="color:rgb(223, 218, 212);background-color:rgb(26, 28, 29);">auto_ptr</font>`<font style="color:#ffffff;">。</font>
++ `**<font style="color:rgb(223, 218, 212);background-color:rgb(26, 28, 29);">unique_ptr</font>**`<font style="color:#ffffff;">：是独占式智能指针，每个</font>`<font style="color:rgb(223, 218, 212);background-color:rgb(26, 28, 29);">unique_ptr</font>`<font style="color:#ffffff;">对象可以拥有对一个资源的唯一所有权。当</font>`<font style="color:rgb(223, 218, 212);background-color:rgb(26, 28, 29);">unique_ptr</font>`<font style="color:#ffffff;">被销毁或者通过</font>`<font style="color:rgb(223, 218, 212);background-color:rgb(26, 28, 29);">std::move</font>`<font style="color:#ffffff;">转移所有权时，它所拥有的资源会被自动释放。由于独占性，</font>`<font style="color:rgb(223, 218, 212);background-color:rgb(26, 28, 29);">unique_ptr</font>`<font style="color:#ffffff;">不能进行复制，只能通过</font>`<font style="color:rgb(223, 218, 212);background-color:rgb(26, 28, 29);">std::move</font>`<font style="color:#ffffff;">转移所有权。适用于需要明确拥有资源的场景。</font>
++ `**<font style="color:rgb(223, 218, 212);background-color:rgb(26, 28, 29);">shared_ptr</font>**`<font style="color:#ffffff;">：是共享式智能指针，多个</font>`<font style="color:rgb(223, 218, 212);background-color:rgb(26, 28, 29);">shared_ptr</font>`<font style="color:#ffffff;">对象可以共享同一个资源的所有权。每个</font>`<font style="color:rgb(223, 218, 212);background-color:rgb(26, 28, 29);">shared_ptr</font>`<font style="color:#ffffff;">对象会维护一个引用计数，当引用计数变为0时，资源会被自动释放。</font>`<font style="color:rgb(223, 218, 212);background-color:rgb(26, 28, 29);">shared_ptr</font>`<font style="color:#ffffff;">支持复制和拷贝构造，通过增加和减少引用计数来管理资源的所有权。适用于多个对象需要共享资源的场景。</font>
++ `**<font style="color:rgb(223, 218, 212);background-color:rgb(26, 28, 29);">weak_ptr</font>**`<font style="color:#ffffff;">：是弱引用智能指针，它可以指向</font>`<font style="color:rgb(223, 218, 212);background-color:rgb(26, 28, 29);">shared_ptr</font>`<font style="color:#ffffff;">管理的资源，但不会增加资源的引用计数。当所有</font>`<font style="color:rgb(223, 218, 212);background-color:rgb(26, 28, 29);">shared_ptr</font>`<font style="color:#ffffff;">都销毁后，即使</font>`<font style="color:rgb(223, 218, 212);background-color:rgb(26, 28, 29);">weak_ptr</font>`<font style="color:#ffffff;">还存在，资源也会被释放。</font>`<font style="color:rgb(223, 218, 212);background-color:rgb(26, 28, 29);">weak_ptr</font>`<font style="color:#ffffff;">主要用于解决</font>`<font style="color:rgb(223, 218, 212);background-color:rgb(26, 28, 29);">shared_ptr</font>`<font style="color:#ffffff;">之间的循环引用问题，避免内存泄漏。</font>
+
+<font style="color:#ffffff;">现代C++智能指针（</font>`<font style="color:rgb(223, 218, 212);background-color:rgb(26, 28, 29);">unique_ptr</font>`<font style="color:#ffffff;">、</font>`<font style="color:rgb(223, 218, 212);background-color:rgb(26, 28, 29);">shared_ptr</font>`<font style="color:#ffffff;">和</font>`<font style="color:rgb(223, 218, 212);background-color:rgb(26, 28, 29);">weak_ptr</font>`<font style="color:#ffffff;">）都定义在头文件</font>`<font style="color:rgb(223, 218, 212);background-color:rgb(26, 28, 29);"><memory></font>`<font style="color:#ffffff;">中。</font>
+
+## 13. C++11新特性有哪些？
+学了这些：
+
+1. **<font style="color:#ffffff;">for-each（范围-based for 循环）</font>**
+2. **<font style="color:#ffffff;">array</font>**
+3. **<font style="color:#ffffff;">列表初始化（Uniform Initialization）</font>**
+
+<font style="color:#ffffff;">使用 {} 来进行初始化，可以保证初始化方式的统一性。</font>
+
+4. **<font style="color:#ffffff;">智能指针（后三个）</font>**
+5. **<font style="color:#ffffff;">override</font>**
+
+<font style="color:#ffffff;">用于指定函数的覆盖（重写）</font>
+
+6. **<font style="color:#ffffff;">继承构造</font>**
+7. **<font style="color:#ffffff;">强制类型转换（四种函数）</font>**
+8. **<font style="color:#ffffff;">auto</font>**
+
+<font style="color:#ffffff;">用于自动推导变量类型，让编译器根据变量的初始化表达式推断出其类型。</font>
+
+9. **<font style="color:#ffffff;">nullptr</font>**
+
+<font style="color:#ffffff;">用于表示空指针，取代了之前使用的 NULL 宏，避免了一些潜在的问题。</font>
+
+10. **<font style="color:#ffffff;">constexpr</font>**
+
+<font style="color:#ffffff;">用于声明常量表达式，可以在编译时计算出结果，提高性能和安全性。</font>
+
+
+
+但是不止这些，还有不少：
+
++ **<font style="color:#ffffff;">引入右值引用（Rvalue References）</font>**
+
+<font style="color:#ffffff;">通过 && 来标识右值引用，支持移动语义，可以提高资源的移动效率。</font>
+
++ **<font style="color:#ffffff;">支持移动语义</font>**
+
+<font style="color:#ffffff;">引入右值引用和移动构造函数，可以高效地进行资源的转移和管理。</font>
+
++ **<font style="color:#ffffff;">Lambda 表达式</font>**
+
+<font style="color:#ffffff;">用于创建匿名函数，简化代码的编写。</font>
+
++ **<font style="color:#ffffff;">线程支持库</font>**
+
+<font style="color:#ffffff;">引入了标准的线程库，支持多线程编程。</font>
+
++ **<font style="color:#ffffff;">std::tuple</font>**
+
+<font style="color:#ffffff;">引入元组类型，可以容纳多个不同类型的元素。</font>
+
++ **<font style="color:#ffffff;">static_assert</font>**
+
+<font style="color:#ffffff;">用于在编译时进行断言检查。</font>
+
++ **<font style="color:#ffffff;">final 关键字</font>**
+
+<font style="color:#ffffff;">用于指定函数禁止覆盖（重写）。</font>
+
+## 14. 深拷贝和浅拷贝区别
+<font style="color:#ffffff;">深拷贝（Deep Copy）和浅拷贝（Shallow Copy）是在对象拷贝（赋值）时常用的两种方式，它们的区别主要在于拷贝对象时是否复制对象所指向的资源。</font>
+
+**<font style="color:#ffffff;">浅拷贝：</font>**
+
+<font style="color:#ffffff;">浅拷贝是简单地复制对象的成员变量值，包括指针成员变量的地址。这意味着两个对象指向同一块内存地址，它们共享同一份资源。当其中一个对象修改了资源，另一个对象也会受到影响，可能导致悬挂指针和资源释放问题。</font>
+
+**<font style="color:#ffffff;">深拷贝：</font>**
+
+<font style="color:#ffffff;">深拷贝是在拷贝对象时，创建一个新的对象，并复制原对象所指向资源的内容到新的对象中。这样两个对象拥有独立的资源副本，修改一个对象不会影响另一个对象。深拷贝保证了对象之间的独立性和安全性。</font>
+
+## 15. this指针的作用
+1. <font style="color:#ffffff;">用于区分同名的成员和局部变量：例如在类的成员函数中，如果局部变量和类的成员同名，使用 this 指针可以明确指出要操作的是成员而不是局部变量。  </font>
+2. <font style="color:#ffffff;">在类的成员函数中访问其他成员：由于成员函数是被对象调用的，而 this 指针指向调用成员函数的对象，可以通过 this 指针访问其他成员变量和成员函数。需要注意的是如果没有重名问题，编译器会自动使用this指针调用，而无需程序员手动调用。</font>
+3. <font style="color:#ffffff;">链式调用：当一个成员函数的返回值类型为当前类型的引用时，函数通常会return *this，这表示此函数支持链式调用。</font>
+
+## 16. 重载、覆盖、隐藏的区别？
+再说一遍，我个人很讨厌把override翻译成重写，这样做的人非蠢既坏，不考虑容易跟overload混淆的问题吗？翻译讲究信达雅，而不是机械化。
+
+1. <font style="color:#ffffff;">重载（Overload）：</font>
+
+<font style="color:#ffffff;">重载指的是在同一个作用域内，函数名相同但参数列表不同的多个函数。重载函数可以有不同的参数类型、参数个数或参数顺序，但返回类型不是重载函数的区分标志。编译器根据调用时的实参来决定调用哪个重载函数。重载是静态多态性的一种表现形式。</font>
+
+2. <font style="color:#ffffff;">覆盖（Override）：</font>
+
+<font style="color:#ffffff;">覆盖是指派生类重写了基类中的虚函数，并且函数签名完全一致。在派生类中使用 override 关键字明确指示覆盖。当通过基类指针或引用调用虚函数时，实际上执行的是派生类中的版本。覆盖是实现多态性的一种手段。</font>
+
+3. <font style="color:#ffffff;">隐藏（Hide）：</font>
+
+<font style="color:#ffffff;">隐藏是指派生类定义了一个与基类同名的成员（函数或变量），导致基类的成员在派生类中被隐藏。这个过程中，派生类的成员将隐藏基类的同名成员，而不是覆盖它。隐藏通常发生在非虚函数和静态成员函数中，因为它们不参与动态绑定。隐藏也是静态多态性的一种表现形式。</font>
+
+## 17. 静态成员变量占用对象内存吗？为什么？
+	<font style="color:#ffffff;">对象的创建一定伴随着内存的开辟，但是这部分内存是不包含静态成员变量的。这是因为静态成员变量是属于类的，而不是属于类的每个实例（对象）的。静态成员变量的存储空间在程序的生命周期中只分配一次，它们位于数据段（data segment）或全局存储区（global storage）中，不在堆区，也不在栈区，与堆内存对象或栈内存对象无关。</font>
+
+
+
+# 七、QT
+## 1. Qt的跨平台特性是如何体现的？
+:::info
+<font style="color:#ffffff;">Qt提供了一套统一的API，不依赖于底层操作系统，因此可以在不同平台上编写相同的代码。开发者可以使用Qt的API来创建界面、处理事件、访问文件系统、进行网络通信等操作，而不需要关心底层操作系统的差异。</font>
+
+<font style="color:#ffffff;">跨平台编译工具：Qt提供了Qt Creator作为开发环境，并且支持各种常用的编译器，如GCC、MinGW、MSVC等。开发者可以在Qt Creator中编写代码，并使用相应的编译工具将代码编译为不同平台下的可执行文件。</font>
+
+:::
+
+## 2. 上位机与下位机的关系是什么，你做过哪些相关项目？
+
+
+:::info
+<font style="color:#ffffff;">上位机与下位机是指在嵌入式系统中，上位机是指具有较强计算能力和丰富外部资源的计算机或设备，通常运行着操作系统（如PC、工作站、服务器等），用于处理和控制下位机。而下位机是指相对简单的嵌入式设备，通常不具备复杂的计算和控制能力，通过与上位机通信，接收上位机的指令并执行相应的任务。</font>
+
+<font style="color:#ffffff;"></font>
+
+<font style="color:#ffffff;">上位机和下位机之间通常通过串口、以太网、CAN总线等通信方式进行数据交互和命令传输。上位机可以向下位机发送控制指令、配置参数等，下位机则负责根据上位机的指令执行相应的操作。</font>
+
+:::
+
+## 4. 如何提升组件？
+:::info
+<font style="color:rgb(5, 7, 59);">在 Qt 中，"提升组件"通常指的是将一个标准的 Qt 组件（如 </font>`<font style="color:rgb(5, 7, 59);">QPushButton</font>`<font style="color:rgb(5, 7, 59);">、</font>`<font style="color:rgb(5, 7, 59);">QLabel</font>`<font style="color:rgb(5, 7, 59);"> 等）替换为一个自定义的组件或派生类。这在设计 Qt 用户界面（UI）时非常有用，特别是当你需要扩展或修改现有组件的功能时。首先需要先把自定义类写好，然后在UI编辑器上使用提升选项，选择相应的类即可。</font>
+
+:::
+
+
+
+## 5. QApplication的功能是什么？
+:::info
+<font style="color:#ffffff;">QApplication是Qt中的一个重要类，它是Qt应用程序的核心类之一。它提供了一些必要的功能，用于初始化和管理整个Qt应用程序的运行环境。QApplication的功能包括：</font>
+
+
+
+<font style="color:#ffffff;">初始化Qt框架： QApplication在应用程序启动时，负责初始化Qt框架。它会处理一些全局配置，为整个应用程序做好准备。</font>
+
+<font style="color:#ffffff;">事件循环：QApplication负责运行应用程序的事件循环。事件循环是Qt中用于处理用户输入、定时器事件、网络事件等的机制。它让应用程序可以响应用户操作和其他事件。</font>
+
+
+
+<font style="color:#ffffff;">窗口管理：QApplication可以管理应用程序的所有窗口。它会跟踪所有打开的窗口，并确保它们在正确的时间被显示、隐藏、关闭等。</font>
+
+
+
+<font style="color:#ffffff;">多语言支持：QApplication提供了多语言支持的功能。它可以加载和切换不同的翻译文件，以实现应用程序的国际化和本地化。</font>
+
+
+
+<font style="color:#ffffff;">全局属性和设置：QApplication可以设置一些全局属性，如应用程序的图标、名称、版本等。它还可以管理应用程序的设置和配置。</font>
+
+
+
+<font style="color:#ffffff;">线程管理：QApplication可以帮助管理多线程应用程序的线程。它提供了一些线程安全的方法，用于在线程之间发送信号和事件。</font>
+
+
+
+<font style="color:#ffffff;">退出管理：QApplication可以管理应用程序的退出。它提供了一些方法，用于优雅地退出应用程序，并确保在退出前完成必要的清理工作。</font>
+
+:::
+
+## 7. （随便找一个电脑软件）请问这个软件界面的布局思路是什么？
+布局是要重点复习的东西，从整体到局部或者从局部到整体的思路都可。没有很固定的答案。
+
+## 8. 定时器是做什么的，能举出一些在实际项目中的使用场景吗？
+:::info
+<font style="color:#ffffff;">定时器在程序中用于定时触发特定的事件或函数。它可以在一定时间间隔内周期性地执行某个任务，也可以在指定的时间点执行某个任务。</font>
+
+
+
+<font style="color:#ffffff;">界面刷新：在图形界面应用程序中，定时器可以用来定时刷新界面，以保持界面的实时性，比如实时监控软件中的数据刷新。</font>
+
+
+
+<font style="color:#ffffff;">数据采集：在嵌入式系统或物联网项目中，定时器可以用来定时采集传感器数据，比如温度传感器、湿度传感器等。</font>
+
+
+
+<font style="color:#ffffff;">定时任务：定时器可以用于执行一些定时任务，比如定时打印日志、定时备份数据等。</font>
+
+
+
+<font style="color:#ffffff;">超时处理：在网络通信或多线程程序中，定时器可以用于处理超时事件，比如设置超时时间，如果在规定时间内没有收到响应，则执行相应的处理逻辑。</font>
+
+
+
+<font style="color:#ffffff;">软件控制：定时器可以用于软件控制硬件设备，比如定时控制电机的启动和停止。</font>
+
+
+
+<font style="color:#ffffff;">游戏开发：在游戏开发中，定时器可以用来控制游戏中的时间流逝和事件发生。</font>
+
+
+
+<font style="color:#ffffff;">轮询任务：定时器可以用于定时执行轮询任务，比如定时检查某个条件是否满足，然后执行相应的操作。</font>
+
+:::
+
+## 9.一个父对象与一个子对象互相传值，如何处理？
+<font style="color:#ffffff;">父对象和子对象之间可以通过信号和槽来互相传值。信号和槽是Qt中实现对象之间通信的机制</font>
+
+```cpp
+#include <QObject>
+#include <QDebug>
+
+class Parent : public QObject
+{
+    Q_OBJECT 
+
+public:
+    explicit Parent(QObject *parent = nullptr) : QObject(parent) {}
+
+signals:
+    void valueChanged(int value);
+
+public slots:
+    void setValue(int value) {
+        qDebug() << "Parent: Received value" << value;
+    }
+};
+
+class Child : public QObject
+{
+    Q_OBJECT
+
+public:
+    explicit Child(QObject *parent = nullptr) : QObject(parent) {}
+
+    void sendValue() {
+        emit valueChanged(42);
+    }
+
+signals:
+    void valueChanged(int value);
+};                                    
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication app(argc, argv);
+
+    Parent parent;
+    Child child(&parent);
+
+    QObject::connect(&parent, &Parent::valueChanged, &child, &Child::setValue);
+
+    child.sendValue(); // Child sends a value to Parent
+
+    return app.exec();
+}
+```
+
+## 10. 请简述事件机制？
+:::info
+<font style="color:#ffffff;">事件机制是一种软件设计模式，用于处理异步事件和消息。在事件机制中，程序将事件和消息发送到事件队列中，然后由事件循环（Event Loop）从队列中取出事件并处理。</font>
+
+
+
+<font style="color:#ffffff;">事件机制的基本流程如下：</font>
+
+<font style="color:#ffffff;">事件生成：当某个事件发生时，例如用户点击鼠标、键盘输入、网络数据到达等，系统会将事件封装成一个事件对象。</font>
+
+<font style="color:#ffffff;">事件分发：事件对象被放入事件队列中等待处理。</font>
+
+
+
+<font style="color:#ffffff;">事件循环：事件循环是一个无限循环，不断从事件队列中取出事件，并根据事件的类型进行相应的处理。 </font>
+
+<font style="color:#ffffff;">事件处理：根据事件的类型，系统会调用对应的事件处理函数来处理事件。事件处理函数可能触发一系列动作，例如更新用户界面、执行计算任务、发送网络请求等。</font>
+
+<font style="color:#ffffff;">完成处理：事件处理完成后，系统会继续从事件队列中取出下一个事件并进行处理。</font>
+
+:::
+
+# 八、单片机
+## 1、RTOS是什么？ 
+<font style="color:#ffffff;">概念：实时操作系统（Real Time Operate System，简称RTOS）是指当外界事件或数据产生时，能够接受并</font><font style="color:#DF2A3F;">以足够快的速度予以处理</font><font style="color:#ffffff;">，其处理的结果又能在</font><font style="color:#DF2A3F;">规定的时间之内</font><font style="color:#ffffff;">来控制</font>[<font style="color:#ffffff;">生产过程</font>](https://baike.baidu.com/item/%E7%94%9F%E4%BA%A7%E8%BF%87%E7%A8%8B/10626316?fromModule=lemma_inlink)<font style="color:#ffffff;">或对处理系统</font><font style="color:#DF2A3F;">做出</font>[<font style="color:#DF2A3F;">快速响应</font>](https://baike.baidu.com/item/%E5%BF%AB%E9%80%9F%E5%93%8D%E5%BA%94/9246168?fromModule=lemma_inlink)<font style="color:#ffffff;">，调度一切可利用的资源完成</font>[<font style="color:#ffffff;">实时任务</font>](https://baike.baidu.com/item/%E5%AE%9E%E6%97%B6%E4%BB%BB%E5%8A%A1/8729714?fromModule=lemma_inlink)<font style="color:#ffffff;">，并控制所有实时任务</font><font style="color:#DF2A3F;">协调一致</font><font style="color:#ffffff;">运行的操作系统。</font>
+
+<font style="color:#ffffff;">主要特点：实时性和</font>[<font style="color:#ffffff;">高可靠性</font>](https://baike.baidu.com/item/%E9%AB%98%E5%8F%AF%E9%9D%A0%E6%80%A7/18140358?fromModule=lemma_inlink)<font style="color:#ffffff;">。</font>
+
+<font style="color:#ffffff;">简单理解：实时操作系统是</font>[<font style="color:#DF2A3F;">保证在</font>](https://baike.baidu.com/item/%E4%BF%9D%E8%AF%81%E5%9C%A8/13571740?fromModule=lemma_inlink)<font style="color:#DF2A3F;">一定时间限制内完成特定功能的操作系统</font><font style="color:rgb(51, 51, 51);">。</font>
+
+<font style="color:#ffffff;">实时操作系统有硬实时和软实时之分，硬实时要求在规定的时间内必须完成操作，这是在操作系统设计时保证的；软实时则只要按照任务的优先级，尽可能快地完成操作即可。我们通常使用的操作系统在经过一定改变之后就可以变成实时操作系统。</font>
+
+## 2、谈谈你对中断的理解？
+<font style="color:#ffffff;background-color:rgb(253, 253, 254);">在单片机中，中断是一种功能机制，允许单片机在执行主程序的同时，能够响应并处理来自内部或外部的各种突发事件。是一种</font><font style="color:#DF2A3F;background-color:rgb(253, 253, 254);">异步信号</font><font style="color:#ffffff;background-color:rgb(253, 253, 254);">，它表明某个特定的事件已经发生，并且这个事件需要单片机立即处理。当中断发生时，单片机会暂停当前正在执行的程序（即主程序），并跳转到相应的中断服务程序（ISR，Interrupt Service Routine）去处理这个事件。当中断服务程序执行完毕后，单片机会返回到被中断的程序继续执行。</font>
+
+<font style="color:#ffffff;background-color:rgb(253, 253, 254);">中断的作用和意义：</font>
+
+    1. <font style="color:#ffffff;background-color:rgb(253, 253, 254);">提高系统响应速度：通过中断机制，单片机可以在不占用CPU资源的情况下，及时响应并处理外部事件，从而提高系统的响应速度。</font>
+    2. <font style="color:#ffffff;background-color:rgb(253, 253, 254);">实现多任务处理：虽然单片机通常是单线程的，但通过中断机制，可以实现</font><font style="color:#DF2A3F;background-color:rgb(253, 253, 254);">伪多任务处理</font><font style="color:#ffffff;background-color:rgb(253, 253, 254);">。即单片机在主程序执行过程中，可以不断响应并处理中断事件，从而模拟出多任务的效果。</font>
+    3. <font style="color:#ffffff;background-color:rgb(253, 253, 254);">节能降耗：在嵌入式系统中，节能降耗是非常重要的。通过中断机制，单片机可以在没有外部事件时进入低功耗模式，当外部事件发生时再唤醒并处理事件，从而有效降低系统的功耗。</font>
+    4. <font style="color:#ffffff;background-color:rgb(253, 253, 254);">提高系统可靠性：中断机制允许单片机在遇到异常情况时及时响应并处理，从而避免系统崩溃或数据丢失等问题，提高系统的可靠性。</font>
+
+<font style="color:#ffffff;background-color:rgb(253, 253, 254);">中断的处理过程：</font>
+
+    1. <font style="color:#ffffff;background-color:rgb(253, 253, 254);">中断请求：当中断源产生中断信号时，它会向单片机的中断控制器发送中断请求。</font>
+    2. <font style="color:#ffffff;background-color:rgb(253, 253, 254);">中断优先级判断：单片机中断控制器会根据预设的优先级判断哪些中断需要优先处理。</font>
+    3. <font style="color:#ffffff;background-color:rgb(253, 253, 254);">中断响应：单片机在接收到中断请求并判断优先级后，会暂停当前正在执行的程序，并保存其上下文（程序计数器、寄存器状态等），以便在中断处理完成后能够恢复执行。</font>
+    4. <font style="color:#ffffff;background-color:rgb(253, 253, 254);">中断服务程序执行：单片机跳转到相应的中断服务程序去处理中断事件。中断服务程序会根据中断类型执行相应的操作。</font>
+    5. <font style="color:#ffffff;background-color:rgb(253, 253, 254);">中断恢复：中断服务程序执行完毕后，单片机会恢复被中断程序的上下文，并继续执行该程序。</font>
+
+<img src="https://cdn.nlark.com/yuque/0/2024/png/34813384/1728869754448-9c29cc5e-db26-4f0c-9a96-284567c6b8e3.png" width="440.3333435058594" title="" crop="0,0,1,1" id="JAGod" class="ne-image">
+
+## 3、Linux和RTOS的区别？   
+[【RTOS面试题】RTOS和Linux的区别_常见系统 rtos linux-CSDN博客](https://blog.csdn.net/qq_33738357/article/details/140992455?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522283881AC-FF80-4212-B740-43DF63C517BE%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&request_id=283881AC-FF80-4212-B740-43DF63C517BE&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_ecpm_v1~rank_v31_ecpm-1-140992455-null-null.nonecase&utm_term=Linux&spm=1018.2226.3001.4450)
+
+<font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">一、基本特性</font>
+
+<font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">Linux</font><font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">：</font>
+
+<font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">Linux是一种自由和</font><font style="color:#DF2A3F;background-color:rgb(253, 253, 254);">开源的类UNIX操作系统，具有多任务、多用户的特点</font><font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">。广泛应用于服务器、桌面计算机、嵌入式系统、超级计算机以及云计算等领域。</font>
+
+<font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">Linux以其稳定性、安全性和丰富的开源资源而受到青睐。</font>
+
+<font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">RTOS</font><font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">：</font>
+
+<font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">RTOS是专为</font><font style="color:#DF2A3F;background-color:rgb(253, 253, 254);">满足实时控制需求</font><font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">而设计的操作系统，强调</font><font style="color:#DF2A3F;background-color:rgb(253, 253, 254);">在规定时间内对外部事件或数据作出快速响应</font><font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">，以满足实时性要求。通常用于工业自动化、医疗设备、汽车系统、航空航天等对时间敏感性要求较高的领域。</font>
+
+<font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">RTOS通过高效的任务调度、中断处理和时间管理等功能，确保实时任务的正确执行和系统的稳定运行。</font>
+
+<font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">二、实时性能</font>
+
+<font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">Linux</font><font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">：</font>
+
+<font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">Linux本身是一个</font><font style="color:#DF2A3F;background-color:rgb(253, 253, 254);">分时操作系统</font><font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">，通过时间片轮转的方式为多个任务分配CPU时间。虽然Linux可以通过配置内核和改善调度策略来提高其实时性，但通常无法达到RTOS那样的严格实时响应要求。</font>
+
+<font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">RTOS</font><font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">：</font>
+
+<font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">RTOS的核心特性是实时性，它能够在规定的时间内对外部事件或数据作出快速响应。RTOS通过确定性的</font><font style="color:#DF2A3F;background-color:rgb(253, 253, 254);">任务调度、优先级管理和中断处理</font><font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">等功能，确保实时任务的正确执行。</font>
+
+<font style="color:#DF2A3F;background-color:rgb(253, 253, 254);">RTOS的实时性能通常优于Linux，适用于对时间敏感性要求较高的场合。</font>
+
+<font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">三、内核与资源管理</font>
+
+<font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">Linux</font><font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">：</font>
+
+<font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">Linux的内核相对较大，提供了丰富的系统功能和设备驱动程序。支持多种文件系统、网络协议和进程间通信机制。</font>
+
+<font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">Linux的内存管理、任务调度和文件系统等功能都相对复杂，以适应多种应用场景的需求。</font>
+
+<font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">RTOS</font><font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">：</font>
+
+<font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">RTOS的内核通常较小，以减少系统的复杂性和提高响应速度。提供有限的系统功能和设备驱动程序，以专注于实时任务的处理。</font>
+
+<font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">RTOS的内存管理、任务调度和中断处理等功能都相对简单且高效，以满足实时应用的需求。</font>
+
+## 4、NVIC？
+<font style="color:#000000;background-color:rgb(253, 253, 254);">NVIC（Nested Vectored Interrupt Controller），即</font><font style="color:#DF2A3F;background-color:rgb(253, 253, 254);">嵌套向量中断控制器</font><font style="color:#000000;background-color:rgb(253, 253, 254);">，是ARM Cortex-M系列</font><font style="color:#DF2A3F;background-color:rgb(253, 253, 254);">处理器中的一个关键组件</font><font style="color:#000000;background-color:rgb(253, 253, 254);">。它主要负责</font><font style="color:#DF2A3F;background-color:rgb(253, 253, 254);">控制和管理微控制器中的中断</font><font style="color:#000000;background-color:rgb(253, 253, 254);">，允许处理器在响应一个中断时处理更高优先级的嵌套中断。</font><font style="color:#000000;">NVIC旨在实现更高效的中断处理，允许系统响应多个中断并正确处理它们。</font>
+
+<font style="color:#ffffff;">在STM32系列微控制处理器中，NVIC通常被集中在内部，它不是独立的模块，而是与微控制器的内部总线相连接，用于管理中断，可以通过写入特定的寄存器来配置NVIC，使其正确的处理不同的中断请求。</font>
+
+**<font style="color:#ffffff;">NVIC主要功能：</font>**<font style="color:#ffffff;">负责管理中断 （CPU的小助理）</font>
+
+<font style="color:#000000;background-color:#ffff00;">中断管理</font>
+
+<font style="color:#000000;background-color:#ffff00;">支持异常及中断向量化处理</font>
+
+<font style="color:#000000;background-color:#ffff00;">支持嵌套中断</font>
+
+<font style="color:#ffffff;">理解NVIC包括以下几个方面：</font>
+
+**<font style="color:#ffffff;">中断优先级：</font>**
+
+<font style="color:#ffffff;">NVIC允许为每个中断分配优先级，因为不同的中断可能需要不同的响应速度和优先级，优先级高的会打断优先级低的。</font>
+
+**<font style="color:#ffffff;">中断向量表：</font>**
+
+<font style="color:#ffffff;">中断向量表是一个存储中断处理函数地址的表格，当中断发生时，处理器会根据中断号从中断向量表中查找对应的处理函数地址，并跳转到该地址执行中断处理程序。</font>
+
+**<font style="color:#ffffff;">嵌套中断：</font>**
+
+<font style="color:#ffffff;">嵌套中断是指当一个中断正在执行时，另一个中断发生，NVIC能够管理这些中断，并根据优先级决定是否打断正在执行的中断。</font>
+
+**<font style="color:#ffffff;">中断控制：</font>**
+
+<font style="color:#ffffff;">通过配置NVIC寄存器，可以控制特定中断的使能与禁用，以及设置中断触发方式（上升沿、下降沿、边沿等）</font>
+
+<font style="color:#ffffff;">异常处理：除了外部中断，NVIC还负责处理各种异常，如硬件错误、系统调用等。</font>
+
+## 5、冯诺依曼和哈佛架构
+**<font style="color:#ffffff;">冯诺依曼架构：</font>**
+
+<font style="color:#ffffff;">冯诺依曼架构中，计算机的存储器包括程序存储器和数据存储器，它们共用同一总线进行数据传输。程序和数据都存储在同一个存储器中，由计算机内部的控制单元根据需要再来读取指令或数据进行处理。</font>
+
+<font style="color:#ffffff;">冯诺依曼架构的特点是存储器与中央处理器（CPU）之间通过总线进行通信。指令和数据使用相同的地址空间，因此程序可以自我修改和自我复制。优点是灵活，程序和数据可以自由地在存储器中移动，但由于指令和数据共用一个总线，可能会出现瓶颈，影响计算机性能。</font>
+
+**<font style="color:#ffffff;">哈佛架构：</font>**
+
+<font style="color:#ffffff;">哈佛架构中，计算机的存储器分为两个部分：指令存储器（程序存储器）和数据存储器，它们分别使用不同的总线进行数据传输。指令和数据使用不同的存储器，它们分别有自己独立的地址空间，互相之间没有直接交互，因此指令和数据不能共享存储器。</font>
+
+<font style="color:#ffffff;">哈佛架构的特点是指令和数据访问可以并行进行，同时也可以采取不同的存储器技术，从而提高计算机的性能。优点是指令和数据分开存储，避免了数据与指令之间的竞争和冲突，提高了数据传输的效率，但由于需要独立的指令和数据存储器，造成了硬件成本的增加。</font>
+
+<img src="https://cdn.nlark.com/yuque/0/2024/png/34813384/1728875212604-34c9ce8a-84d5-4994-bc12-bcf3494f73cf.png" width="983" title="" crop="0,0,1,1" id="u1eb919e3" class="ne-image">
+
+## 6、内核有多少个内部异常？多少个外部中断？
+<font style="color:#ffffff;">Cortex-M0内核 可以处理15个内部异常和32个外部中断</font>
+
+<font style="color:#ffffff;">STM32G030（M0+）使用了6个内部异常和28个外部中断</font>
+
+<font style="color:#ffffff;"></font>
+
+<font style="color:#ffffff;">Cortex-M33内核可以处理16个内部异常和240个外部中断</font>
+
+<font style="color:#ffffff;">STM32U575（M33）使用了16个异常和138个外部中断</font>
+
+## 7、外部中断事件流程
+<img src="https://cdn.nlark.com/yuque/0/2024/png/34813384/1728875958249-c7a03490-02e2-403e-b6d3-c6d3ddd54d18.png" width="1569" title="" crop="0,0,1,1" id="uea6534ef" class="ne-image">
+
+<details class="lake-collapse"><summary id="ub74c4d3d"><span class="ne-text">外部中断流程理解</span></summary><p id="u561e6cc6" class="ne-p" style="text-align: left"><span class="ne-text" style="color: #ffffff; font-size: 16px">编号1是信号输入线，EXTI支持产生多达28个外部事件/中断请求。</span></p><p id="u3cdafe02" class="ne-p" style="text-align: left"><span class="ne-text" style="color: #ffffff; font-size: 16px">	编号2是边沿检测电路，用于监测上升沿或下降沿信号。</span></p><p id="u9bef6a2d" class="ne-p" style="text-align: left"><span class="ne-text" style="color: #ffffff; font-size: 16px">	它会根据上升沿触发选择寄存(EXTI_RTSR)和下降沿触发选择寄存器(EXTI_FTSR)对应位的设置来控制信号触发。</span></p><p id="ue09e7bf7" class="ne-p" style="text-align: left"><span class="ne-text" style="color: #ffffff; font-size: 16px">	边沿检测电路以输入线作为信号输入端，监测是否有边沿跳变，检测到有边沿跳变输出有效信号 1 给编号 3 电路，否则输出无效信号0。</span></p><p id="u83eb6fbc" class="ne-p" style="text-align: left"><span class="ne-text" style="color: #ffffff; font-size: 16px">	编号3是一个或门电路，信号来源是外部事件或者软件中断/事件寄存器产生。</span></p><p id="uf514dda4" class="ne-p" style="text-align: left"><span class="ne-text" style="color: #ffffff; font-size: 16px">	允许我们通过程序控制EXTI_SWIER就可以启动中断/事件线</span></p><p id="u26939eb1" class="ne-p" style="text-align: left"><span class="ne-text" style="color: #ffffff; font-size: 16px">	编号4是一个与门电路，信号来源是编号3送来的信号和中断屏蔽寄存器的值，</span></p><p id="u55419525" class="ne-p" style="text-align: left"><span class="ne-text" style="color: #ffffff; font-size: 16px">	如果中断屏蔽寄存器为0，也不会将信号送到NVIC，</span></p><p id="ue291b57a" class="ne-p" style="text-align: left"><span class="ne-text" style="color: #ffffff; font-size: 16px">	只有编号3送来了中断信号且中断屏蔽寄存器允许产生中断，才会将中断信号送入NVIC.</span></p><p id="u722db1a0" class="ne-p" style="text-align: left"><span class="ne-text" style="color: #ffffff; font-size: 16px">	接下来我们来看看红色虚线指示的电路流程。它是一个产生事件的线路，最终输出一个脉冲信号。</span></p><p id="u07629dc8" class="ne-p" style="text-align: left; text-indent: 2em"><span class="ne-text" style="color: #ffffff; font-size: 16px">产生事件线路是在编号3电路之后与中断线路有所不同，之前电路都是共用的。</span></p><p id="ua33d2a27" class="ne-p" style="text-align: left"><span class="ne-text" style="color: #ffffff; font-size: 16px">	编号5是一个与门电路，信号来源是编号3送来的信号和事件屏蔽寄存器的值，</span></p><p id="u2fa80d99" class="ne-p" style="text-align: left"><span class="ne-text" style="color: #ffffff; font-size: 16px">	如果事件屏蔽寄存器为0，不会将信号送到脉冲发生器，</span></p><p id="u415f3670" class="ne-p" style="text-align: left"><span class="ne-text" style="color: #ffffff; font-size: 16px">	只有编号3送来了信号且事件屏蔽寄存器允许产生事件，才会将信号送入脉冲发生器（编号6）， 进而产生脉冲来控制外部设备做出动作。</span></p></details>
+<font style="color:#ffffff;">外部事件触发：外部事件可以是来自外部硬件设备或其他外部信号的触发事件，例如GPIO引脚的电平变化、外部设备的请求信号等。当外部事件发生时，会触发外部中断。</font>
+
+<font style="color:#ffffff;">中断请求产生：外部事件触发后，硬件会产生一个中断请求信号，通常称为“中断触发信号”或“中断源信号” 。这个中断请求信号会传递给中断控制器。</font>
+
+<font style="color:#ffffff;">中断服务例程：中断控制器收到中断请求后，会根据优先级和中断掩码等设置决定是否接受中断请求。如果中断被接受，中断控制器会根据中断向量表中对应的中断处理函数的地址，跳转到相应的中断服务例程（中断处理函数）。</font>
+
+<font style="color:#ffffff;">中断服务例程执行： 中断服务例程是预先定义好的处理外部中断的函数。当中断服务例程执行时，会完成对外部事件的处理。这可能涉及到读取GPIO状态、处理外部设备请求、清除中断标志等操作。</font>
+
+<font style="color:#ffffff;">中断处理结束：中断服务例程执行完成后，控制权会返回到中断控制器，继续执行主程序（即中断发生时的上下文）。如果有其他挂起的中断请求，中断控制器可能会继续处理其他中断。</font>
+
+<font style="color:#ffffff;">主程序执行:  中断处理结束后，CPU会继续执行主程序的代码，从上次中断发生的地方继续运行。</font>
+
+## 8、简述单片机中的前后台操作（什么是前台，什么是后台）
+<img src="https://cdn.nlark.com/yuque/0/2024/png/34813384/1728875794064-67b42848-9cae-4abc-a850-fbfd11b6fc7a.png" width="211" title="" crop="0,0,1,1" id="u3e38c96b" class="ne-image">
+
+**<font style="color:#ffffff;">后台操作：</font>**
+
+<font style="color:#ffffff;">后台操作也称为主循环或主任务，是单片机系统中最重要的任务。在后台操作中，程序执行主要的任务逻辑，如系统初始化、数据采集、数据处理、通信等。后台操作是单片机程序的主要部分，其执行频率较高，通常是以一个循环结构组织的，不断地重复执行主要任务。</font>
+
+<font style="color:#ffffff;">在后台操作中，任务的执行是按照固定的顺序进行的，且执行时间是可控的。由于后台操作需要频繁地执行，因此其代码应该尽量精简，避免耗时过长的操作，以确保系统的响应性和实时性。</font>
+
+**<font style="color:#ffffff;">前台操作：</font>**
+
+<font style="color:#ffffff;">前台操作也称为前台任务或中断服务例程（ISR，Interrupt Service Routine），是单片机系统中的中断处理程序。当外部事件发生时，如定时器溢出、外部中断、串口接收等，中断控制器会暂停当前的后台操作，跳转到相应的前台操作执行。</font>
+
+<font style="color:#ffffff;">在前台操作中，程序执行特定的中断处理代码，完成对中断事件的响应和处理。由于前台操作是在中断发生时执行的，其执行时间是不确定的，可能会打断正在进行的后台操作。因此，在编写前台操作时，需要注意其代码应尽量简短、高效，以尽快完成对中断事件的处理，减少对后台操作的影响。</font>
+
+## 9、如何保障串口通信过程中数据的安全性？ 
+**<font style="color:#ffffff;">加密：</font>**<font style="color:#ffffff;"> 使用加密算法对传输的数据进行加密，</font><font style="color:#ffffff;background-color:rgb(253, 253, 254);">确保数据在传输过程中不被窃取或篡改</font><font style="color:#ffffff;">。常见的加密算法包括AES、DES、RSA等。</font>
+
+**<font style="color:#ffffff;">数据校验：</font>**<font style="color:#ffffff;"> 在传输的数据中添加校验码，如CRC校验、校验和等，以检测数据是否在传输过程中发生错误或被篡改。</font>
+
+**<font style="color:#ffffff;">数据压缩：</font>**<font style="color:#ffffff;"> 使用数据压缩算法可以减少数据传输的长度，提高传输效率，并降低被窃听和篡改的风险。</font>
+
+**<font style="color:#ffffff;">数据分包：</font>**<font style="color:#ffffff;"> 将数据分成较小的包进行传输，每个包都有唯一的标识符，以提高传输的可靠性和安全性。</font>
+
+**<font style="color:#ffffff;">认证和授权：</font>**<font style="color:#ffffff;"> 在通信双方进行认证和授权，确保只有经过授权的设备可以进行通信。</font>
+
+**<font style="color:#ffffff;">物理层安全：</font>**<font style="color:#ffffff;"> 确保串口的物理连接是安全可靠的，防止被未经授权的设备插入串口进行数据窃听或篡改。</font>
+
+**<font style="color:#ffffff;">访问控制： </font>**<font style="color:#ffffff;">对串口通信进行限制访问控制，只有授权的用户或设备可以访问串口。</font>
+
+**<font style="color:#ffffff;">防止重放攻击：</font>**<font style="color:#ffffff;"> 在数据传输中防止重放攻击，可以使用时间戳、随机数等方法来确保数据的唯一性。</font>
+
+
+
+## 10、简述同步通信和异步通信的区别
+**<font style="color:#ffffff;">同步通信：</font>**
+
+<font style="color:#ffffff;">同步通信是指发送方和接收方在数据传输过程中严格按照事先约定的时钟信号进行数据的传输和接收。在同步通信中，</font><font style="color:#DF2A3F;">发送方和接收方必须使用相同的时钟源，以确保数据的时序一致性。</font><font style="color:#ffffff;">发送方发送数据后会等待接收方确认收到数据，然后再发送下一个数据。因此，同步通信具有一定的阻塞性，发送方和接收方在通信过程中需要保持同步状态。</font>
+
++ <font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">传输效率高，因为没有额外的标志位，也不需要等待接收方的响应。</font>
++ <font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">适用于数据量大、实时性要求高、传输距离短的场景。</font>
++ <font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">可以用于点对多点的通信场景，例如广播或多播。</font>
+
+**<font style="color:#ffffff;">异步通信：</font>**
+
+<font style="color:#ffffff;">异步通信是指</font><font style="color:#DF2A3F;">发送方和接收方在数据传输过程中不需要共享时钟信号</font><font style="color:#ffffff;">，</font><font style="color:#ffffff;background-color:rgb(253, 253, 254);">数据传输没有固定的时钟周期，发送方可以在任意时间发送数据。</font>
+
+<font style="color:#ffffff;">数据的传输和接收是根据起始位、数据位、校验位和停止位等信息来进行的。在异步通信中，发送方发送数据时会在数据之间插入起始位和停止位，并在通信过程中通过起始位来确定数据的开始，通过停止位来确定数据的结束。</font>
+
++ <font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">传输效率相对较低，因为需要添加起始位、停止位和校验位等标志位。</font>
++ <font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">适用于数据量小、实时性要求低、传输距离长的场景。</font>
++ <font style="color:rgb(5, 7, 59);background-color:rgb(253, 253, 254);">主要用于点对点的通信场景，例如串行通信。</font>
+
+## 11、 谈谈你对ARM的理解
+<font style="color:#2C2C36;">ARM（Advanced RISC Machines）是一家英国公司，它设计并授权基于RISC（Reduced Instruction Set Computing，精简指令集计算）架构的处理器内核及相关技术。ARM公司本身不直接制造芯片，而是将其设计授权给其他公司，这些公司可以基于ARM架构来制造和销售自己的处理器产品。</font>
+
+**<font style="color:#2C2C36;">ARM的关键特点：</font>**
+
+<font style="color:#2C2C36;">低功耗</font><font style="color:#2C2C36;">：ARM架构以其低功耗特性而闻名，这使其非常适合移动设备、嵌入式系统和其他需要长时间运行而无需频繁充电的应用场景。</font>
+
+<font style="color:#2C2C36;">广泛的适用性</font><font style="color:#2C2C36;">：ARM架构被广泛应用于各种领域，包括智能手机、平板电脑、服务器、嵌入式系统、可穿戴设备等。</font>
+
+<font style="color:#2C2C36;">灵活的授权模式</font><font style="color:#2C2C36;">：ARM提供不同级别的授权选项，允许合作伙伴根据自身的需求对ARM设计进行不同程度的定制。</font>
+
+<font style="color:#2C2C36;">强大的生态系统</font><font style="color:#2C2C36;">：ARM与众多半导体制造商、软件开发商和其他合作伙伴共同构建了一个庞大的生态系统，支持丰富的软件和硬件解决方案。</font>
+
+**<font style="color:#2C2C36;">ARM处理器内核类型：</font>**
+
+<font style="color:#2C2C36;">Cortex-A系列：针对高性能应用处理器，适用于智能手机、平板电脑、服务器等。</font>
+
+<font style="color:#2C2C36;">Cortex-R系列</font><font style="color:#2C2C36;">：面向实时应用，例如汽车电子系统和工业控制。</font>
+
+<font style="color:#2C2C36;">Cortex-M系列：面向微控制器市场，适用于各种嵌入式应用。</font>
+
+## 12、ARM指令集和RISC之间的关系？RISC-V和RISC之间的关系？
+**<font style="color:#ffffff;">ARM指令集与RISC的关系</font>**
+
+<font style="color:#ffffff;">设计理念</font><font style="color:#ffffff;">：</font>
+
+<font style="color:#DF2A3F;">ARM指令集是基于精简指令集计算（RISC）原理设计的。</font><font style="color:#ffffff;">RISC的核心设计原则是通过简化指令集来提高处理器的性能和能效。ARM指令集遵循了这一原则，通过减少指令的复杂性和种类，使得处理器的执行更为高效。</font>
+
+<font style="color:#ffffff;">技术特点</font><font style="color:#ffffff;">：</font>
+
+<font style="color:#ffffff;">ARM指令集具有RISC架构的典型特点，如指令长度固定、指令格式简单、寻址方式有限等。有助于降低处理器的复杂性，提高执行效率。</font>
+
+**<font style="color:#ffffff;">RISC-V与RISC的关系</font>**
+
+<font style="color:#ffffff;">起源与发展</font><font style="color:#ffffff;">：</font>
+
+<font style="color:#DF2A3F;">RISC-V是基于RISC原理设计的开放指令集架构（ISA）。</font><font style="color:#ffffff;">它起源于加州大学伯克利分校的研究团队，作为第五代RISC架构（RISC的第五个版本），旨在提供一种开放、可扩展的处理器设计。</font>
+
+<font style="color:#ffffff;">技术特点与优势</font><font style="color:#ffffff;">：</font>
+
+<font style="color:#ffffff;">RISC-V继承了RISC架构的精简指令集特点，并在此基础上进行了创新和优化。其模块化设计、简洁的指令集和易于移植Linux系统等特点使得RISC-V在处理器设计领域具有显著优势。RISC-V的开源特性也促进了创新和定制化解决方案的发展。任何人都可以自由地使用、修改和分发RISC-V指令集，无需支付授权费用。</font>
+
+## 13、DHT11使用的是什么协议
+<font style="color:#DF2A3F;">单总线通信协议</font>
+
+<img src="https://cdn.nlark.com/yuque/0/2024/png/34813384/1728878243710-36884fb3-bc08-497a-8f68-d9d9402e815e.png" width="366.3333435058594" title="" crop="0,0,1,1" id="ChUdf" class="ne-image">
+
+<img src="https://cdn.nlark.com/yuque/0/2024/png/34813384/1728878215698-e223eb02-fe7d-4f47-b8f9-b0a8cfaee584.png" width="489.3333740234375" title="" crop="0,0,1,1" id="u69b8f07c" class="ne-image">
+
+## 14、简述DMA及其作用
+<font style="color:#ffffff;background-color:rgb(253, 253, 254);">DMA（Direct Memory Access）即</font><font style="color:#DF2A3F;background-color:rgb(253, 253, 254);">直接内存访问</font><font style="color:#ffffff;background-color:rgb(253, 253, 254);">，其</font><font style="color:#DF2A3F;background-color:rgb(253, 253, 254);">核心作用在于提升数据在内存与外设之间的传输效率，并减轻CPU的工作负担。</font><font style="color:#ffffff;background-color:rgb(253, 253, 254);">这种方式避免了传统数据传输中CPU作为中转站的需要，从而减少了CPU在数据传输过程中的参与度，使得CPU能够更专注于其他任务的处理。因此，DMA能够显著提高数据传输的效率。</font>
+
+<font style="color:#ffffff;">DMA的作用主要体现在以下几个方面：</font>
+
+1. **<font style="color:#ffffff;background-color:rgb(253, 253, 254);">提升数据传输效率：</font>**<font style="color:#ffffff;background-color:rgb(253, 253, 254);">DMA允许数据在内存和外设之间直接传输，绕过CPU，从而显著加快了数据的传输速度。这种方式避免了CPU在数据传输过程中的介入，使得数据传输更为高效。</font>
+2. **<font style="color:#ffffff;background-color:rgb(253, 253, 254);">减轻CPU负担：</font>**<font style="color:#ffffff;background-color:rgb(253, 253, 254);">由于DMA能够自主处理数据传输任务，CPU无需再亲自参与数据的复制和存储操作。这大大减轻了CPU的工作负荷，使其能够将更多资源投入到其他计算任务中，从而提升了系统的整体性能。</font>
+3. **<font style="color:#ffffff;background-color:rgb(253, 253, 254);">优化系统资源利用：</font>**<font style="color:#ffffff;background-color:rgb(253, 253, 254);">通过DMA技术，系统资源得到了更合理的利用。CPU可以专注于处理复杂的计算任务，而数据传输等相对简单的任务则由DMA负责，实现了系统资源的优化配置。</font>
+4. **<font style="color:#ffffff;background-color:rgb(253, 253, 254);">支持复杂数据传输需求：</font>**<font style="color:#ffffff;background-color:rgb(253, 253, 254);">DMA控制器通常具备多个通道，可以同时处理多个数据传输任务。这使得DMA能够轻松应对复杂的数据传输需求，如同时从多个外设读取数据或向多个外设写入数据。</font>
+5. **<font style="color:#ffffff;background-color:rgb(253, 253, 254);">提供灵活的配置选项：</font>**<font style="color:#ffffff;background-color:rgb(253, 253, 254);">DMA技术通常提供丰富的配置选项，如传输方向、数据宽度、传输模式等。这些配置选项使得DMA能够适应不同的应用场景，满足各种数据传输需求。</font>
+
+## 15、IIC、SPI、UART、CAN通信协议的作用和区别。哪些能做多机之间的通讯?
+<font style="color:rgb(5, 7, 59);">I</font><font style="color:#ffffff;">IC（Inter-Integrated Circuit）、SPI（Serial Peripheral Interface）、UART（Universal Asynchronous Receiver/Transmitter）、CAN（Controller Area Network）是四种常见的通信协议，它们各自具有独特的作用和区别。以下是关于这四种通信协议的详细比较：</font>
+
+<details class="lake-collapse"><summary id="uef3e3725"><span class="ne-text" style="color: rgb(5, 7, 59)">作用</span></summary><ol class="ne-ol"><li id="u1b454d26" data-lake-index-type="0"><strong><span class="ne-text" style="color: rgb(5, 7, 59)">IIC</span></strong><span class="ne-text" style="color: rgb(5, 7, 59)">：</span></li></ol><ul class="ne-list-wrap"><ul ne-level="1" class="ne-ul"><li id="ub6b6f89e" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">是一种同步串行通信接口，采用半双工工作模式，即在同一时间只能进行单向的数据传输。</span></li><li id="ub22611ee" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">总线由两条信号线组成：数据线SDA和时钟线SCL。主设备通过时钟线提供时钟信号，以确保所有连接到总线的设备同步进行数据交换。</span></li><li id="u3761c9e2" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">广泛应用于嵌入式系统和电子设备中，方便连接各种低速外设，如传感器、存储器、时钟芯片等。</span></li></ul></ul><ol start="2" class="ne-ol"><li id="u4d649c82" data-lake-index-type="0"><strong><span class="ne-text" style="color: rgb(5, 7, 59)">SPI</span></strong><span class="ne-text" style="color: rgb(5, 7, 59)">：</span></li></ol><ul class="ne-list-wrap"><ul ne-level="1" class="ne-ul"><li id="u841cd023" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">是一种高速、全双工、同步的串行通信总线。</span></li><li id="u1d7def2a" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">采用主从方式工作，一般包含一个主设备和一个或多个从设备。</span></li><li id="u3a6451ab" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">使用四根线完成通信：MISO（主输入从输出）、MOSI（主输出从输入）、SCLK（时钟）、CS（片选）。</span></li><li id="u8f9f66cd" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">应用于EEPROM、Flash、RTC、ADC、DSP等设备。</span></li></ul></ul><ol start="3" class="ne-ol"><li id="udc4c473e" data-lake-index-type="0"><strong><span class="ne-text" style="color: rgb(5, 7, 59)">UART</span></strong><span class="ne-text" style="color: rgb(5, 7, 59)">：</span></li></ol><ul class="ne-list-wrap"><ul ne-level="1" class="ne-ul"><li id="u278da8e3" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">是一种通用的串行、异步通信总线。</span></li><li id="uea8f0e7b" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">该总线有两条数据线：TX（发送）和RX（接收），可以实现全双工的发送和接收。</span></li><li id="u42e4c2d6" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">在嵌入式系统中常用于主机与辅助设备之间的通信，如计算机和外部设备之间的串口通信。</span></li></ul></ul><ol start="4" class="ne-ol"><li id="u4af60c5b" data-lake-index-type="0"><strong><span class="ne-text" style="color: rgb(5, 7, 59)">CAN</span></strong><span class="ne-text" style="color: rgb(5, 7, 59)">：</span></li></ol><ul class="ne-list-wrap"><ul ne-level="1" class="ne-ul"><li id="u2d94d44b" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">是一种用于汽车和工业控制领域的通信协议。</span></li><li id="uadc64547" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">实现多个ECU（电子控制单元）之间的相互通信。</span></li><li id="u53fe9188" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">使用差分信号进行通讯，具有较高的抗干扰能力和可靠性。</span></li></ul></ul><h3 id="yYMY8"><span class="ne-text" style="color: rgb(5, 7, 59)">区别</span></h3><ol class="ne-ol"><li id="uf901b0d5" data-lake-index-type="0"><strong><span class="ne-text" style="color: rgb(5, 7, 59)">通信方式</span></strong><span class="ne-text" style="color: rgb(5, 7, 59)">：</span></li></ol><ul class="ne-list-wrap"><ul ne-level="1" class="ne-ul"><li id="u499aef61" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">IIC和SPI是同步通信协议，需要时钟信号来同步数据传输。</span></li><li id="u3eaa1cff" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">UART是异步通信协议，不需要时钟信号来同步数据传输，而是通过起始位、数据位、校验位和停止位来确定数据的传输时序。</span></li><li id="uddf1787b" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">CAN则使用差分信号进行通信，具有更高的抗干扰能力。</span></li></ul></ul><ol start="2" class="ne-ol"><li id="u4d724230" data-lake-index-type="0"><strong><span class="ne-text" style="color: rgb(5, 7, 59)">设备连接</span></strong><span class="ne-text" style="color: rgb(5, 7, 59)">：</span></li></ol><ul class="ne-list-wrap"><ul ne-level="1" class="ne-ul"><li id="u919fb03e" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">IIC和SPI都支持多设备连接，但连接方式有所不同。IIC通过设备地址来寻址和选中总线上的某个设备并与其进行通信；而SPI则使用片选信号线（CS）来寻址和选中从设备。</span></li><li id="u9a5c9ccb" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">UART通常只能用于两个设备之间的通信，如果要实现多个设备之间的通信，则需要额外的设备或电路来协调。</span></li><li id="u8936e4c6" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">CAN则支持多个设备在同一总线上进行通信，通过识别码来解决总线冲突的问题。</span></li></ul></ul><ol start="3" class="ne-ol"><li id="ubb1d78b5" data-lake-index-type="0"><strong><span class="ne-text" style="color: rgb(5, 7, 59)">数据传输速率</span></strong><span class="ne-text" style="color: rgb(5, 7, 59)">：</span></li></ol><ul class="ne-list-wrap"><ul ne-level="1" class="ne-ul"><li id="u399aab1a" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">SPI具有较高的数据传输速率，适用于需要高速数据传输的应用场景。</span></li><li id="u821a254f" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">IIC的数据传输速率相对较低，但也能满足大多数低速外设的通信需求。</span></li><li id="ub0db1cbc" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">UART的数据传输速率可变，通常用波特率来表示，适用于不同速率的通信需求。</span></li><li id="u0648d4e0" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">CAN的数据传输速率也较高，且具有较高的可靠性和抗干扰能力。</span></li></ul></ul><ol start="4" class="ne-ol"><li id="u101468ef" data-lake-index-type="0"><strong><span class="ne-text" style="color: rgb(5, 7, 59)">应用场景</span></strong><span class="ne-text" style="color: rgb(5, 7, 59)">：</span></li></ol><ul class="ne-list-wrap"><ul ne-level="1" class="ne-ul"><li id="u539defa5" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">IIC广泛应用于嵌入式系统和电子设备中，用于连接各种低速外设。</span></li><li id="ud341b4e5" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">SPI则常用于需要高速数据传输的外设之间，如存储器、ADC等。</span></li><li id="ue427708f" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">UART常用于计算机与外部设备之间的串口通信，以及嵌入式系统中的外设通信。</span></li><li id="ue59486b0" data-lake-index-type="0"><span class="ne-text" style="color: rgb(5, 7, 59)">CAN则主要应用于汽车和工业控制领域，实现多个ECU之间的相互通信。</span></li></ul></ul><h3 id="PJOJL"><span class="ne-text" style="color: rgb(5, 7, 59)">多机通讯能力</span></h3><ul class="ne-ul"><li id="u6bb7f78b" data-lake-index-type="0"><strong><span class="ne-text" style="color: rgb(5, 7, 59)">IIC</span></strong><span class="ne-text" style="color: rgb(5, 7, 59)">：支持多设备通信，可以组成一个网络，实现多个设备之间的通讯。每个通讯设备分别使用两根线（SCL、SDA）挂载在IIC总线上。</span></li><li id="ua7d248e9" data-lake-index-type="0"><strong><span class="ne-text" style="color: rgb(5, 7, 59)">SPI</span></strong><span class="ne-text" style="color: rgb(5, 7, 59)">：同样支持多设备通信，一般一个主设备，多个从设备。使用CS片选线选择通讯的对象，无需发送通讯地址，也不需要从机发送应答信号，能大大提升通讯效率。</span></li><li id="u7bc4da32" data-lake-index-type="0"><strong><span class="ne-text" style="color: rgb(5, 7, 59)">UART</span></strong><span class="ne-text" style="color: rgb(5, 7, 59)">：只能用于两个设备之间的通信，两个设备的发送器和接收器的TX和RX两两相连即可。如果想实现三个设备之间的通讯，UART则不适用。</span></li><li id="ud1e128c8" data-lake-index-type="0"><strong><span class="ne-text" style="color: rgb(5, 7, 59)">CAN</span></strong><span class="ne-text" style="color: rgb(5, 7, 59)">：支持多个设备在同一总线上进行通信，使用识别码来解决总线冲突的问题，保证优先级高的设备先通讯。</span></li></ul><p id="u35b89927" class="ne-p"><span class="ne-text" style="color: rgb(5, 7, 59)">IIC、SPI和CAN都具备多机之间的通讯能力，而UART则通常只能用于两个设备之间的通信。</span></p></details>
+## 16、简述单片机中断触发过程 
+<font style="color:#ffffff;background-color:rgb(253, 253, 254);">单片机的中断触发过程是一个高效且灵活的事件处理机制，它允许单片机在发生特定事件时暂停当前执行的代码，转而执行中断服务程序（ISR）。以下是单片机中断触发过程的详细简述：</font>
+
+1. **<font style="color:#ffffff;background-color:rgb(253, 253, 254);">外设发出中断请求</font>**<font style="color:#ffffff;background-color:rgb(253, 253, 254);">：</font>
+    - <font style="color:#ffffff;background-color:rgb(253, 253, 254);">当外设（如GPIO、定时器、通信接口等）发生特定事件时，它会向NVIC发出中断请求。</font>
+2. **<font style="color:#ffffff;background-color:rgb(253, 253, 254);">NVIC判断优先级并响应</font>**<font style="color:#ffffff;background-color:rgb(253, 253, 254);">：</font>
+    - <font style="color:#ffffff;background-color:rgb(253, 253, 254);">NVIC会判断中断请求的优先级，并根据当前的系统状态决定是否响应中断。如果中断的优先级高于当前正在执行的任务，NVIC会中断当前任务，准备跳转到中断服务程序。</font>
+3. **<font style="color:#ffffff;background-color:rgb(253, 253, 254);">保护现场并跳转到ISR</font>**<font style="color:#ffffff;background-color:rgb(253, 253, 254);">：</font>
+    - <font style="color:#ffffff;background-color:rgb(253, 253, 254);">在跳转到中断服务程序之前，STM32单片机会保护当前任务的执行现场（如将当前PC地址压栈）。然后，处理器会跳转到中断向量表中对应的中断服务程序地址，开始执行中断服务程序。</font>
+4. **<font style="color:#ffffff;background-color:rgb(253, 253, 254);">执行ISR并清除中断标志</font>**<font style="color:#ffffff;background-color:rgb(253, 253, 254);">：</font>
+    - <font style="color:#ffffff;background-color:rgb(253, 253, 254);">在中断服务程序中，单片机会执行相应的中断处理代码，如读取外设状态、更新数据等。处理完成后，需要清除中断标志位，以防止中断重复触发。</font>
+5. **<font style="color:#ffffff;background-color:rgb(253, 253, 254);">恢复现场并继续执行</font>**<font style="color:#ffffff;background-color:rgb(253, 253, 254);">：</font>
+    - <font style="color:#ffffff;background-color:rgb(253, 253, 254);">中断服务程序执行完毕后，单片机会恢复之前保护的现场（如将栈顶的值送回PC），并继续执行被中断的任务。</font>
+
+## 17、在PWM中，占空比是什么
+<font style="color:#ffffff;">在PWM（脉冲宽度调制）中，</font>**<font style="color:#DF2A3F;">占空比是指在一个脉冲周期内，高电平（或称为“开”状态）所占的时间与该周期总时间的比值</font>**<font style="color:#DF2A3F;">。</font><font style="color:#ffffff;">这个比值通常以百分比的形式表示，用于描述PWM信号的“开启”程度。</font>
+
+<font style="color:#DF2A3F;">占空比 = (高电平时间) / (脉冲周期时间) × 100%</font>
+
+<font style="color:#ffffff;">其中，脉冲周期时间是指一个完整的PWM波形从开始到结束的时间，而高电平时间则是指在这个周期内，信号处于高电平（或称为“有效”电平）的时间段。</font>
+
+<font style="color:#ffffff;">PWM信号的占空比对于控制电机速度、调整LED亮度等应用至关重要。通过改变占空比，可以调整平均功率输出，从而实现对负载的精确控制。例如，在电机控制中，增加占空比通常会使电机速度加快，而减小占空比则会降低电机速度。在LED照明中，通过调整占空比，可以精确地控制LED的亮度，实现节能和调光效果。</font>
+
+<font style="color:#ffffff;">注意：占空比的变化范围通常在0%到100%之间，但实际上，由于硬件和软件的限制，可能无法达到这些极限值。此外，占空比的调节精度也取决于PWM发生器的分辨率和时钟频率等因素。</font>
+
+## 18、简述几个PWM的应用场景
+<font style="color:#ffffff;">PWM（脉冲宽度调制）作为一种重要的信号调制技术，具有高效性、灵活性、稳定性和简单性等特点，在多个领域中都发挥着重要作用。以下是PWM的几个典型应用场景：</font>
+
+1. <font style="color:#DF2A3F;">电源管理：</font><font style="color:#ffffff;">PWM信号被广泛应用于控制电源输出的电压和电流大小，从而实现对电池和其他电源的高效管理。在手机、笔记本电脑等便携式设备的充电器中，PWM技术被用来实现快速充电功能。通过精确控制电源输出的电压和电流，PWM信号可以确保电池在充电过程中既快速又安全。</font>
+2. <font style="color:#DF2A3F;">电机控制：</font><font style="color:#ffffff;">PWM信号在电机控制领域的应用尤为广泛，其灵活的调节性能使其成为电机控制中的重要工具。通过调整PWM信号的占空比，可以实现对电机转速的精确控制。利用PWM信号可以实现电机的平滑启动和停止，降低机械压力，有助于延长电机寿命。通过调节PWM信号的占空比和频率，还可以实现对电机输出扭矩的精确控制。</font>
+3. <font style="color:#DF2A3F;">LED照明：</font><font style="color:#ffffff;">PWM信号被用来控制LED灯的亮度和颜色变化，从而实现对室内照明和景观照明等领域的精确控制。通过改变PWM信号的占空比，可以实现对LED灯亮度的无级调节，方便用户根据实际需求调整照明亮度，还能有效节约能源和延长LED灯的使用寿命。</font>
+4. <font style="color:#DF2A3F;">音频处理：</font><font style="color:#ffffff;">在一些简单的音频放大电路中，PWM信号可以通过控制开关元件的通断来实现对音频信号的放大和调节。</font>
+5. <font style="color:#DF2A3F;">测量和通信：</font><font style="color:#ffffff;">PWM信号还可以用来实现信号的调制和解调，在测量和通信领域中发挥重要作用。</font>
+
+## 19、单片机IO框图中，保护二极管如何实现的保护功能，保护的谁？ 
+<img src="https://cdn.nlark.com/yuque/0/2024/png/34813384/1728887207207-dbde6434-22ed-47e6-ab83-15602aff11db.png" width="1438" title="" crop="0,0,1,1" id="u25254fd6" class="ne-image">
+
+**<font style="color:#ffffff;">保护二极管的实现原理</font>**
+
+**<font style="color:#ffffff;">钳位作用：</font>**
+
+1. <font style="color:#ffffff;">保护二极管通常被连接在IO引脚的上下两边，形成钳位电路。当IO引脚受到过高或过低的电压输入时，二极管会导通，从而将引脚电压钳制在一个安全范围内。</font>
+2. <font style="color:#ffffff;">当引脚电压高于VDD（电源电压）时，上方的二极管会导通，将电压钳位在VDD加上一个二极管的正向导通压降（通常为0.7V左右）。</font>
+3. <font style="color:#ffffff;">当引脚电压低于VSS（地电压或0V）时，下方的二极管会导通，将电压钳位在VSS减去一个二极管的反向击穿电压（但通常这个电压很小，接近0V）。</font>
+
+**<font style="color:#ffffff;">电流限制：</font>**
+
+<font style="color:#ffffff;">保护二极管还具有限制电流的作用。当外部电压异常导致电流过大时，二极管会限制电流的大小，防止过大的电流损坏单片机的IO端口或内部电路。</font>
+
+**<font style="color:#ffffff;">保护二极管保护的对象</font>**
+
+**<font style="color:#ffffff;">单片机IO端口：</font>**
+
+<font style="color:#ffffff;">保护二极管的主要保护对象是单片机的IO端口。IO端口是单片机与外部电路进行交互的重要接口，其稳定性和可靠性对单片机的正常工作至关重要。</font>
+
+<font style="color:#ffffff;">通过保护二极管，可以有效防止外部异常电压或电流对IO端口造成损坏，保证单片机与外部电路的正常通信和数据传输。</font>
+
+**<font style="color:#ffffff;">单片机内部电路：</font>**
+
+<font style="color:#ffffff;">除了直接保护IO端口外，保护二极管还间接保护了单片机内部的其他电路。由于IO端口是单片机与外部电路的接口，如果IO端口受到损坏，很可能会导致单片机内部电路也受到牵连而损坏。</font>
+
+## 20、单片机IO口有什么作用？上拉电阻与下拉电阻的作用？
+<img src="https://cdn.nlark.com/yuque/0/2024/png/34813384/1728887564776-705ba75a-a4eb-4985-9220-59cdccbda387.png" width="1438" title="" crop="0,0,1,1" id="u4cf9251b" class="ne-image">
+
+**<font style="color:#ffffff;">单片机IO口的作用</font>**
+
+**<font style="color:#ffffff;">输入：</font>**
+
+<font style="color:#ffffff;">单片机的输入端口用于接收来自外部设备的数据。例如，可以连接传感器、按钮等元器件，通过输入端口将这些元器件收集到的数据（如温度、压力、开关状态等）传递到单片机内部进行处理。</font>
+
+**<font style="color:#ffffff;">输出：</font>**
+
+<font style="color:#ffffff;">单片机的输出端口用于向外部设备发送数据或控制信号。例如，可以连接LED灯、蜂鸣器、电机等外部设备，通过输出端口向这些设备发送指令信号，实现对它们的控制。</font>
+
+**<font style="color:#ffffff;">复用：</font>**
+
+<font style="color:#ffffff;">一些单片机的IO口还具有复用功能，可以用于连接需要公共控制信号的高速器件，如同步器件、高速数据存储器、网络通信模块等。这些复用端口通常需要使用特殊的协议进行操作，以实现不同设备之间的联动和协作。</font>
+
+**<font style="color:#ffffff;">通信：</font>**
+
+<font style="color:#ffffff;">某些单片机的IO口还可以用于实现与外部设备之间的通信功能。例如，通过串口端口（UART）可以实现单片机与计算机、其他单片机或物联网设备之间的数据传输和控制。</font>
+
+**<font style="color:#ffffff;">上拉电阻的作用</font>**
+
+**<font style="color:#ffffff;">防止IO口浮空：</font>**
+
+<font style="color:#ffffff;">当没有外部设备连接到IO口时，IO口处于开路状态，容易受到电磁干扰或静电干扰的影响，导致电平不稳定甚至错误触发。通过使用上拉电阻，</font><font style="color:#DF2A3F;">可以将IO口的电平拉高，防止IO口浮空，保证电平稳定。</font>
+
+**<font style="color:#ffffff;">确定IO口的默认状态：</font>**
+
+<font style="color:#ffffff;">在某些应用中，需要确保IO口在无信号输入时处于特定的状态。通过使用上拉电阻，可以将IO口的电平拉高为高电平（逻辑1），从而确定IO口的默认状态。</font>
+
+**<font style="color:#ffffff;">实现开漏输出：</font>**
+
+<font style="color:#ffffff;">在某些特殊的应用中，IO口需要实现开漏输出（Open Drain Output），即可以输出低电平，但不能输出高电平。通过使用上拉电阻，可以将IO口的电平拉高，使其处于高阻态，实现开漏输出功能。</font>
+
+**<font style="color:#ffffff;">下拉电阻的作用</font>**
+
+**<font style="color:#ffffff;">确定IO口的默认状态：</font>**
+
+<font style="color:#ffffff;">与上拉电阻相反，下拉电阻将IO口的电平拉低为低电平（逻辑0），从而确定IO口的默认状态为低电平。</font>
+
+**<font style="color:#ffffff;">防止IO口误触发：</font>**
+
+<font style="color:#ffffff;">在一些应用中，当IO口处于高阻态或浮空状态时，可能会由于外部干扰或噪声而产生误触发。通过使用下拉电阻，可以将IO口的电平拉低，防止误触发。</font>
+
+**<font style="color:#ffffff;">降低功耗：</font>**
+
+<font style="color:#ffffff;">在需要使用开关或按键等外部设备进行输入的场合，如果直接将IO口连接到高电平或电源电压，会导致电流流过IO口，造成功耗的浪费。而通过使用下拉电阻，可以将IO口的电平拉低，减小电流流过IO口的情况，降低功耗。</font>
+
+## 21、单片机的寻址方式有哪些？
+<font style="color:#ffffff;">单片机的寻址方式是指单片机如何通过指令来访问数据存储器（RAM）、程序存储器（ROM）或I/O端口。单片机的指令系统通常使用多种寻址方式以适应不同的操作需求。</font>
+
+**<font style="color:#ffffff;">1、立即寻址：</font>**
+
+<font style="color:#ffffff;">指令中直接包含操作数（即立即数），而不是操作数的地址。</font>
+
+<font style="color:#ffffff;">这种寻址方式常用于将常量或立即数直接加载到寄存器或内存位置。</font>
+
+<font style="color:#ffffff;">例如，指令“MOV A, #20H”将立即数20H加载到累加器A中。</font>
+
+**<font style="color:#ffffff;">2、直接寻址：</font>**
+
+<font style="color:#ffffff;">指令中直接包含操作数的内存地址。</font>
+
+<font style="color:#ffffff;">CPU直接访问这个地址来读取或写入数据。</font>
+
+<font style="color:#ffffff;">这种寻址方式简单明了，适合对特定地址的直接操作。</font>
+
+<font style="color:#ffffff;">例如，指令“MOV A, 20H”将地址20H中的数据移动到累加器A中。</font>
+
+**<font style="color:#ffffff;">3、寄存器寻址：</font>**
+
+<font style="color:#ffffff;">指令直接使用CPU内部的寄存器来访问数据。</font>
+
+<font style="color:#ffffff;">这种寻址方式速度快，因为寄存器的访问速度通常比内存快得多。</font>
+
+<font style="color:#ffffff;">寄存器寻址通常用于快速访问和处理数据。</font>
+
+<font style="color:#ffffff;">例如，指令“MOV A, B”将寄存器B的内容复制到寄存器A中。</font>
+
+**<font style="color:#ffffff;">4、寄存器间接寻址：</font>**
+
+<font style="color:#ffffff;">通过一个寄存器给出操作数的地址。</font>
+
+<font style="color:#ffffff;">这种方式提供了更大的灵活性，因为可以通过改变寄存器的值来访问不同的内存地址。</font>
+
+<font style="color:#ffffff;">常用的寄存器间接寻址方式包括累加器间接寻址和数据指针间接寻址。</font>
+
+<font style="color:#ffffff;">例如，指令“MOV A, @R0”将R0寄存器指向的内存地址中的数据移动到累加器A中。</font>
+
+**<font style="color:#ffffff;">5、基址加变址寻址：</font>**
+
+<font style="color:#ffffff;">以某个寄存器（如DPTR或PC）作为基址寄存器，另一个寄存器（如累加器A）作为变址寄存器，两者的内容之和为操作数的地址。</font>
+
+<font style="color:#ffffff;">这种寻址方式常用于访问程序存储器中的某个字节。</font>
+
+<font style="color:#ffffff;">例如，在某些单片机中，可以使用DPTR作为基址寄存器，累加器A作为变址寄存器来访问程序存储器中的数据。</font>
+
+**<font style="color:#ffffff;">6、相对寻址：</font>**
+
+<font style="color:#ffffff;">使用当前指令的地址（通常是程序计数器PC的当前值）加上一个相对偏移量来计算跳转的目标地址。</font>
+
+<font style="color:#ffffff;">这种寻址方式常用于实现程序中的分支和循环控制。</font>
+
+<font style="color:#ffffff;">例如，指令“JZ label”如果条件测试为真（如累加器A的内容为0），则跳转到标签label所指示的地址。</font>
+
+**<font style="color:#ffffff;">7、位寻址：</font>**
+
+<font style="color:#ffffff;">直接对单个位进行操作，而不需要访问整个字节。</font>
+
+<font style="color:#ffffff;">这种寻址方式通常用于对特定的标志位或状态位进行控制，如设置、清除或翻转。</font>
+
+<font style="color:#ffffff;">位寻址可以提高程序的执行效率，特别是在需要频繁操作单个位的情况下。</font>
+
+<font style="color:#ffffff;">例如，指令“SETB P1.0”将端口P1的第0位设置为1。</font>
+
+## 22、看门狗的原理?
+<font style="color:#ffffff;">单片机中的看门狗（Watchdog）原理主要涉及到一个</font><font style="color:#DF2A3F;">定时器</font><font style="color:#ffffff;">电路，</font><font style="color:#DF2A3F;">用于监控单片机的运行状态，并在系统出现异常时自动复位单片机，以确保系统的稳定性和可靠性。</font><font style="color:#ffffff;"></font>
+
+<font style="color:#ffffff;">一、看门狗的基本概念与构成</font>
+
+<font style="color:#ffffff;">定义：看门狗，又叫watchdog或watchdog timer，是一个</font><font style="color:#DF2A3F;">定时器</font><font style="color:#ffffff;">电路，用于监控单片机系统的运行状态。</font>
+
+<font style="color:#ffffff;">构成：看门狗电路一般由</font><font style="color:#DF2A3F;">一个输入（喂狗）和一个输出组成</font><font style="color:#ffffff;">。</font><font style="color:#DF2A3F;">输入端接收来自单片机的喂狗信号，输出端则连接到单片机的复位端。</font>
+
+<font style="color:#ffffff;">二、看门狗的工作原理</font>
+
+<font style="color:#ffffff;">定时器启动</font><font style="color:#ffffff;">：看门狗定时器在系统上电或复位后启动，开始计时。</font>
+
+<font style="color:#ffffff;">喂狗操作：单片机在正常工作时，</font><font style="color:#DF2A3F;">会定期向看门狗的输入端发送喂狗信号（通常是一个高电平或低电平信号），以重置看门狗定时器。</font><font style="color:#ffffff;">喂狗信号的发送频率应根据看门狗定时器的超时时间进行设置，以确保在定时器超时前能够发送喂狗信号。</font>
+
+<font style="color:#ffffff;">超时与复位</font><font style="color:#ffffff;">：如果单片机由于某种原因（如程序跑飞、死机等）无法在规定时间内发送喂狗信号，看门狗定时器就会超时。一旦超时，看门狗电路就会输出一个复位信号到单片机的复位端，使单片机复位或重启。</font>
+
+<font style="color:#ffffff;">三、看门狗的使用原则</font>
+
+<font style="color:#ffffff;">系统正常工作时不复位</font><font style="color:#ffffff;">：看门狗应在系统正常工作时不产生复位信号，以确保系统的连续性和稳定性。</font>
+
+<font style="color:#ffffff;">系统死机时尽快复位</font><font style="color:#ffffff;">：当系统出现异常或死机时，看门狗应尽快输出复位信号，以恢复系统的正常运行。</font>
+
+<font style="color:#ffffff;">四、看门狗的分类与实现</font>
+
+<font style="color:#ffffff;">硬件看门狗：硬件看门狗通常是一个</font><font style="color:#DF2A3F;">独立的芯片</font><font style="color:#ffffff;">，通过监控单片机的电源、时钟等信号来判断系统是否正常运行。硬件看门狗具有可靠性高、独立性强的特点，但成本相对较高。</font>
+
+<font style="color:#ffffff;">软件看门狗：软件看门狗则是</font><font style="color:#DF2A3F;">通过单片机内部的定时器/计数器来实现的</font><font style="color:#ffffff;">。在单片机系统中，可以利用闲置的定时器/计数器设计一个软件看门狗。软件看门狗的成本较低，但可靠性可能受到单片机本身或应用程序的影响。</font>
+
+<font style="color:#ffffff;">五、看门狗的应用场景</font>
+
+<font style="color:#ffffff;">看门狗广泛应用于各种需要高可靠性和稳定性的单片机系统中，如工业控制、汽车电子、医疗设备、航空航天等领域。在这些领域中，单片机系统的稳定性和可靠性至关重要，看门狗可以有效地监测系统的运行状态，并在系统出现异常时采取相应措施，确保系统的连续性和安全性。</font>
+
+## 23、复位时单片机有什么动作?
+<font style="color:#ffffff;">复位时，单片机会执行一系列特定的动作，确保从确定的初始状态开始运行。</font>
+
+1. <font style="color:#ffffff;">程序计数器（PC）清零：复位后，单片机的程序计数器通常会被设置为初始值（如0000H），这意味着单片机将从存储器的起始地址开始执行程序。</font>
+2. <font style="color:#ffffff;">特殊功能寄存器（SFR）初始化：单片机内部的一些特殊功能寄存器在复位后会被设置为特定的初始值。这些寄存器的初始状态通常是已知的，以确保单片机在复位后能够按照预期的方式运行。例如，堆栈指针（SP）可能被初始化为指向堆栈的顶部，而中断使能寄存器（IE）可能被清零以禁用所有中断。</font>
+3. <font style="color:#ffffff;">内部RAM状态：对于片内RAM，复位操作通常不会改变其内容（除非特定于某些单片机型号的复位行为）。然而，在单片机启动后，片内RAM的内容是随机的，因此在编写程序时，通常需要在复位后的初始化代码中显式地设置RAM的值。</font>
+4. <font style="color:#ffffff;">I/O端口状态：复位后，单片机的I/O端口通常会被设置为高阻态或特定的初始状态（如全0或全1）。这取决于单片机型号和具体的设计。</font>
+5. <font style="color:#ffffff;">时钟和振荡器：复位操作可能会影响单片机的时钟和振荡器。在某些情况下，复位可能会导致时钟源被重新选择或振荡器被重新启动。然而，这通常取决于单片机型号和复位电路的设计。</font>
+6. <font style="color:#ffffff;">中断系统：复位后，单片机的中断系统通常会被禁用。这意味着在复位后的初始化代码中，需要显式地启用所需的中断源。</font>
+7. <font style="color:#ffffff;">看门狗定时器：如果单片机内部集成了看门狗定时器，复位操作可能会清除看门狗定时器的计数并禁用它。在复位后的初始化代码中，如果需要，可以重新启用看门狗定时器并设置其超时时间。</font>
+
+## 24、中断嵌套的好处与坏处?
+<font style="color:#ffffff;">中断嵌套是指在一个中断服务程序（ISR）正在执行的过程中，再次发生了一个优先级更高的中断请求，此时系统会暂时终止当前正在执行的低优先级中断的服务程序，去处理高优先级的中断请求，待高优先级中断处理完毕后，再返回到被中断了的低优先级中断服务程序继续执行。</font>
+
+**<font style="color:#ffffff;">中断嵌套的好处</font>**
+
+1. <font style="color:#DF2A3F;">提高中断响应的实时性</font><font style="color:#ffffff;">：对于某些对实时性要求较高的操作，必须赋予较高的优先级并采取中断嵌套的方式，才能保证系统能够及时响应该中断请求。</font>
+2. <font style="color:#DF2A3F;">允许高优先级中断打断低优先级中断</font><font style="color:#ffffff;">：这种机制确保了紧急情况下，高优先级的中断可以及时得到响应和处理，从而提高了系统的响应速度和灵活性。</font>
+
+**<font style="color:#ffffff;">中断嵌套的坏处</font>**
+
+1. <font style="color:#DF2A3F;">增加系统复杂度和不确定性</font><font style="color:#ffffff;">：中断嵌套使得系统的行为变得更加复杂和不确定。由于一个中断可能会被另一个中断打断，这增加了预测系统行为的难度。</font>
+2. <font style="color:#DF2A3F;">可能导致低优先级中断延迟或丢失</font><font style="color:#ffffff;">：如果高优先级的中断频繁打断低优先级的中断，可能导致低优先级的中断服务程序无法及时完成，进而影响系统的实时响应能力。</font>
+3. <font style="color:#DF2A3F;">系统开销和资源消耗增加</font><font style="color:#ffffff;">：每次中断都需要保存和恢复处理器的状态，包括寄存器、堆栈等。嵌套中断意味着这些操作会频繁发生，从而增加了系统的开销和资源消耗。</font>
+4. <font style="color:#DF2A3F;">可能出现死锁或重入情况</font><font style="color:#ffffff;">：如果在嵌套中断处理过程中不当地访问共享资源或修改全局状态，可能导致死锁或重入的情况。例如，如果两个中断都试图锁定同一资源，而一个中断被另一个中断打断，就可能出现死锁。</font>
+5. <font style="color:#DF2A3F;">可能出现优先级反转问题</font><font style="color:#ffffff;">：在嵌套中断的情况下，低优先级的中断源由于嵌套在高优先级的中断服务程序中执行，而实际上获得了比其他高优先级中断源更高的执行优先级。这可能导致系统行为不符合预期。</font>
+
+## 25、什么是可重入型函数，使用时需要注意哪些问题？
+<font style="color:#ffffff;">可重入型函数（Reentrant Function）是指</font><font style="color:#DF2A3F;">一个函数可以被同时多个任务（线程）调用，且不会出现竞争资源的问题或产生意外结果。</font><font style="color:#ffffff;">这意味着在多个任务同时调用这个函数时，函数内部不会使用全局变量、静态变量或其他共享资源，以确保函数的行为是确定的、可预测的。</font>
+
+<font style="color:#ffffff;">在使用可重入型函数时，需要注意以下几个问题：</font>
+
+1. <font style="color:#ffffff;">线程安全性：由于可重入型函数可能会被多个任务同时调用，因此需要确保函数内部使用的数据是线程安全的，不会出现竞争条件或数据污染。</font>
+2. <font style="color:#ffffff;">不可重入型函数调用：在一个可重入型函数中，不应该调用其他不可重入型函数，否则可能会破坏可重入性。</font>
+3. <font style="color:#ffffff;">不可中断性：可重入型函数在执行过程中一般不会被中断，否则可能导致函数状态不一致。</font>
+4. <font style="color:#ffffff;">数据保护：如果可重入型函数需要访问共享资源，必须使用互斥锁或其他同步机制保护这些资源，以防止数据竞争。</font>
+5. <font style="color:#ffffff;">局部变量：可重入型函数应尽量使用局部变量，避免使用全局变量或静态变量，以避免多个任务之间共享数据。</font>
+6. <font style="color:#ffffff;">递归调用：可重入型函数可以是递归调用的，但需要注意递归深度，避免栈溢出或死锁。</font>
+
+## 26、ROM与RAM的区别？
+[一文看懂RAM与ROM的区别！(赶快收藏)_ram与rom 区别-CSDN博客](https://blog.csdn.net/qq_33738357/article/details/141271688?spm=1001.2014.3001.5501)
+
+<font style="color:#ffffff;">ROM（只读存储器）与RAM（随机存取存储器）是计算机系统中两种不同类型的存储器</font>
+
+**<font style="color:#ffffff;">定义与特点</font>**
+
+**<font style="color:#ffffff;">ROM（只读存储器）</font>**
+
+<font style="color:#ffffff;">定义：ROM是一种用于</font><font style="color:#DF2A3F;">存储计算机固件和永久性数据的存储器。</font>
+
+<font style="color:#ffffff;">特点</font><font style="color:#ffffff;">：数据一旦写入，通常不能通过常规手段进行修改，具有非易失性，即断电后数据不会丢失。</font>
+
+<font style="color:#ffffff;">类型</font><font style="color:#ffffff;">：常见的ROM类型包括PROM（可编程只读存储器，只能编程一次）、EPROM（可擦除可编程只读存储器，可多次编程，需紫外线擦除）、EEPROM（电子可擦除可编程只读存储器，可多次编程，通过电子方式擦除）以及Flash ROM（闪存只读存储器，可多次编程，通过电子方式擦除，广泛应用于便携式数字设备）。</font>
+
+**<font style="color:#ffffff;">RAM（随机存取存储器）</font>**
+
+<font style="color:#ffffff;">定义：RAM是一种用于</font><font style="color:#DF2A3F;">存储计算机正在运行的程序和数据的临时存储器。</font>
+
+<font style="color:#ffffff;">特点</font><font style="color:#ffffff;">：数据可以随时读写，具有易失性，即断电后数据会丢失。RAM的访问速度非常快，适合频繁的读写操作。</font>
+
+<font style="color:#ffffff;">类型</font><font style="color:#ffffff;">：常见的RAM类型包括SRAM（静态随机存取存储器，速度快，价格高，常用作CPU的缓存）和DRAM（动态随机存取存储器，速度慢于SRAM，但价格较低，常用作主存储器）。DRAM的主要类型包括SDRAM、DDR RAM等。</font>
+
+**<font style="color:#ffffff;">用途与应用</font>**
+
+**<font style="color:#ffffff;">ROM</font>**
+
+<font style="color:#ffffff;">用途</font><font style="color:#ffffff;">：ROM主要用于存储计算机的启动程序、固件、操作系统和其他关键信息。这些程序和信息在设备启动时加载，为计算机的初始化提供必要的支持。</font>
+
+<font style="color:#ffffff;">应用</font><font style="color:#ffffff;">：ROM在计算机、手机、平板电脑等设备的启动和初始化过程中发挥关键作用。它确保了设备的稳定性和可靠性，并为用户提供了良好的使用体验。</font>
+
+**<font style="color:#ffffff;">RAM</font>**
+
+<font style="color:#ffffff;">用途</font><font style="color:#ffffff;">：RAM用于存储正在运行的程序的代码和数据，支持操作系统的运行和多任务处理。RAM的读写速度非常快，能够为用户提供流畅的操作体验。</font>
+
+<font style="color:#ffffff;">应用</font><font style="color:#ffffff;">：RAM在计算机的日常运行中扮演关键角色。它存储了操作系统、应用程序、临时数据等，并支持虚拟内存、数据缓存等功能。通过增加RAM的容量，可以提高计算机的运行速度和性能。</font>
+
+**<font style="color:#ffffff;">工作原理</font>**
+
+**<font style="color:#ffffff;">ROM</font>**
+
+<font style="color:#ffffff;">ROM中的数据以物理状态（如电路中的电子开关状态）表示，不需要持续刷新。ROM中的数据在写入后通常不能通过常规手段进行修改，因此具有稳定性和可靠性。</font>
+
+**<font style="color:#ffffff;">RAM</font>**
+
+<font style="color:#ffffff;">RAM中的数据以电子状态存储，需要不断刷新以保持数据的可读性。RAM的读写速度非常快，因为它允许随机访问存储的任何位置。然而，由于RAM具有易失性，因此需要在断电前将数据保存到永久存储设备中。</font>
+
+# 九、PCB设计
+1. 电源处理如何实现 5v 到 3.3v，电容选多大的，为什么这么选
+
+2. 语音模块的喇叭功率多大
+
+3. 为什么用继电器控制
+
+4. wifi 的使用原理
+
+5. 语音模块的使用原理
+
+6. 为什么选择当前这个芯片作为主控芯片
+
+7. LED 灯的保护电阻阻值怎么确定的
+
+
+
