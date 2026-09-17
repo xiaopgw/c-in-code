@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="ttUlwvXsjd5bkNXeBvTF" name="第 1 页">
-        <mxGraphModel dx="1621" dy="3942" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0" adaptiveColors="simple">
+        <mxGraphModel dx="1539" dy="3893" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0" adaptiveColors="simple">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -167,7 +167,7 @@
                 <mxCell id="829" style="edgeStyle=none;html=1;" parent="1" source="37" target="832" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="865" style="edgeStyle=none;html=1;" edge="1" parent="1" source="37" target="863">
+                <mxCell id="865" style="edgeStyle=none;html=1;" parent="1" source="37" target="863" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="37" value="命令" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontStyle=1;fontSize=26;" parent="1" vertex="1">
@@ -848,14 +848,26 @@
                 <mxCell id="356" value="网络编程" style="rounded=1;whiteSpace=wrap;html=1;arcSize=11;sketch=1;curveFitting=1;jiggle=2;" parent="1" vertex="1">
                     <mxGeometry x="500" y="510" width="100" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="359" value="stm32单片机" style="rounded=1;whiteSpace=wrap;html=1;arcSize=11;sketch=1;curveFitting=1;jiggle=2;" parent="1" vertex="1">
-                    <mxGeometry x="500" y="638" width="100" height="50" as="geometry"/>
+                <mxCell id="872" style="edgeStyle=none;html=1;" edge="1" parent="1" source="359" target="871">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="899" style="edgeStyle=none;html=1;" edge="1" parent="1" source="359" target="898">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="913" style="edgeStyle=none;html=1;" edge="1" parent="1" source="359" target="912">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="917" style="edgeStyle=none;html=1;" edge="1" parent="1" source="359" target="916">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="359" value="stm32单片机" style="rounded=1;whiteSpace=wrap;html=1;arcSize=11;sketch=1;curveFitting=1;jiggle=2;fontSize=70;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="500" y="1280" width="260" height="170" as="geometry"/>
                 </mxCell>
                 <mxCell id="361" value="PCB设计" style="rounded=1;whiteSpace=wrap;html=1;arcSize=11;sketch=1;curveFitting=1;jiggle=2;" parent="1" vertex="1">
-                    <mxGeometry x="500" y="760" width="100" height="50" as="geometry"/>
+                    <mxGeometry x="-110" y="1670" width="100" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="363" value="C++" style="rounded=1;whiteSpace=wrap;html=1;arcSize=11;sketch=1;curveFitting=1;jiggle=2;" parent="1" vertex="1">
-                    <mxGeometry x="500" y="890" width="100" height="50" as="geometry"/>
+                    <mxGeometry x="-110" y="1800" width="100" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="373" style="edgeStyle=none;html=1;sketch=1;curveFitting=1;jiggle=2;" parent="1" source="365" target="370" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -1438,7 +1450,7 @@
                 <mxCell id="663" style="edgeStyle=none;html=1;sketch=1;curveFitting=1;jiggle=2;" parent="1" source="650" target="662" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="845" style="edgeStyle=none;html=1;" edge="1" parent="1" source="650" target="680">
+                <mxCell id="845" style="edgeStyle=none;html=1;" parent="1" source="650" target="680" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="650" value="#if" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" parent="1" vertex="1">
@@ -1652,7 +1664,7 @@
                         <mxPoint x="1931" y="-1120" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="857" style="edgeStyle=none;html=1;" edge="1" parent="1" source="752" target="856">
+                <mxCell id="857" style="edgeStyle=none;html=1;" parent="1" source="752" target="856" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="752" value="安装工具" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" parent="1" vertex="1">
@@ -1685,7 +1697,7 @@
                 <mxCell id="780" style="edgeStyle=none;html=1;" parent="1" source="764" target="766" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="854" style="edgeStyle=none;html=1;" edge="1" parent="1" source="764" target="768">
+                <mxCell id="854" style="edgeStyle=none;html=1;" parent="1" source="764" target="768" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="764" value="dpkg -i 软件包名：安装软件" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" parent="1" vertex="1">
@@ -1712,10 +1724,10 @@
                 <mxCell id="770" value="apt-get&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" parent="1" vertex="1">
                     <mxGeometry x="2291" y="-1060" width="80" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="848" style="edgeStyle=none;html=1;labelBackgroundColor=none;" edge="1" parent="1" source="774">
+                <mxCell id="848" style="edgeStyle=none;html=1;labelBackgroundColor=none;" parent="1" source="774" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="853" style="edgeStyle=none;html=1;" edge="1" parent="1" source="774" target="852">
+                <mxCell id="853" style="edgeStyle=none;html=1;" parent="1" source="774" target="852" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="774" value="&lt;span style=&quot;color: rgb(255, 255, 255);&quot;&gt;install 软件名：安装软件&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" parent="1" vertex="1">
@@ -1811,7 +1823,7 @@
                 <mxCell id="838" value="前一个命令的输出作为下一个命令的输入" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" parent="1" vertex="1">
                     <mxGeometry x="1521" y="-1420" width="124.5" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="847" style="edgeStyle=none;html=1;" edge="1" parent="1" source="841" target="843">
+                <mxCell id="847" style="edgeStyle=none;html=1;" parent="1" source="841" target="843" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="841" value="输入输出重定向" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" parent="1" vertex="1">
@@ -1820,35 +1832,201 @@
                 <mxCell id="843" value="&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" parent="1" vertex="1">
                     <mxGeometry x="1509.5" y="-1190" width="75" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="844" value="计算机网络四级" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#6a00ff;sketch=1;fontColor=#FFFFFF;strokeColor=#FFFFFF;" vertex="1" parent="1">
+                <mxCell id="844" value="计算机网络四级" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#6a00ff;sketch=1;fontColor=#FFFFFF;strokeColor=#FFFFFF;" parent="1" vertex="1">
                     <mxGeometry x="210" y="-2840" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="852" value="remove软件名：卸载软件" style="text;strokeColor=none;fillColor=none;html=1;fontSize=13;fontStyle=0;verticalAlign=middle;align=center;spacing=2;" vertex="1" parent="1">
+                <mxCell id="852" value="remove软件名：卸载软件" style="text;strokeColor=none;fillColor=none;html=1;fontSize=13;fontStyle=0;verticalAlign=middle;align=center;spacing=2;" parent="1" vertex="1">
                     <mxGeometry x="2679" y="-1110" width="180" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="859" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="856" target="858">
+                <mxCell id="859" value="" style="edgeStyle=none;html=1;" parent="1" source="856" target="858" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="856" value="makefile" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                <mxCell id="856" value="makefile" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" parent="1" vertex="1">
                     <mxGeometry x="2093" y="-1120" width="90" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="858" value="利用已经有的代码文件之类的用make来直接编程" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                <mxCell id="858" value="利用已经有的代码文件之类的用make来直接编程" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" parent="1" vertex="1">
                     <mxGeometry x="2200" y="-1010" width="140" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="868" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="863" target="867">
+                <mxCell id="868" value="" style="edgeStyle=none;html=1;" parent="1" source="863" target="867" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="870" style="edgeStyle=none;html=1;" edge="1" parent="1" source="863" target="869">
+                <mxCell id="870" style="edgeStyle=none;html=1;" parent="1" source="863" target="869" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="863" value="查找命令" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontSize=25;" vertex="1" parent="1">
+                <mxCell id="863" value="查找命令" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontSize=25;" parent="1" vertex="1">
                     <mxGeometry x="1770" y="-860" width="119" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="867" value="find" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;strokeColor=#FF0000;" vertex="1" parent="1">
+                <mxCell id="867" value="find" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;strokeColor=#FF0000;" parent="1" vertex="1">
                     <mxGeometry x="1969" y="-850" width="80" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="869" value="grep" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;strokeColor=#FF0000;" vertex="1" parent="1">
+                <mxCell id="869" value="grep" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;strokeColor=#FF0000;" parent="1" vertex="1">
                     <mxGeometry x="1969" y="-790" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="874" style="edgeStyle=none;html=1;" edge="1" parent="1" source="871" target="873">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="878" style="edgeStyle=none;html=1;" edge="1" parent="1" source="871" target="875">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="879" style="edgeStyle=none;html=1;" edge="1" parent="1" source="871" target="876">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="880" style="edgeStyle=none;html=1;" edge="1" parent="1" source="871" target="877">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="871" value="通信方式" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="890" y="1180" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="882" style="edgeStyle=none;html=1;" edge="1" parent="1" source="873" target="881">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="884" style="edgeStyle=none;html=1;" edge="1" parent="1" source="873" target="883">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1098.5" y="924.090909090909" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="873" value="GPIO" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="988.5" y="890" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="875" value="USART" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="1030" y="1200" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="876" value="SPI" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="1040" y="1280" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="877" value="IIC" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="1009" y="1340" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="889" style="edgeStyle=none;html=1;" edge="1" parent="1" source="881" target="885">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="890" style="edgeStyle=none;html=1;" edge="1" parent="1" source="881" target="886">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="881" value="模式" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="1078.5" y="830" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="883" value="相关实验" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="1100" y="1070" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="894" style="edgeStyle=none;html=1;" edge="1" parent="1" source="885" target="887">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="895" style="edgeStyle=none;html=1;" edge="1" parent="1" source="885" target="888">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="896" style="edgeStyle=none;html=1;" edge="1" parent="1" source="885" target="891">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="897" style="edgeStyle=none;html=1;" edge="1" parent="1" source="885" target="892">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="885" value="输入" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="1212.75" y="790" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="886" value="输出" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="1220" y="1000" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="887" value="浮空" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="1349.5" y="730" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="888" value="上拉输入" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="1348.5" y="780" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="891" value="下拉输入" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="1349.5" y="830" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="892" value="模拟" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="1349.5" y="880" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="901" style="edgeStyle=none;html=1;" edge="1" parent="1" source="898" target="900">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="898" value="通信方式" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="789" y="600" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="903" style="edgeStyle=none;html=1;" edge="1" parent="1" source="900" target="902">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="905" style="edgeStyle=none;html=1;" edge="1" parent="1" source="900" target="904">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="907" style="edgeStyle=none;html=1;" edge="1" parent="1" source="900" target="906">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="910" style="edgeStyle=none;html=1;" edge="1" parent="1" source="900" target="908">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="911" style="edgeStyle=none;html=1;" edge="1" parent="1" source="900" target="909">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="900" value="计算机组成" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="819" y="490" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="902" value="输入设备" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="929" y="440" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="904" value="输出设备" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="929" y="510" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="906" value="运算器" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="929" y="580" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="908" value="控制器" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="929" y="630" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="909" value="存储器" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="929" y="680" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="915" style="edgeStyle=none;html=1;" edge="1" parent="1" target="914">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="754.6153846153843" y="1130" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="921" style="edgeStyle=none;html=1;" edge="1" parent="1" source="912" target="920">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="912" value="芯片架构" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="730" y="1140" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="925" style="edgeStyle=none;html=1;" edge="1" parent="1" source="914" target="922">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="914" value="Cortex-A" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="739" y="1010" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="919" style="edgeStyle=none;html=1;" edge="1" parent="1" source="916" target="918">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="916" value="寄存器怎么找" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="845" y="1430" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="918" value="从数据手册上找，确定哪一位，看什么功能，然后去操作" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="960" y="1480" width="110" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="924" style="edgeStyle=none;html=1;" edge="1" parent="1" source="920" target="923">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="920" value="Cortex-M" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="830" y="1080" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="928" style="edgeStyle=none;html=1;" edge="1" parent="1" source="922" target="926">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="922" value="性能高" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="750" y="930" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="929" style="edgeStyle=none;html=1;" edge="1" parent="1" source="923" target="927">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="923" value="stm系列" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="869" y="1000" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="926" value="可运行linux、安卓" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="790" y="840" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="927" value="只可运行freeRTOS" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="1">
+                    <mxGeometry x="880" y="910" width="80" height="30" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
