@@ -49,7 +49,7 @@ int main(int argc, char const *argv[])
             perror("accfd->");
             return -1;
         }
-        printf("IP为: %s %d的客户端已连接\n", inet_ntoa(addrci.sin_addr), htons(addrci.sin_port));
+        printf("IP为: %s %d的客户端已连接\n", inet_ntoa(addrci.sin_addr), ntohs(addrci.sin_port));
         // read(accept, arrac, N - 1);
         // printf("%s\n", arrac);
 
