@@ -1,0 +1,131 @@
+# ==============================================================
+#  .gitignore —— 项目根目录的 git 忽略清单
+#
+#  来源：以「文件及网址之类的/git忽略文件模板/.gitignore」为底本，
+#        再按本项目实际情况补充（两部分已分别标注）
+#
+#  语法（与 .clineignore 完全一致）：
+#    # 开头   -> 注释
+#    / 结尾   -> 只匹配目录
+#    *        -> 通配符（匹配任意字符）
+#    ! 开头   -> 反向排除（例外）
+#
+#  两条必须记住的规则：
+#    1) 忽略规则【只对未跟踪文件生效】。已经被 git 跟踪的文件，
+#       即使写进本文件也照样上传，必须先执行：
+#           git rm -r --cached <路径>     （只从索引移除，本地文件保留）
+#       本文件才能真正拦住它。
+#    2) .clineignore 只影响 Cline 的读取/搜索，git 完全不看它；
+#       本文件才是 git 的"上传与否"清单。两者职责不同，不要混用。
+# ==============================================================
+
+# ==================== 以下为原模板内容（保持原样） ====================
+
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.o.d
+*.ko
+*.obj
+*.elf
+*.builtin
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+#*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+
+# project config
+*.user
+.vscode
+
+#doc
+~*.docx
+~*.pptx
+~*.xlsx
+~*.doc
+~*.ppt
+~*.xls
+
+# ==================== 以下为本项目补充 ====================
+
+# ---------- 第三方源码 / 工具包（体积大：本地保留、不进仓库）----------
+文件及网址之类的/valgrind/
+文件及网址之类的/mosquitto/
+文件及网址之类的/paho/
+
+
+# ---------- 构建输出目录 ----------
+build/
+Debug/
+Release/
+Node/
+
+# ---------- 压缩包 ----------
+*.zip
+*.tar
+*.tar.gz
+*.tar.bz2
+*.rar
+*.7z
+
+# ---------- 编辑器 / 系统垃圾 ----------
+.DS_Store
+Thumbs.db
+*~
+*.bak
+*.swp
+*.tmp
+
+# ---------- 个人临时文件 ----------
+test2
+
+# ==================== 刻意【不】忽略的内容（勿添加） ====================
+# *.png / *.jpg / *.jpeg
+#   笔记里有 290 处图片引用（![](image/xxx.png)）。若把图片忽略并停止跟踪，
+#   换机器或推送后网页端看笔记时图片会全部裂掉。
+#   "让 Cline 不读图片"是 .clineignore 的职责，与"git 是否保存图片"无关。
+# *.drawio / *.mmf / *.mff
+#   drawio 本质是文本 XML，适合版本管理；mmf/mff 体积小，均保留。
